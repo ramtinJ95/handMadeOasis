@@ -3,18 +3,44 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-06-28T14:54:37+02:00</lastmod>
+    <lastmod>2025-08-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/</loc>
     <lastmod>2025-06-28T14:54:37+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/about/</loc>
+    <lastmod>2025-08-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/my-new-post/</loc>
     <lastmod>2025-06-28T14:54:37+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/personal/</loc>
+    <lastmod>2025-06-28T14:54:37+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-06-28T14:54:37+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/updates/</loc>
+    <lastmod>2025-06-28T14:54:37+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/data-engineering/</loc>
+    <lastmod>2025-05-09T22:52:24+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/developer-tooling/</loc>
+    <lastmod>2025-05-09T22:52:24+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/hello/</loc>
     <lastmod>2025-05-09T22:52:24+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/hello2/</loc>
     <lastmod>2025-05-09T22:52:24+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/hugo/</loc>
+    <lastmod>2025-05-09T22:52:24+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/tutorial/</loc>
+    <lastmod>2025-05-09T22:52:24+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>
