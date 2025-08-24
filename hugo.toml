@@ -6,7 +6,7 @@ baseURL = "https://handmadeoasis.pages.dev/"
 theme = 'hugo-bearblog'
 
 # Basic metadata configuration for your blog.
-title = "Handmande Oasis"
+title = "Handmade Oasis"
 author = "Ramtin Javanmardi"
 copyright = "Copyright © 2025, Ramtin Javanmardi."
 languageCode = "en-US"

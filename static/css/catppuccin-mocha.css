@@ -1,0 +1,259 @@
+/* Catppuccin Mocha Color Scheme for Hugo Bear Blog */
+
+:root {
+  /* Catppuccin Mocha Colors */
+  --ctp-mocha-rosewater: #f5e0dc;
+  --ctp-mocha-flamingo: #f2cdcd;
+  --ctp-mocha-pink: #f5c2e7;
+  --ctp-mocha-mauve: #cba6f7;
+  --ctp-mocha-red: #f38ba8;
+  --ctp-mocha-maroon: #eba0ac;
+  --ctp-mocha-peach: #fab387;
+  --ctp-mocha-yellow: #f9e2af;
+  --ctp-mocha-green: #a6e3a1;
+  --ctp-mocha-teal: #94e2d5;
+  --ctp-mocha-sky: #89dceb;
+  --ctp-mocha-sapphire: #74c7ec;
+  --ctp-mocha-blue: #89b4fa;
+  --ctp-mocha-lavender: #b4befe;
+  --ctp-mocha-text: #cdd6f4;
+  --ctp-mocha-subtext1: #bac2de;
+  --ctp-mocha-subtext0: #a6adc8;
+  --ctp-mocha-overlay2: #9399b2;
+  --ctp-mocha-overlay1: #7f849c;
+  --ctp-mocha-overlay0: #6c7086;
+  --ctp-mocha-surface2: #585b70;
+  --ctp-mocha-surface1: #45475a;
+  --ctp-mocha-surface0: #313244;
+  --ctp-mocha-base: #1e1e2e;
+  --ctp-mocha-mantle: #181825;
+  --ctp-mocha-crust: #11111b;
+}
+
+/* Base styling */
+body {
+  background-color: var(--ctp-mocha-base);
+  color: var(--ctp-mocha-text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ctp-mocha-text);
+  border-bottom: none;
+}
+
+h1 {
+  color: var(--ctp-mocha-blue);
+}
+
+h2 {
+  color: var(--ctp-mocha-mauve);
+}
+
+h3 {
+  color: var(--ctp-mocha-pink);
+}
+
+/* Links */
+a {
+  color: var(--ctp-mocha-sapphire);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--ctp-mocha-sky);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--ctp-mocha-lavender);
+}
+
+/* Code */
+code {
+  background-color: var(--ctp-mocha-surface0);
+  color: var(--ctp-mocha-green);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+}
+
+pre {
+  background-color: var(--ctp-mocha-mantle);
+  color: var(--ctp-mocha-text);
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid var(--ctp-mocha-surface0);
+}
+
+pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--ctp-mocha-blue);
+  background-color: var(--ctp-mocha-surface0);
+  padding: 1em;
+  margin: 1em 0;
+  color: var(--ctp-mocha-subtext1);
+}
+
+/* Navigation */
+nav a {
+  color: var(--ctp-mocha-text);
+}
+
+nav a:hover {
+  color: var(--ctp-mocha-blue);
+}
+
+/* Main content wrapper */
+main {
+  background-color: var(--ctp-mocha-base);
+}
+
+/* Footer */
+footer {
+  color: var(--ctp-mocha-subtext0);
+  border-top: 1px solid var(--ctp-mocha-surface0);
+}
+
+/* Strong/Bold text */
+strong, b {
+  color: var(--ctp-mocha-peach);
+}
+
+/* Emphasis/Italic text */
+em, i {
+  color: var(--ctp-mocha-yellow);
+}
+
+/* Horizontal rules */
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--ctp-mocha-surface1);
+  margin: 2em 0;
+}
+
+/* Lists */
+ul li::marker {
+  color: var(--ctp-mocha-blue);
+}
+
+ol li::marker {
+  color: var(--ctp-mocha-mauve);
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid var(--ctp-mocha-surface1);
+  padding: 0.5em;
+  text-align: left;
+}
+
+th {
+  background-color: var(--ctp-mocha-surface0);
+  color: var(--ctp-mocha-blue);
+}
+
+tr:nth-child(even) {
+  background-color: var(--ctp-mocha-surface0);
+}
+
+/* Form elements */
+input, textarea, select {
+  background-color: var(--ctp-mocha-surface0);
+  color: var(--ctp-mocha-text);
+  border: 1px solid var(--ctp-mocha-surface1);
+  border-radius: 4px;
+  padding: 0.5em;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--ctp-mocha-blue);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ctp-mocha-blue)40;
+}
+
+/* Buttons */
+button, .button {
+  background-color: var(--ctp-mocha-blue);
+  color: var(--ctp-mocha-base);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover, .button:hover {
+  background-color: var(--ctp-mocha-sky);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--ctp-mocha-blue);
+  color: var(--ctp-mocha-base);
+}
+
+/* Scrollbar (webkit) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ctp-mocha-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ctp-mocha-surface1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ctp-mocha-surface2);
+}
+
+/* Hugo Bear Blog specific overrides */
+.blog-header {
+  background-color: var(--ctp-mocha-base);
+  border-bottom: 1px solid var(--ctp-mocha-surface0);
+}
+
+.blog-post {
+  background-color: var(--ctp-mocha-base);
+}
+
+.blog-post-title {
+  color: var(--ctp-mocha-blue);
+}
+
+.blog-post-meta {
+  color: var(--ctp-mocha-subtext0);
+}
+
+/* Date styling */
+time {
+  color: var(--ctp-mocha-subtext0);
+}
+
+/* Made with line at bottom */
+.made-with-line {
+  color: var(--ctp-mocha-subtext0);
+}
+
+.made-with-line a {
+  color: var(--ctp-mocha-sapphire);
+}
