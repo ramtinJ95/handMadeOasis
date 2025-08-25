@@ -62,13 +62,16 @@ enableRobotsTXT = true
     url = "/blog/"
     weight = 2
   [[menu.main]]
-    name = "About"
-    url = "/about/"
+    name = "About Me"
+    url = "/aboutme/"
     weight = 3
 
 # Configure markup highlighter to match "Bearblog" aesthetics, see 
 # https://gohugo.io/configuration/markup/#highlight
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
   [markup.highlight]
     style = 'friendly'
     lineNos = true

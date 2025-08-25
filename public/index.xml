@@ -10,11 +10,11 @@
     <lastBuildDate>Sun, 24 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <title>About Me</title>
+      <link>http://localhost:1313/aboutme/</link>
       <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;&#xA;&lt;p&gt;Hi, I&amp;rsquo;m Ramtin Javanmardi!&lt;/p&gt;&#xA;&lt;p&gt;Welcome to my corner of the internet where I share my thoughts and experiences on:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Data Engineering&lt;/strong&gt; - Building robust data pipelines and systems&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Developer Tooling&lt;/strong&gt; - Creating tools that make developers&amp;rsquo; lives easier&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Technology&lt;/strong&gt; - Exploring new technologies and best practices&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;&#xA;&lt;p&gt;[Add your background here - education, work experience, interests]&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-find-here&#34;&gt;What You&amp;rsquo;ll Find Here&lt;/h2&gt;&#xA;&lt;p&gt;This blog is where I document my journey, share tutorials, and discuss the technologies I&amp;rsquo;m passionate about. Whether you&amp;rsquo;re here for technical deep-dives or just curious about my perspective on the industry, I hope you find something valuable.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/aboutme/</guid>
+      <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;&#xA;&lt;p&gt;Hi, I&amp;rsquo;m Ramtin Javanmardi!&lt;/p&gt;&#xA;&lt;p&gt;Welcome to my corner of the internet where I share my thoughts and experiences on:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Data Engineering&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Developer Tooling&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Low level programming&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Game and graphics programming&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;General Technology&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;&#xA;&lt;p&gt;I studied Computer Science at university and spent the last two years&#xA;specialising in machine learning. Started out as a web developer for a very&#xA;short time but switched into data engineering almost immediately and have been&#xA;doing that ever since pretty much. Currently I work as the lead data platform&#xA;engineer at a scale up in Stockholm&lt;/p&gt;</description>
     </item>
     <item>
       <title>My New Post</title>
