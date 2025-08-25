@@ -16,26 +16,5 @@
       <guid>http://localhost:1313/aboutme/</guid>
       <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;&#xA;&lt;p&gt;Hi, I&amp;rsquo;m Ramtin Javanmardi!&lt;/p&gt;&#xA;&lt;p&gt;Welcome to my corner of the internet where I share my thoughts and experiences on:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Data Engineering&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Developer Tooling&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Low level programming&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Game and graphics programming&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;General Technology&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;&#xA;&lt;p&gt;I studied Computer Science at university and spent the last two years&#xA;specialising in machine learning. Started out as a web developer for a very&#xA;short time but switched into data engineering almost immediately and have been&#xA;doing that ever since pretty much. Currently I work as the lead data platform&#xA;engineer at a scale up in Stockholm&lt;/p&gt;</description>
     </item>
-    <item>
-      <title>My New Post</title>
-      <link>http://localhost:1313/my-new-post/</link>
-      <pubDate>Sat, 28 Jun 2025 14:54:37 +0200</pubDate>
-      <guid>http://localhost:1313/my-new-post/</guid>
-      <description>&lt;p&gt;Warruuuppp world&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Hello</title>
-      <link>http://localhost:1313/hello/</link>
-      <pubDate>Fri, 09 May 2025 22:52:24 +0200</pubDate>
-      <guid>http://localhost:1313/hello/</guid>
-      <description>&lt;p&gt;This is a page about »Hello2«.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Hello2</title>
-      <link>http://localhost:1313/hello2/</link>
-      <pubDate>Fri, 09 May 2025 22:52:24 +0200</pubDate>
-      <guid>http://localhost:1313/hello2/</guid>
-      <description>&lt;p&gt;This is a page about »Hello2«.&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>
