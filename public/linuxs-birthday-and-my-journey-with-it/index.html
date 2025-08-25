@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Linux&#39;s Birthday and My Journey With It | Handmade Oasis</title>
+<meta name="title" content="Linux&#39;s Birthday and My Journey With It" />
+<meta name="description" content="Let me preface this coming post with the fact that
+i was a huge MacOS fanboy for a decade or so and only started feeling that the
+OS was getting in my way a couple of years ago.
+With today being the 34th birthday of Linux it made me reflect a bit over how i
+have used it over the years. I started out using Ubuntu at University 10 years
+ago for some intro labs and for learning how to navigate the filesystem with a
+terminal. That experience was very meh, I thought the OS looked clunky and i was
+not sold on using the terminal over a GUI, especially when compared to the sleek
+and beautiful MacOS UI. So this was an opinion that I held on to for a long
+time, of course I was using Linux in the cloud for servers and even just running
+stuff with docker and so on but that was it really." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:url" content="http://localhost:1313/linuxs-birthday-and-my-journey-with-it/">
+  <meta property="og:site_name" content="Handmade Oasis">
+  <meta property="og:title" content="Linux&#39;s Birthday and My Journey With It">
+  <meta property="og:description" content="Let me preface this coming post with the fact that i was a huge MacOS fanboy for a decade or so and only started feeling that the OS was getting in my way a couple of years ago.
+With today being the 34th birthday of Linux it made me reflect a bit over how i have used it over the years. I started out using Ubuntu at University 10 years ago for some intro labs and for learning how to navigate the filesystem with a terminal. That experience was very meh, I thought the OS looked clunky and i was not sold on using the terminal over a GUI, especially when compared to the sleek and beautiful MacOS UI. So this was an opinion that I held on to for a long time, of course I was using Linux in the cloud for servers and even just running stuff with docker and so on but that was it really.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-08-25T12:08:40+02:00">
+    <meta property="article:modified_time" content="2025-08-25T12:08:40+02:00">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Linux&#39;s Birthday and My Journey With It">
+  <meta name="twitter:description" content="Let me preface this coming post with the fact that i was a huge MacOS fanboy for a decade or so and only started feeling that the OS was getting in my way a couple of years ago.
+With today being the 34th birthday of Linux it made me reflect a bit over how i have used it over the years. I started out using Ubuntu at University 10 years ago for some intro labs and for learning how to navigate the filesystem with a terminal. That experience was very meh, I thought the OS looked clunky and i was not sold on using the terminal over a GUI, especially when compared to the sleek and beautiful MacOS UI. So this was an opinion that I held on to for a long time, of course I was using Linux in the cloud for servers and even just running stuff with docker and so on but that was it really.">
+
+
+
+
+  <meta itemprop="name" content="Linux&#39;s Birthday and My Journey With It">
+  <meta itemprop="description" content="Let me preface this coming post with the fact that i was a huge MacOS fanboy for a decade or so and only started feeling that the OS was getting in my way a couple of years ago.
+With today being the 34th birthday of Linux it made me reflect a bit over how i have used it over the years. I started out using Ubuntu at University 10 years ago for some intro labs and for learning how to navigate the filesystem with a terminal. That experience was very meh, I thought the OS looked clunky and i was not sold on using the terminal over a GUI, especially when compared to the sleek and beautiful MacOS UI. So this was an opinion that I held on to for a long time, of course I was using Linux in the cloud for servers and even just running stuff with docker and so on but that was it really.">
+  <meta itemprop="datePublished" content="2025-08-25T12:08:40+02:00">
+  <meta itemprop="dateModified" content="2025-08-25T12:08:40+02:00">
+  <meta itemprop="wordCount" content="339">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+<link rel="stylesheet" href="/css/catppuccin-mocha.css">
+<link rel="canonical" href="http://localhost:1313/linuxs-birthday-and-my-journey-with-it/" /></head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Handmade Oasis</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/blog/">Blog</a>
+
+<a href="/aboutme/">About Me</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Linux&#39;s Birthday and My Journey With It</h1>
+<p>
+  <i>
+    <time datetime='2025-08-25'>
+      25 Aug, 2025
+    </time>
+  </i>
+</p>
+
+<content>
+  <p>Let me preface this coming post with the fact that
+i was a huge MacOS fanboy for a decade or so and only started feeling that the
+OS was getting in my way a couple of years ago.</p>
+<p>With today being the 34th birthday of Linux it made me reflect a bit over how i
+have used it over the years. I started out using Ubuntu at University 10 years
+ago for some intro labs and for learning how to navigate the filesystem with a
+terminal. That experience was very meh, I thought the OS looked clunky and i was
+not sold on using the terminal over a GUI, especially when compared to the sleek
+and beautiful MacOS UI. So this was an opinion that I held on to for a long
+time, of course I was using Linux in the cloud for servers and even just running
+stuff with docker and so on but that was it really.</p>
+<p>Then around mid to late 2023, for some reason I really got into optimizing
+and customizing my developer experience, but also just my interactions with my
+computer. The best way I can describe it is like I started to not only think of
+the computer as a tool to get things done with, but rather an extension of
+myself somehow. At this point I was looking for something different, something
+that would allow me to feel closer to the computer in a sense. Randomly I got
+recommended (is it ever randomly though? I feel like the Youtube algorithm
+somehow knows what I&rsquo;m really looking for, this has happened more than once) a
+clip of ThePrimeagen just absolutely flying all over the screen, editing code,
+compiling, looking at the result, back to the browser, back to the code, paste
+here, paste there etc. I was just amazed and decided I want that for myself so i
+started learning Neovim, tmux etc. Very slowly at first but as time passed I
+started to gain quite a bit of confidence with the tools.</p>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+  
+</body>
+
+</html>
