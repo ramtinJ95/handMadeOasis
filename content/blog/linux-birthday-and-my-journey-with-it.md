@@ -13,7 +13,7 @@ tags = ["Linux", "Arch"]
 +++
 
 Let me preface this post with the fact that
-I was a huge MacOS fanboy for a decade or so and only started feeling that the
+I was a huge macOS fanboy for a decade or so and only started feeling that the
 OS was getting in my way a couple of years ago.
 
 With today being the 34th birthday of Linux it made me reflect a bit on how I
@@ -21,7 +21,7 @@ have used it over the years. I started out using Ubuntu at University 12 years
 ago for some intro labs and for learning how to navigate the filesystem with a
 terminal. That experience was very meh, I thought the OS looked clunky and I was
 not sold on using the terminal over a GUI, especially when compared to the sleek
-and beautiful MacOS UI. So this was an opinion that I held on to for a long
+and beautiful macOS UI. So this was an opinion that I held on to for a long
 time, of course I was using Linux in the cloud for servers and even just running
 stuff with docker and so on but that was it really.
 
@@ -39,14 +39,14 @@ here, paste there etc. I was just amazed and decided I want that for myself so i
 started learning Neovim, tmux etc. Very slowly at first but as time passed I
 started to gain quite a bit of confidence with the tools.
 
-At this point in time I was still using MacOS as my daily driver, but now I was
+At this point in time I was still using macOS as my daily driver, but now I was
 starting to see the problems. Just how the OS is blocking you from doing what
 you want and even on the "Pro" machines you cannot really do anything they don't
-want you to do. I find MacOS to be quite an opinionated OS actually, and that is
+want you to do. I find macOS to be quite an opinionated OS actually, and that is
 super fine, but I started to not share those same opinions anymore slowly but
 surely. My frustrations really reached a tipping point when i was trying to use
-a proper window manager on MacOS, I chose to go with the yabai + skhd combo and
-wow is the setup brittle. It feels like on every MacOS update something new
+a proper window manager on macOS, I chose to go with the yabai + skhd combo and
+wow is the setup brittle. It feels like on every macOS update something new
 breaks or stops working. So i thought if this is already the case, and one of
 the major points against a Linux desktop environment is that it can be prone to
 breaking, then I'm already in pain let me at least have the freedom that comes
@@ -67,7 +67,7 @@ a distro!). It is very opinionated and I have modified it quite a bit during
 this time that i have been daily driving it, but the difference is that I'm
 totally free to control every aspect of the OS and computer. Arch and by
 extension Omarchy feel like they respect the intellect of the user, not like
-MacOS that tries to baby you and tell you what is best for you. Best of all was
+macOS that tries to baby you and tell you what is best for you. Best of all was
 that it was so intuitive and easy to modify the parts that I didn't like and get
 it just right, the foundation that Omarchy gives you to build on top of is just
 top-notch, but it's DHH, who would have expected anything less from him.
