@@ -56,6 +56,29 @@ So I went back to Ubuntu and tried it again. It was again just okej, it was
 better than the first time because i was super used to a terminal based workflow
 and the tools i used for my job, Neovim, tmux, zsh, eza, zioxide, yazi etc where
 the same but something was still missing. Then around a month ago I came across
-an Arch Linux config package called Omarchy, from the famous programmer DHH. 
+an Arch Linux config package called Omarchy, from the famous programmer DHH. The
+first thing that I noticed was that even Ubuntu felt slow, bloated and clunky
+compared to Arch.
+
+Is 2025 finally the year of the desktop Linux? I don't know, but enough good
+things cannot be said about Omarchy. It is such a well thought out config
+package (soon they are releasing their own ISO, so it will be correct to call it
+a distro!). It is very opinionated and I have modified it quite a bit during
+this time that i have been daily driving it, but the difference is that I'm
+totally free to control every aspect of the OS and computer. Arch and by
+extension Omarchy feel like they respect the intellect of the user, not like
+MacOS that tries to baby you and tell you what is best for you. Best of all was
+that it was so intuitve and easy to modify the parts that I didn't like and get
+it just right, the foundation that Omarchy gives you to build on top of is just
+top-notch, but its DHH who would have expected anything less from him.
+
+To round things off, happy birthday Linux, and congratulations on managing to
+stay open and free. Congratulations of managing to become the backbone of modern
+civilisation, congratulations to all the contributors for pouring in so much
+heart and effort into Linux and creating something that is on the same scale of
+greatness as the 7 wonders of the world. Last but not least, thank you Linux for
+showing me that we dont have to settle for what Apple and Microsoft think
+computing is and should be, we are allowed to and I think owe it to ourselves to
+decide for ourselves what computing means and is to us.
 
 
