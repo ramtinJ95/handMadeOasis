@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog on Handmade Oasis</title>
-    <link>http://localhost:1313/blog/</link>
-    <description>Recent content in Blog on Handmade Oasis</description>
+    <title>Arch on Handmade Oasis</title>
+    <link>http://localhost:1313/tag/arch/</link>
+    <description>Recent content in Arch on Handmade Oasis</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, Ramtin Javanmardi.</copyright>
     <lastBuildDate>Mon, 25 Aug 2025 12:08:40 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tag/arch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux&#39;s Birthday and My Journey With It</title>
       <link>http://localhost:1313/linux-birthday-and-my-journey-with-it/</link>
