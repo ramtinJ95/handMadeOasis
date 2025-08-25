@@ -17,13 +17,13 @@ Welcome to my corner of the internet where I share my thoughts and experiences o
 - **General Technology**
 
 My guiding principle when it comes to engineering is: Always aim for great, not
-good enough, not good and definitely not perfect
+good enough, not good and definitely not perfect.
 
 ## Background
 I studied Computer Science at university and spent the last two years
-specialising in machine learning. Started out as a web developer for a very
-short time but switched into data engineering almost immediately and have been
-doing that ever since pretty much. Currently, I work as the lead data platform
+specializing in machine learning. Started out as a web developer for a very
+short time but switched into data engineering almost immediately, and have been
+doing that ever since. Currently, I work as the lead data platform
 engineer at a scale-up in Stockholm.
 
 ## What You'll Find Here
