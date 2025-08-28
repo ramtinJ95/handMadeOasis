@@ -8,7 +8,7 @@ draft = false
 #
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["developer-tooling","personal",]
+tags = ["Generative AI", "AI Agents", "Stream of consciousness"]
 +++
 
 This is just like a note or dump of everything I research on AI agents, MCP, and
