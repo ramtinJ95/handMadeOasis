@@ -39,7 +39,7 @@ is the reason that i now have spent a significant time the past 2 weeks
 researching this stuff, its been out for a while but I have just not thought it
 would be worth my time, how wrong I was. These coding agents unlock true
 productivity gains, and not only that but they also make the use of LLM's
-finally feel like engineering. 
+finally feel like engineering.
 
 The reason I say that it finally feels like proper engineering is because at
 this tier/ ladder step/ level one has to put in some proper effort and systems
@@ -52,7 +52,7 @@ performance drops on tasks that are relevant to the team context and workflows.
 These tools even allow for creation of custom agents and subagents which can be
 spun up and used by a primary agent. Now this type of workflow is the next tier
 and I'm not there yet, its a bit over my head currently to start having swarms of
-these agents and so on. 
+these agents and so on.
 
 I have not even mentioned the hyped MCP stuff that makes these coding agents
 even more powerful, where now we can start to really combine the different
@@ -66,7 +66,25 @@ cognitive load there. This essentially means that when I open my editor today, I
 want to write the code (although i do use copilot autosuggestions when they make
 sense) and if i need to ask something or have the AI assist me in some way I
 will change to a different tmux tab that i have running and ask or tell it to do
-something while I stay with the context I had and keep working. 
+something while I stay with the context I had and keep working.
+
+One aspect of AI-assisted programming that I'm not yet sure how to deal with is the
+fact that while syntax and writing the code has never been the hard part, it is
+an important part because it forces me to really deeply think. Just reviewing the
+code that an LLM spits out is just not the same really for me. I still think
+that to be able to engineer proper solutions the core implementation of features
+should be done the "old" way of just typing the code slowly and thinking about what
+patterns emerge and how to create abstractions based on these patterns. The AI's
+role in this situation is to help brainstorm by coming up with suggestions of
+different ways of doing whatever it is that I'm trying to do.
+
+But once the abstractions are set and there are some good patterns, then there
+are true productivity gains. Because now we have stable abstractions. If we do a
+great job of explaining these abstractions in the AGENTS.md file, then it is
+almost as if a new language develops in the context of the project. And just a
+few sentences can convey quite a bit of context to the LLM. This is something I
+have not quite nailed yet systematically, but I have managed to get it to this
+point in a few projects.
 
 **All of this to say that my current (2025-08-28) AI assisted workflow is:**
 - For each project create an AGENTS.md file which gives context about the current
@@ -80,6 +98,9 @@ tasks.
 requirements.md file that i have the agent read with the classification
 command so that the agent can create a plan and list of tasks etc which I can
 review before i send it off.
+- I use the AI also to iterate fast on ideas and prototypes for features, then I
+throw it all away usually and write it myself with all the new data that I
+gathered during this exploration phase.
 
 **Workflow changes that I want to or am evaluating:**
 - Somehow save more context of changes made to the repo.
@@ -90,10 +111,10 @@ around with all these .md files
 
 ### Recreational programming
 This will be another post entirely in the future but for me, turning off all
-the AI assistance when learning something new or working on projects is very
-important. I have found that the less I use AI for my personal projects where
-the aim is just to have fun and learn new things, like graphics programming or
-writing a programming language etc the more fun I have.
+the AI assistance when learning something new in programming or working on 
+projects is very important. I have found that the less I use AI for my personal
+projects where the aim is just to have fun and learn new things, like graphics 
+programming or writing a programming language etc., the more fun I have.
 
 This concept of Recreational programming was something I stumbled upon by the
 streamer and content creator tsoding. 
@@ -106,3 +127,7 @@ Current tools that I'm using or looking into for this stuff:
 - Opencode.ai
 - GitHub Copilot as the access point to different LLM's
 - Copilot in nvim for autosuggestions
+- MCP's
+  - context7, this is to get up-to-date docs
+  - dbt mcp
+  - cloud provider mcp's, depends on what cloud I'm working with
