@@ -131,3 +131,5 @@ Current tools that I'm using or looking into for this stuff:
   - context7, this is to get up-to-date docs
   - dbt mcp
   - cloud provider mcp's, depends on what cloud I'm working with
+  - prefect mcp, orchestration tool
+  - dlt mcp, data pipeline tool
