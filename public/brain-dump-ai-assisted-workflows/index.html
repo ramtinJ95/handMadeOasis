@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Brain Dump: AI Assisted Workflows | Handmade Oasis</title>
+<meta name="title" content="Brain Dump: AI Assisted Workflows" />
+<meta name="description" content="This is just like a note or dump of everything I research on AI agents, MCP, and
+other generative AI stuff. I think the correct phrase for it is a stream of
+consciousness dump
+There seems to be a kind of tier or ladder of sophistication that is slowly
+getting shaped when it comes to AI assisted workflows, especially in relation to
+software engineering. As I see it currently we have the use of online chat
+interfaces, this is where you have chatGPT, Claude and company. At this point 3 years in,
+this I think we have to admit has become table stakes pretty much. The next
+level up is having an agent side by side your daily work. Here you have direct
+access to the LLM and if you use a vscode fork like Cursor or any of their
+competitors its usually just another pane on the right side of your code. This
+is pretty nice, especially when you start to use it. It just feels so nice to
+not have to leave your editor (personally i hated having to use these vs code
+forks, and so glad the next level now exists), and just have the LLM have some
+context around your code and so on." />
+<meta name="keywords" content="Generative AI,AI Agents,Stream of consciousness," />
+
+
+<meta property="og:url" content="http://localhost:1313/brain-dump-ai-assisted-workflows/">
+  <meta property="og:site_name" content="Handmade Oasis">
+  <meta property="og:title" content="Brain Dump: AI Assisted Workflows">
+  <meta property="og:description" content="This is just like a note or dump of everything I research on AI agents, MCP, and other generative AI stuff. I think the correct phrase for it is a stream of consciousness dump
+There seems to be a kind of tier or ladder of sophistication that is slowly getting shaped when it comes to AI assisted workflows, especially in relation to software engineering. As I see it currently we have the use of online chat interfaces, this is where you have chatGPT, Claude and company. At this point 3 years in, this I think we have to admit has become table stakes pretty much. The next level up is having an agent side by side your daily work. Here you have direct access to the LLM and if you use a vscode fork like Cursor or any of their competitors its usually just another pane on the right side of your code. This is pretty nice, especially when you start to use it. It just feels so nice to not have to leave your editor (personally i hated having to use these vs code forks, and so glad the next level now exists), and just have the LLM have some context around your code and so on.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-08-28T23:15:26+02:00">
+    <meta property="article:modified_time" content="2025-08-28T23:15:26+02:00">
+    <meta property="article:tag" content="Generative AI">
+    <meta property="article:tag" content="AI Agents">
+    <meta property="article:tag" content="Stream of Consciousness">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Brain Dump: AI Assisted Workflows">
+  <meta name="twitter:description" content="This is just like a note or dump of everything I research on AI agents, MCP, and other generative AI stuff. I think the correct phrase for it is a stream of consciousness dump
+There seems to be a kind of tier or ladder of sophistication that is slowly getting shaped when it comes to AI assisted workflows, especially in relation to software engineering. As I see it currently we have the use of online chat interfaces, this is where you have chatGPT, Claude and company. At this point 3 years in, this I think we have to admit has become table stakes pretty much. The next level up is having an agent side by side your daily work. Here you have direct access to the LLM and if you use a vscode fork like Cursor or any of their competitors its usually just another pane on the right side of your code. This is pretty nice, especially when you start to use it. It just feels so nice to not have to leave your editor (personally i hated having to use these vs code forks, and so glad the next level now exists), and just have the LLM have some context around your code and so on.">
+
+
+
+
+  <meta itemprop="name" content="Brain Dump: AI Assisted Workflows">
+  <meta itemprop="description" content="This is just like a note or dump of everything I research on AI agents, MCP, and other generative AI stuff. I think the correct phrase for it is a stream of consciousness dump
+There seems to be a kind of tier or ladder of sophistication that is slowly getting shaped when it comes to AI assisted workflows, especially in relation to software engineering. As I see it currently we have the use of online chat interfaces, this is where you have chatGPT, Claude and company. At this point 3 years in, this I think we have to admit has become table stakes pretty much. The next level up is having an agent side by side your daily work. Here you have direct access to the LLM and if you use a vscode fork like Cursor or any of their competitors its usually just another pane on the right side of your code. This is pretty nice, especially when you start to use it. It just feels so nice to not have to leave your editor (personally i hated having to use these vs code forks, and so glad the next level now exists), and just have the LLM have some context around your code and so on.">
+  <meta itemprop="datePublished" content="2025-08-28T23:15:26+02:00">
+  <meta itemprop="dateModified" content="2025-08-28T23:15:26+02:00">
+  <meta itemprop="wordCount" content="1319">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Generative AI,AI Agents,Stream of Consciousness">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+<link rel="stylesheet" href="/css/catppuccin-mocha.css">
+<link rel="canonical" href="http://localhost:1313/brain-dump-ai-assisted-workflows/" /></head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Handmade Oasis</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/blog/">Blog</a>
+
+<a href="/aboutme/">About Me</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Brain Dump: AI Assisted Workflows</h1>
+<p>
+  <i>
+    <time datetime='2025-08-28'>
+      28 Aug, 2025
+    </time>
+    • 1319 words • 7 min read
+  </i>
+</p>
+
+<content>
+  <p>This is just like a note or dump of everything I research on AI agents, MCP, and
+other generative AI stuff. I think the correct phrase for it is a stream of
+consciousness dump</p>
+<p>There seems to be a kind of tier or ladder of sophistication that is slowly
+getting shaped when it comes to AI assisted workflows, especially in relation to
+software engineering. As I see it currently we have the use of online chat
+interfaces, this is where you have chatGPT, Claude and company. At this point 3 years in,
+this I think we have to admit has become table stakes pretty much. The next
+level up is having an agent side by side your daily work. Here you have direct
+access to the LLM and if you use a vscode fork like Cursor or any of their
+competitors its usually just another pane on the right side of your code. This
+is pretty nice, especially when you start to use it. It just feels so nice to
+not have to leave your editor (personally i hated having to use these vs code
+forks, and so glad the next level now exists), and just have the LLM have some
+context around your code and so on.</p>
+<p>Now the third level, which I&rsquo;m currently on as of 2 weeks (28/08/2025) is to use
+a proper coding agent through the CLI. For me this was a super welcomed and
+natural transition actually, since I love the terminal and I really wanted to
+get the hell off of vscode and back to my beloved Neovim. The premier tool for
+this level is currently Claude Code, but I actually use opencode which is the
+open source version of Claude Code. Now the capabilities of the tool and
+enjoyment of using a LLM is finally starting to really impress me. I guess that
+is the reason that i now have spent a significant time the past 2 weeks
+researching this stuff, its been out for a while but I have just not thought it
+would be worth my time, how wrong I was. These coding agents unlock true
+productivity gains, and not only that but they also make the use of LLM&rsquo;s
+finally feel like engineering.</p>
+<p>The reason I say that it finally feels like proper engineering is because at
+this tier/ ladder step/ level one has to put in some proper effort and systems
+to get the really awesome results. For these agents you can have custom commands
+which are pretty much prompts that can be used based on situation, these can then
+be used by the entire team. You can have project specific and/or global prompts,
+this then means that technically one could run evals on these, or save the chats
+and outcomes then once changes are made to these team wide prompts we can see if
+performance drops on tasks that are relevant to the team context and workflows.
+These tools even allow for creation of custom agents and subagents which can be
+spun up and used by a primary agent. Now this type of workflow is the next tier
+and I&rsquo;m not there yet, its a bit over my head currently to start having swarms of
+these agents and so on.</p>
+<p>I have not even mentioned the hyped MCP stuff that makes these coding agents
+even more powerful, where now we can start to really combine the different
+actions that the agent can take in our environment. But you say, correctly,
+all of these things were also possible with Cursor and copilot in vscode.
+Somehow that workflow never stuck with me when I was using Cursor. And with
+Cursor, since it&rsquo;s an IDE pretty much you always have to guide it and keep an eye
+on it. While I feel like these coding agents can run off do their thing and I
+can focus on something else while they are doing what I told them, there is no
+cognitive load there. This essentially means that when I open my editor today, I
+want to write the code (although i do use copilot autosuggestions when they make
+sense) and if i need to ask something or have the AI assist me in some way I
+will change to a different tmux tab that i have running and ask or tell it to do
+something while I stay with the context I had and keep working.</p>
+<p>One aspect of AI-assisted programming that I&rsquo;m not yet sure how to deal with is the
+fact that while syntax and writing the code has never been the hard part, it is
+an important part because it forces me to really deeply think. Just reviewing the
+code that an LLM spits out is just not the same really for me. I still think
+that to be able to engineer proper solutions the core implementation of features
+should be done the &ldquo;old&rdquo; way of just typing the code slowly and thinking about what
+patterns emerge and how to create abstractions based on these patterns. The AI&rsquo;s
+role in this situation is to help brainstorm by coming up with suggestions of
+different ways of doing whatever it is that I&rsquo;m trying to do.</p>
+<p>But once the abstractions are set and there are some good patterns, then there
+are true productivity gains. Because now we have stable abstractions. If we do a
+great job of explaining these abstractions in the AGENTS.md file, then it is
+almost as if a new language develops in the context of the project. And just a
+few sentences can convey quite a bit of context to the LLM. This is something I
+have not quite nailed yet systematically, but I have managed to get it to this
+point in a few projects.</p>
+<p><strong>All of this to say that my current (2025-08-28) AI assisted workflow is:</strong></p>
+<ul>
+<li>For each project create an AGENTS.md file which gives context about the current
+project/repo. This is something that the agents can even generate themselves but
+its best to iterate on it for better results. Even better is to iterate on it
+together with the AI.</li>
+<li>I have custom commands that I will add as part of my dotfiles. These are
+commands for tasks like review, possible improvements and classification of
+tasks.</li>
+<li>Write what I&rsquo;m trying to do or what the goal is and the steps to get there in a
+requirements.md file that i have the agent read with the classification
+command so that the agent can create a plan and list of tasks etc which I can
+review before i send it off.</li>
+<li>I use the AI also to iterate fast on ideas and prototypes for features, then I
+throw it all away usually and write it myself with all the new data that I
+gathered during this exploration phase.</li>
+</ul>
+<p><strong>Workflow changes that I want to or am evaluating:</strong></p>
+<ul>
+<li>Somehow save more context of changes made to the repo.</li>
+<li>Incorporate proper eval to see if we are actually improving results when we play
+around with all these .md files</li>
+</ul>
+<h3 id="recreational-programming">Recreational programming</h3>
+<p>This will be another post entirely in the future but for me, turning off all
+the AI assistance when learning something new in programming or working on
+projects is very important. I have found that the less I use AI for my personal
+projects where the aim is just to have fun and learn new things, like graphics
+programming or writing a programming language etc., the more fun I have.</p>
+<p>This concept of Recreational programming was something I stumbled upon by the
+streamer and content creator tsoding.</p>
+<h2 id="tools">Tools</h2>
+<p>Current tools that I&rsquo;m using or looking into for this stuff:</p>
+<ul>
+<li>FastMCP</li>
+<li>Pydantic-ai</li>
+<li>Opencode.ai</li>
+<li>GitHub Copilot as the access point to different LLM&rsquo;s</li>
+<li>Copilot in nvim for autosuggestions</li>
+<li>MCP&rsquo;s
+<ul>
+<li>context7, this is to get up-to-date docs</li>
+<li>dbt mcp</li>
+<li>cloud provider mcp&rsquo;s, depends on what cloud I&rsquo;m working with</li>
+<li>prefect mcp, orchestration tool</li>
+<li>dlt mcp, data pipeline tool</li>
+</ul>
+</li>
+</ul>
+
+</content>
+<p>
+  
+  <a href="http://localhost:1313/tag/generative-ai/">#Generative AI</a>
+  
+  <a href="http://localhost:1313/tag/ai-agents/">#AI Agents</a>
+  
+  <a href="http://localhost:1313/tag/stream-of-consciousness/">#Stream of Consciousness</a>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+  
+</body>
+
+</html>

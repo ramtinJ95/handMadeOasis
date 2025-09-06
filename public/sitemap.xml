@@ -2,22 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tag/arch/</loc>
-    <lastmod>2025-08-25T12:08:40+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2025-08-25T12:08:40+02:00</lastmod>
+    <lastmod>2025-09-06T13:02:35+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/data-engineering/</loc>
+    <lastmod>2025-09-06T13:02:35+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/data-infrastructure/</loc>
+    <lastmod>2025-09-06T13:02:35+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/data-platform/</loc>
+    <lastmod>2025-09-06T13:02:35+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/data-stack/</loc>
+    <lastmod>2025-09-06T13:02:35+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-09-06T13:02:35+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-09-06T13:02:35+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/what-is-a-data-platform/</loc>
+    <lastmod>2025-09-06T13:02:35+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/ai-agents/</loc>
+    <lastmod>2025-08-28T23:15:26+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/brain-dump-ai-assisted-workflows/</loc>
+    <lastmod>2025-08-28T23:15:26+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/generative-ai/</loc>
+    <lastmod>2025-08-28T23:15:26+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/stream-of-consciousness/</loc>
+    <lastmod>2025-08-28T23:15:26+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/arch/</loc>
     <lastmod>2025-08-25T12:08:40+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tag/linux/</loc>
     <lastmod>2025-08-25T12:08:40+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/linux-birthday-and-my-journey-with-it/</loc>
-    <lastmod>2025-08-25T12:08:40+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-08-25T12:08:40+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/aboutme/</loc>

@@ -7,8 +7,57 @@
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, Ramtin Javanmardi.</copyright>
-    <lastBuildDate>Mon, 25 Aug 2025 12:08:40 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 06 Sep 2025 13:02:35 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Engineering</title>
+      <link>http://localhost:1313/tag/data-engineering/</link>
+      <pubDate>Sat, 06 Sep 2025 13:02:35 +0200</pubDate>
+      <guid>http://localhost:1313/tag/data-engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Infrastructure</title>
+      <link>http://localhost:1313/tag/data-infrastructure/</link>
+      <pubDate>Sat, 06 Sep 2025 13:02:35 +0200</pubDate>
+      <guid>http://localhost:1313/tag/data-infrastructure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Platform</title>
+      <link>http://localhost:1313/tag/data-platform/</link>
+      <pubDate>Sat, 06 Sep 2025 13:02:35 +0200</pubDate>
+      <guid>http://localhost:1313/tag/data-platform/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Stack</title>
+      <link>http://localhost:1313/tag/data-stack/</link>
+      <pubDate>Sat, 06 Sep 2025 13:02:35 +0200</pubDate>
+      <guid>http://localhost:1313/tag/data-stack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI Agents</title>
+      <link>http://localhost:1313/tag/ai-agents/</link>
+      <pubDate>Thu, 28 Aug 2025 23:15:26 +0200</pubDate>
+      <guid>http://localhost:1313/tag/ai-agents/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Generative AI</title>
+      <link>http://localhost:1313/tag/generative-ai/</link>
+      <pubDate>Thu, 28 Aug 2025 23:15:26 +0200</pubDate>
+      <guid>http://localhost:1313/tag/generative-ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Stream of Consciousness</title>
+      <link>http://localhost:1313/tag/stream-of-consciousness/</link>
+      <pubDate>Thu, 28 Aug 2025 23:15:26 +0200</pubDate>
+      <guid>http://localhost:1313/tag/stream-of-consciousness/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Arch</title>
       <link>http://localhost:1313/tag/arch/</link>
