@@ -19,8 +19,12 @@ Basically, the data platform that a big tech company with 1000's of engineers us
 and a team with 100 engineers use will be wildly different. So I shifted my focus
 from the tech and scale to capabilities. I think this is a good way of actually
 making clear what a data platform is, by saying what it should be able to do at
-the absolute minimum. So the layers below are what I came up with based on
+the absolute minimum. This post provides the foundational framework, over the next few posts, we'll dive deep into each layer with real implementation details and lessons learned. So the layers below are what I came up with based on
 experience and my own opinions.
+
+In order to make the information more digestible I will make this into a series
+of posts. This first post will be the high level overview and in the following
+posts in this series I will go into more detail about each layer.
 
 ### Key components
 I have identified 4 layers or maybe pillars that makes a data platform,
@@ -94,5 +98,9 @@ Think of notebooks as the R&D lab of your data stack. They don’t replace pipel
 
 As your team matures, this layer becomes more important not just for data scientists, but for analysts and product teams who want to explore without committing to production changes right away.
 
-## Conclusion
+## Summary
+At its core, a data platform is about enabling teams to make better decisions with data. The four layers - pipelines, storage, visualization, and experimentation - provide the essential capabilities every organization needs, regardless of size or technical sophistication.
+
+This framework gives you a lens for evaluating tools and planning your data infrastructure. In the next post, we'll dive into the first layer: building reliable data pipelines.
+
 
