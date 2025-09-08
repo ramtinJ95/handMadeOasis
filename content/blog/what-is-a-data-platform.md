@@ -2,6 +2,7 @@
 title = "What Is a Data Platform"
 date = "2025-09-08T12:00:00+02:00"
 draft = false
+slug = "what-is-a-data-platform"
 
 #
 # description is optional
