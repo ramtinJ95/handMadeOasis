@@ -1,7 +1,7 @@
 +++
 title = "What Is a Data Platform"
-date = "2025-09-06T13:02:35+02:00"
-draft = true
+date = "2025-09-08T12:00:00+02:00"
+draft = false
 
 #
 # description is optional
@@ -99,7 +99,7 @@ Think of notebooks as the R&D lab of your data stack. They don’t replace pipel
 As your team matures, this layer becomes more important not just for data scientists, but for analysts and product teams who want to explore without committing to production changes right away.
 
 ## Summary
-At its core, a data platform is about enabling teams to make better decisions with data. The four layers - pipelines, storage, visualization, and experimentation - provide the essential capabilities every organization needs, regardless of size or technical sophistication.
+At its core, a data platform is about enabling teams to make better decisions with data. The four layers pipelines, storage, visualization, and experimentation provide the essential capabilities every organization needs, regardless of size or technical sophistication.
 
 This framework gives you a lens for evaluating tools and planning your data infrastructure. In the next post, we'll dive into the first layer: building reliable data pipelines.
 

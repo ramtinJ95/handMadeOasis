@@ -11,19 +11,20 @@
 <meta name="description" content="Lately I have been thinking quite a bit about the question &ldquo;What is a data
 platform in its most basic form&rdquo;. When I set out to answer this question my
 first thought was that it&rsquo;s not possible to answer this in a useful way. Reason
-being that what a dataplaform is, varies a lot depending on the company.
-Basically the Data platform that a big tech company with 1000&rsquo;s of engineers use
-and a team with 100 engineers use will be wildy different. So I shifted my focus
+being that what a data platform is varies a lot depending on the company.
+Basically, the data platform that a big tech company with 1000&rsquo;s of engineers use
+and a team with 100 engineers use will be wildly different. So I shifted my focus
 from the tech and scale to capabilities. I think this is a good way of actually
 making clear what a data platform is, by saying what it should be able to do at
-the absolut minimum." />
+the absolute minimum. This post provides the foundational framework, over the next few posts, we&rsquo;ll dive deep into each layer with real implementation details and lessons learned. So the layers below are what I came up with based on
+experience and my own opinions." />
 <meta name="keywords" content="Data Engineering,Data Platform,Data Infrastructure,Data stack," />
 
 
 <meta property="og:url" content="http://localhost:1313/what-is-a-data-platform/">
   <meta property="og:site_name" content="Handmade Oasis">
   <meta property="og:title" content="What Is a Data Platform">
-  <meta property="og:description" content="Lately I have been thinking quite a bit about the question “What is a data platform in its most basic form”. When I set out to answer this question my first thought was that it’s not possible to answer this in a useful way. Reason being that what a dataplaform is, varies a lot depending on the company. Basically the Data platform that a big tech company with 1000’s of engineers use and a team with 100 engineers use will be wildy different. So I shifted my focus from the tech and scale to capabilities. I think this is a good way of actually making clear what a data platform is, by saying what it should be able to do at the absolut minimum.">
+  <meta property="og:description" content="Lately I have been thinking quite a bit about the question “What is a data platform in its most basic form”. When I set out to answer this question my first thought was that it’s not possible to answer this in a useful way. Reason being that what a data platform is varies a lot depending on the company. Basically, the data platform that a big tech company with 1000’s of engineers use and a team with 100 engineers use will be wildly different. So I shifted my focus from the tech and scale to capabilities. I think this is a good way of actually making clear what a data platform is, by saying what it should be able to do at the absolute minimum. This post provides the foundational framework, over the next few posts, we’ll dive deep into each layer with real implementation details and lessons learned. So the layers below are what I came up with based on experience and my own opinions.">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
@@ -41,16 +42,16 @@ the absolut minimum." />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/images/share.png">
   <meta name="twitter:title" content="What Is a Data Platform">
-  <meta name="twitter:description" content="Lately I have been thinking quite a bit about the question “What is a data platform in its most basic form”. When I set out to answer this question my first thought was that it’s not possible to answer this in a useful way. Reason being that what a dataplaform is, varies a lot depending on the company. Basically the Data platform that a big tech company with 1000’s of engineers use and a team with 100 engineers use will be wildy different. So I shifted my focus from the tech and scale to capabilities. I think this is a good way of actually making clear what a data platform is, by saying what it should be able to do at the absolut minimum.">
+  <meta name="twitter:description" content="Lately I have been thinking quite a bit about the question “What is a data platform in its most basic form”. When I set out to answer this question my first thought was that it’s not possible to answer this in a useful way. Reason being that what a data platform is varies a lot depending on the company. Basically, the data platform that a big tech company with 1000’s of engineers use and a team with 100 engineers use will be wildly different. So I shifted my focus from the tech and scale to capabilities. I think this is a good way of actually making clear what a data platform is, by saying what it should be able to do at the absolute minimum. This post provides the foundational framework, over the next few posts, we’ll dive deep into each layer with real implementation details and lessons learned. So the layers below are what I came up with based on experience and my own opinions.">
 
 
 
 
   <meta itemprop="name" content="What Is a Data Platform">
-  <meta itemprop="description" content="Lately I have been thinking quite a bit about the question “What is a data platform in its most basic form”. When I set out to answer this question my first thought was that it’s not possible to answer this in a useful way. Reason being that what a dataplaform is, varies a lot depending on the company. Basically the Data platform that a big tech company with 1000’s of engineers use and a team with 100 engineers use will be wildy different. So I shifted my focus from the tech and scale to capabilities. I think this is a good way of actually making clear what a data platform is, by saying what it should be able to do at the absolut minimum.">
+  <meta itemprop="description" content="Lately I have been thinking quite a bit about the question “What is a data platform in its most basic form”. When I set out to answer this question my first thought was that it’s not possible to answer this in a useful way. Reason being that what a data platform is varies a lot depending on the company. Basically, the data platform that a big tech company with 1000’s of engineers use and a team with 100 engineers use will be wildly different. So I shifted my focus from the tech and scale to capabilities. I think this is a good way of actually making clear what a data platform is, by saying what it should be able to do at the absolute minimum. This post provides the foundational framework, over the next few posts, we’ll dive deep into each layer with real implementation details and lessons learned. So the layers below are what I came up with based on experience and my own opinions.">
   <meta itemprop="datePublished" content="2025-09-06T13:02:35+02:00">
   <meta itemprop="dateModified" content="2025-09-06T13:02:35+02:00">
-  <meta itemprop="wordCount" content="672">
+  <meta itemprop="wordCount" content="826">
   <meta itemprop="image" content="http://localhost:1313/images/share.png">
   <meta itemprop="keywords" content="Data Engineering,Data Platform,Data Infrastructure,Data Stack">
 <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -241,7 +242,7 @@ the absolut minimum." />
     <time datetime='2025-09-06'>
       06 Sep, 2025
     </time>
-    • 672 words • 4 min read
+    • 826 words • 4 min read
   </i>
 </p>
 
@@ -249,12 +250,16 @@ the absolut minimum." />
   <p>Lately I have been thinking quite a bit about the question &ldquo;What is a data
 platform in its most basic form&rdquo;. When I set out to answer this question my
 first thought was that it&rsquo;s not possible to answer this in a useful way. Reason
-being that what a dataplaform is, varies a lot depending on the company.
-Basically the Data platform that a big tech company with 1000&rsquo;s of engineers use
-and a team with 100 engineers use will be wildy different. So I shifted my focus
+being that what a data platform is varies a lot depending on the company.
+Basically, the data platform that a big tech company with 1000&rsquo;s of engineers use
+and a team with 100 engineers use will be wildly different. So I shifted my focus
 from the tech and scale to capabilities. I think this is a good way of actually
 making clear what a data platform is, by saying what it should be able to do at
-the absolut minimum.</p>
+the absolute minimum. This post provides the foundational framework, over the next few posts, we&rsquo;ll dive deep into each layer with real implementation details and lessons learned. So the layers below are what I came up with based on
+experience and my own opinions.</p>
+<p>In order to make the information more digestible I will make this into a series
+of posts. This first post will be the high level overview and in the following
+posts in this series I will go into more detail about each layer.</p>
 <h3 id="key-components">Key components</h3>
 <p>I have identified 4 layers or maybe pillars that makes a data platform,
 regardless of size and bells and whistles:</p>
@@ -266,22 +271,22 @@ outside of the platform into the platform</li>
 <li>BI/Data science. Essentially using the data to create value.</li>
 </ul>
 <h3 id="data-pipelines-and-ingestion---getting-data-into-your-system">Data pipelines and Ingestion - Getting data into your system</h3>
-<p>This is the process of moving data from various sources, i.e logs, third party
-aps/ api&rsquo;s, OLTP systems etc, into your analytics environment.</p>
+<p>This is the process of moving data from various sources, i.e. logs, third party
+apps/APIs, OLTP systems etc, into your analytics environment.</p>
 <p>The three approaches for this is:</p>
 <ul>
 <li>Fully custom code for the entire process</li>
-<li>Low code ingestion tools such as Fivetran, Mattilion etc.</li>
-<li>Code based frameworks such as Prefect, Dagster and Airflow. These tools gives
-alot of control and help orchestrate complex multi step pipelines.</li>
+<li>Low code ingestion tools such as Fivetran, Matillion etc.</li>
+<li>Code based frameworks such as Prefect, Dagster and Airflow. These tools give
+a lot of control and help orchestrate complex multi step pipelines.</li>
 </ul>
-<p>Now each of these options usually also nowdays makes use of a transformation
+<p>Now each of these options usually also nowadays makes use of a transformation
 tool such as dbt or sqlmesh.</p>
 <h3 id="data-storage---building-a-central-source-truth">Data storage - Building a central source truth</h3>
 <p>The analytics environment mentioned above is referencing essentially this
-storage layer. This could be either a data warehouse, date lake or a lakehouse.
+storage layer. This could be either a data warehouse, data lake or a lakehouse.
 The main idea here is that we want a centralized data layer where teams can work
-from the safe definitions, metrics and logic. So instead of team members going
+from the same definitions, metrics and logic. So instead of team members going
 and pulling data themselves from different sources they can just come and join
 in whatever it is that they need directly in the storage layer. Thus a good
 storage layer unlocks:</p>
@@ -294,11 +299,11 @@ storage layer unlocks:</p>
 <h3 id="data-visualization---turning-data-into-decisions">Data visualization - Turning data into decisions</h3>
 <p>Ingestion and storage are necessary but not enough. To drive impact and actually
 solve problems people actually need to use the data.</p>
-<p>Dashboards, KPI&rsquo;s. self-service tools, and even excel reports are all ways teams
+<p>Dashboards, KPIs, self-service tools, and even excel reports are all ways teams
 consume and make decisions. When done right, reporting provides:</p>
 <ul>
 <li>Executives with clarity</li>
-<li>Enable eams to track initiatives</li>
+<li>Enable teams to track initiatives</li>
 <li>Help analysts test hypotheses</li>
 </ul>
 <p>The ultimate goal is to build reports that are trusted, actionable and aligned
@@ -318,13 +323,15 @@ They’re especially useful for cross-functional work, where a data scientist wa
 <ul>
 <li>Customer segmentation</li>
 <li>Predictive modeling (churn, sales, etc)</li>
-<li>Experiment analysis (churn, sales, etc)</li>
+<li>Experiment analysis (A/B tests, feature rollouts, etc)</li>
 <li>Time series forecasting</li>
-<li>NLP for inernal documents or chat data</li>
+<li>NLP for internal documents or chat data</li>
 </ul>
 <p>Think of notebooks as the R&amp;D lab of your data stack. They don’t replace pipelines or BI, they complement them by enabling deeper questions and experimentation.</p>
 <p>As your team matures, this layer becomes more important not just for data scientists, but for analysts and product teams who want to explore without committing to production changes right away.</p>
-<h2 id="conclusion">Conclusion</h2>
+<h2 id="summary">Summary</h2>
+<p>At its core, a data platform is about enabling teams to make better decisions with data. The four layers - pipelines, storage, visualization, and experimentation - provide the essential capabilities every organization needs, regardless of size or technical sophistication.</p>
+<p>This framework gives you a lens for evaluating tools and planning your data infrastructure. In the next post, we&rsquo;ll dive into the first layer: building reliable data pipelines.</p>
 
 </content>
 <p>
