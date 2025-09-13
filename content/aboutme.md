@@ -19,6 +19,9 @@ Welcome to my corner of the internet where I share my thoughts and experiences o
 My guiding principle when it comes to engineering is: Always aim for great, not
 good enough, not good and definitely not perfect.
 
+I'm also deeply influenced by Richard Feynman's insight: "What I cannot create, I do not understand."
+I really do my best to follow and implement it in my life as much as I can. 
+
 ## Background
 I studied Computer Science at university and spent the last two years
 specializing in machine learning. Started out as a web developer for a very
@@ -28,7 +31,10 @@ engineer at a scale-up in Stockholm.
 
 ## What You'll Find Here
 
-This blog is where I document my journey, share tutorials, and discuss the technologies I'm passionate about. Whether you're here for technical deep-dives or just curious about my perspective on the industry, I hope you find something valuable.
+This blog is where I document my journey, share tutorials, and discuss the
+technologies I'm passionate about. Whether you're here for technical deep-dives
+or just curious about my perspective on the industry, I hope you find something
+valuable.
 
 ## Get in Touch
 
