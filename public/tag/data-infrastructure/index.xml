@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Infrastructure on Handmade Oasis</title>
-    <link>http://localhost:1313/tag/data-infrastructure/</link>
+    <link>https://handmadeoasis.com/tag/data-infrastructure/</link>
     <description>Recent content in Data Infrastructure on Handmade Oasis</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, Ramtin Javanmardi.</copyright>
-    <lastBuildDate>Sat, 06 Sep 2025 13:02:35 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tag/data-infrastructure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Sep 2025 12:00:00 +0200</lastBuildDate>
+    <atom:link href="https://handmadeoasis.com/tag/data-infrastructure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What Is a Data Platform</title>
-      <link>http://localhost:1313/what-is-a-data-platform/</link>
-      <pubDate>Sat, 06 Sep 2025 13:02:35 +0200</pubDate>
-      <guid>http://localhost:1313/what-is-a-data-platform/</guid>
-      <description>&lt;p&gt;Lately I have been thinking quite a bit about the question &amp;ldquo;What is a data&#xA;platform in its most basic form&amp;rdquo;. When I set out to answer this question my&#xA;first thought was that it&amp;rsquo;s not possible to answer this in a useful way. Reason&#xA;being that what a dataplaform is, varies a lot depending on the company.&#xA;Basically the Data platform that a big tech company with 1000&amp;rsquo;s of engineers use&#xA;and a team with 100 engineers use will be wildy different. So I shifted my focus&#xA;from the tech and scale to capabilities. I think this is a good way of actually&#xA;making clear what a data platform is, by saying what it should be able to do at&#xA;the absolut minimum.&lt;/p&gt;</description>
+      <link>https://handmadeoasis.com/what-is-a-data-platform/</link>
+      <pubDate>Mon, 08 Sep 2025 12:00:00 +0200</pubDate>
+      <guid>https://handmadeoasis.com/what-is-a-data-platform/</guid>
+      <description>&lt;p&gt;Lately I have been thinking quite a bit about the question &amp;ldquo;What is a data&#xA;platform in its most basic form&amp;rdquo;. When I set out to answer this question my&#xA;first thought was that it&amp;rsquo;s not possible to answer this in a useful way. Reason&#xA;being that what a data platform is varies a lot depending on the company.&#xA;Basically, the data platform that a big tech company with 1000&amp;rsquo;s of engineers use&#xA;and a team with 100 engineers use will be wildly different. So I shifted my focus&#xA;from the tech and scale to capabilities. I think this is a good way of actually&#xA;making clear what a data platform is, by saying what it should be able to do at&#xA;the absolute minimum. This post provides the foundational framework, over the next few posts, we&amp;rsquo;ll dive deep into each layer with real implementation details and lessons learned. So the layers below are what I came up with based on&#xA;experience and my own opinions.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
