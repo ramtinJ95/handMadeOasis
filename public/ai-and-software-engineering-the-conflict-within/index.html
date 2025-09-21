@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>AI and Software Engineering, the Conflict Within | Handmade Oasis</title>
+<meta name="title" content="AI and Software Engineering, the Conflict Within" />
+<meta name="description" content="I wrote a post a while ago about my current workflow when working with AI, my
+initial skepticism and some brief mentions of the concept of recreational
+programming. This post is going to be a continuation of the train of thought
+presented in that previous post, but it will be a stand alone piece still. In
+other words there is no need to have read the previous one to follow along in
+this post." />
+<meta name="keywords" content="generative ai,stream of consciousness,software engineering," />
+
+
+<meta property="og:url" content="http://localhost:1313/ai-and-software-engineering-the-conflict-within/">
+  <meta property="og:site_name" content="Handmade Oasis">
+  <meta property="og:title" content="AI and Software Engineering, the Conflict Within">
+  <meta property="og:description" content="I wrote a post a while ago about my current workflow when working with AI, my initial skepticism and some brief mentions of the concept of recreational programming. This post is going to be a continuation of the train of thought presented in that previous post, but it will be a stand alone piece still. In other words there is no need to have read the previous one to follow along in this post.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-09-21T21:05:43+02:00">
+    <meta property="article:modified_time" content="2025-09-21T21:05:43+02:00">
+    <meta property="article:tag" content="Generative AI">
+    <meta property="article:tag" content="Stream of Consciousness">
+    <meta property="article:tag" content="Software Engineering">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="AI and Software Engineering, the Conflict Within">
+  <meta name="twitter:description" content="I wrote a post a while ago about my current workflow when working with AI, my initial skepticism and some brief mentions of the concept of recreational programming. This post is going to be a continuation of the train of thought presented in that previous post, but it will be a stand alone piece still. In other words there is no need to have read the previous one to follow along in this post.">
+
+
+
+
+  <meta itemprop="name" content="AI and Software Engineering, the Conflict Within">
+  <meta itemprop="description" content="I wrote a post a while ago about my current workflow when working with AI, my initial skepticism and some brief mentions of the concept of recreational programming. This post is going to be a continuation of the train of thought presented in that previous post, but it will be a stand alone piece still. In other words there is no need to have read the previous one to follow along in this post.">
+  <meta itemprop="datePublished" content="2025-09-21T21:05:43+02:00">
+  <meta itemprop="dateModified" content="2025-09-21T21:05:43+02:00">
+  <meta itemprop="wordCount" content="969">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Generative AI,Stream of Consciousness,Software Engineering">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+<link rel="stylesheet" href="/css/catppuccin-mocha.css">
+<link rel="canonical" href="http://localhost:1313/ai-and-software-engineering-the-conflict-within/" /></head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Handmade Oasis</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/blog/">Blog</a>
+
+<a href="/aboutme/">About Me</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>AI and Software Engineering, the Conflict Within</h1>
+<p>
+  <i>
+    <time datetime='2025-09-21'>
+      21 Sep, 2025
+    </time>
+    • 969 words • 5 min read
+  </i>
+</p>
+
+<content>
+  <p>I wrote a post a while ago about my current workflow when working with AI, my
+initial skepticism and some brief mentions of the concept of recreational
+programming. This post is going to be a continuation of the train of thought
+presented in that previous post, but it will be a stand alone piece still. In
+other words there is no need to have read the previous one to follow along in
+this post.</p>
+<p>So the past months I have been using AI quite a bit when writing code and I
+think I can finally articulate why I was a &ldquo;skeptic&rdquo; or &ldquo;AI resistant&rdquo; the past
+year and a half. The TLDR is pretty much that in my opinion or rather for me
+personally the reason is that reaching the end state of a task as fast as
+possible has never been my primary motivation. I code to explore ideas and
+problem spaces, it sounds almost pretentious even to me, but I don&rsquo;t really know
+how else to put it.</p>
+<p>This could be a bit of a spicy take but I think there are two categories of
+software engineers in the world right now, and most people fall into either of
+these roughly speaking. The first one is those that got into programming because
+they are interested in the results that is the end product of writing code, and
+if they could avoid having to write code to get to those results they would be
+super happy and not write any code ever again in their lives. The second
+category is those that love programming and see it as an activity worth doing in
+and of itself, they love learning how to solve a problem in the best way
+possible and want to push the state of the art slightly further even.</p>
+<p>One could argue, and I would probably agree, that I&rsquo;m being a bit too reductive
+here, but I am trying to make a point. I actually think that most people writing
+code today, based on my day to day experience, would actually be happier doing
+something else. For most people that write code today it is a means to an end
+and therefore they are super happy that they can outsource even some part of it
+to a LLM to get their task done a bit faster etc. For me, I would put myself in
+the second category in case that was not clear, using a LLM to code is making me
+feel like I&rsquo;m being robbed of the experience that I want to have.</p>
+<p>Let me expand that last statement a bit more. Since the goal, motivation and
+cause for dopamine release when programming for me is the learning and
+exploration of domain / problem space, having the AI do any of that is literally
+robbing me of the experience that I want to have. So I have now learned to not
+use AI at all for something like that.</p>
+<p>Furthermore using AI when building something new or setting up scaffolding for
+the first time makes it super hard to internalize what is going on in the
+codebase for me, and I have found it actually makes me less productive. What I
+do love to use AI for is generating solutions to problems I already know how to
+solve, because nothing makes me lose focus than having to solve or write code
+for something I already have done or know how to do.</p>
+<p>In the end there is a bunch of stuff that I do still use AI for when
+it comes to programming and writing code, but I have identified for me when I
+should not use it so that I still get the experiences that I want to have. This
+does take a fair bit of self discipline in a professional setting though because
+there is almost always a, sometimes self imposed, pressure to deliver results as
+fast as possible. In a hobby setting I essentially only use AI as a compressed
+search engine and nothing more.</p>
+<p>To reach this &ldquo;insight&rdquo; I did have to lean super hard into using
+LLM&rsquo;s for almost everything though to really learn how to use them and when.
+Without committing to going all in I don&rsquo;t think I would have &ldquo;grokked&rdquo; it,
+because the pace, hype and amount of content around this technology is a bit
+insane at the moment. Slowing down and going deep (Cal Newport reference) has
+always been my way of figuring out things for myself, and usually it pays off in
+the long run also. But I guess only time will tell.</p>
+<p>As a side note, I do think there is a third category being created as we speak
+and that is programmers / people that enjoy getting the LLM to output what they have in
+mind. Just browsing some of the subreddits and other forums of people that talk
+about how they use swarms of AI agents, massive prompts or many custom prompts
+for every possible scenario makes it evident that a new way of working with
+software is definitely being shaped. I find it fascinating honestly but I have
+not personally gone that deep into it yet, because it&rsquo;s unclear to me currently
+how much of the claimed improvements of all that work is going to just be built
+into the models in the future vs not.</p>
+<p>Ultimately, I think the key insight here is that different programmers get
+satisfaction from different aspects of the development process. Understanding
+what drives you personally can help you make better decisions about when and
+how to use AI tools, rather than feeling pressured to adopt them wholesale or
+reject them entirely. The technology isn&rsquo;t going anywhere, so finding a
+sustainable and fulfilling way to work with it seems, to me, like the only
+sensible approach.</p>
+
+</content>
+<p>
+  
+  <a href="http://localhost:1313/tag/generative-ai/">#Generative AI</a>
+  
+  <a href="http://localhost:1313/tag/stream-of-consciousness/">#Stream of Consciousness</a>
+  
+  <a href="http://localhost:1313/tag/software-engineering/">#Software Engineering</a>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+  
+</body>
+
+</html>

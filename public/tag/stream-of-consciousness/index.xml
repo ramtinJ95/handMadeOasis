@@ -2,18 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Stream of Consciousness on Handmade Oasis</title>
-    <link>https://handmadeoasis.com/tag/stream-of-consciousness/</link>
+    <link>http://localhost:1313/tag/stream-of-consciousness/</link>
     <description>Recent content in Stream of Consciousness on Handmade Oasis</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, Ramtin Javanmardi.</copyright>
-    <lastBuildDate>Thu, 28 Aug 2025 23:15:26 +0200</lastBuildDate>
-    <atom:link href="https://handmadeoasis.com/tag/stream-of-consciousness/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Sep 2025 21:05:43 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tag/stream-of-consciousness/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI and Software Engineering, the Conflict Within</title>
+      <link>http://localhost:1313/ai-and-software-engineering-the-conflict-within/</link>
+      <pubDate>Sun, 21 Sep 2025 21:05:43 +0200</pubDate>
+      <guid>http://localhost:1313/ai-and-software-engineering-the-conflict-within/</guid>
+      <description>&lt;p&gt;I wrote a post a while ago about my current workflow when working with AI, my&#xA;initial skepticism and some brief mentions of the concept of recreational&#xA;programming. This post is going to be a continuation of the train of thought&#xA;presented in that previous post, but it will be a stand alone piece still. In&#xA;other words there is no need to have read the previous one to follow along in&#xA;this post.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Brain Dump: AI Assisted Workflows</title>
-      <link>https://handmadeoasis.com/brain-dump-ai-assisted-workflows/</link>
+      <link>http://localhost:1313/brain-dump-ai-assisted-workflows/</link>
       <pubDate>Thu, 28 Aug 2025 23:15:26 +0200</pubDate>
-      <guid>https://handmadeoasis.com/brain-dump-ai-assisted-workflows/</guid>
+      <guid>http://localhost:1313/brain-dump-ai-assisted-workflows/</guid>
       <description>&lt;p&gt;This is just like a note or dump of everything I research on AI agents, MCP, and&#xA;other generative AI stuff. I think the correct phrase for it is a stream of&#xA;consciousness dump&lt;/p&gt;&#xA;&lt;p&gt;There seems to be a kind of tier or ladder of sophistication that is slowly&#xA;getting shaped when it comes to AI assisted workflows, especially in relation to&#xA;software engineering. As I see it currently we have the use of online chat&#xA;interfaces, this is where you have chatGPT, Claude and company. At this point 3 years in,&#xA;this I think we have to admit has become table stakes pretty much. The next&#xA;level up is having an agent side by side your daily work. Here you have direct&#xA;access to the LLM and if you use a vscode fork like Cursor or any of their&#xA;competitors its usually just another pane on the right side of your code. This&#xA;is pretty nice, especially when you start to use it. It just feels so nice to&#xA;not have to leave your editor (personally i hated having to use these vs code&#xA;forks, and so glad the next level now exists), and just have the LLM have some&#xA;context around your code and so on.&lt;/p&gt;</description>
     </item>
   </channel>

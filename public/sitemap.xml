@@ -2,54 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://handmadeoasis.com/blog/</loc>
+    <loc>http://localhost:1313/ai-and-software-engineering-the-conflict-within/</loc>
     <lastmod>2025-09-21T21:05:43+02:00</lastmod>
   </url><url>
-    <loc>https://handmadeoasis.com/</loc>
+    <loc>http://localhost:1313/blog/</loc>
     <lastmod>2025-09-21T21:05:43+02:00</lastmod>
   </url><url>
-    <loc>https://handmadeoasis.com/tag/data-engineering/</loc>
+    <loc>http://localhost:1313/tag/generative-ai/</loc>
+    <lastmod>2025-09-21T21:05:43+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-09-21T21:05:43+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/software-engineering/</loc>
+    <lastmod>2025-09-21T21:05:43+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/stream-of-consciousness/</loc>
+    <lastmod>2025-09-21T21:05:43+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-09-21T21:05:43+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/data-engineering/</loc>
     <lastmod>2025-09-08T12:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://handmadeoasis.com/tag/data-infrastructure/</loc>
+    <loc>http://localhost:1313/tag/data-infrastructure/</loc>
     <lastmod>2025-09-08T12:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://handmadeoasis.com/tag/data-platform/</loc>
+    <loc>http://localhost:1313/tag/data-platform/</loc>
     <lastmod>2025-09-08T12:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://handmadeoasis.com/tag/data-stack/</loc>
+    <loc>http://localhost:1313/tag/data-stack/</loc>
     <lastmod>2025-09-08T12:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://handmadeoasis.com/tags/</loc>
+    <loc>http://localhost:1313/what-is-a-data-platform/</loc>
     <lastmod>2025-09-08T12:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://handmadeoasis.com/what-is-a-data-platform/</loc>
-    <lastmod>2025-09-08T12:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://handmadeoasis.com/tag/ai-agents/</loc>
+    <loc>http://localhost:1313/tag/ai-agents/</loc>
     <lastmod>2025-08-28T23:15:26+02:00</lastmod>
   </url><url>
-    <loc>https://handmadeoasis.com/brain-dump-ai-assisted-workflows/</loc>
+    <loc>http://localhost:1313/brain-dump-ai-assisted-workflows/</loc>
     <lastmod>2025-08-28T23:15:26+02:00</lastmod>
   </url><url>
-    <loc>https://handmadeoasis.com/tag/generative-ai/</loc>
-    <lastmod>2025-08-28T23:15:26+02:00</lastmod>
+    <loc>http://localhost:1313/tag/arch/</loc>
+    <lastmod>2025-08-26T12:20:13+02:00</lastmod>
   </url><url>
-    <loc>https://handmadeoasis.com/tag/stream-of-consciousness/</loc>
-    <lastmod>2025-08-28T23:15:26+02:00</lastmod>
+    <loc>http://localhost:1313/tag/linux/</loc>
+    <lastmod>2025-08-26T12:20:13+02:00</lastmod>
   </url><url>
-    <loc>https://handmadeoasis.com/tag/arch/</loc>
+    <loc>http://localhost:1313/my-guiding-engineering-philosophy/</loc>
+    <lastmod>2025-08-26T12:20:13+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/battery-health-managament-arch/</loc>
+    <lastmod>2025-08-26T12:17:28+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/linux-birthday-and-my-journey-with-it/</loc>
     <lastmod>2025-08-25T12:08:40+02:00</lastmod>
   </url><url>
-    <loc>https://handmadeoasis.com/tag/linux/</loc>
-    <lastmod>2025-08-25T12:08:40+02:00</lastmod>
-  </url><url>
-    <loc>https://handmadeoasis.com/linux-birthday-and-my-journey-with-it/</loc>
-    <lastmod>2025-08-25T12:08:40+02:00</lastmod>
-  </url><url>
-    <loc>https://handmadeoasis.com/aboutme/</loc>
+    <loc>http://localhost:1313/aboutme/</loc>
     <lastmod>2025-08-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://handmadeoasis.com/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>

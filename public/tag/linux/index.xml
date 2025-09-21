@@ -2,18 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Handmade Oasis</title>
-    <link>https://handmadeoasis.com/tag/linux/</link>
+    <link>http://localhost:1313/tag/linux/</link>
     <description>Recent content in Linux on Handmade Oasis</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, Ramtin Javanmardi.</copyright>
-    <lastBuildDate>Mon, 25 Aug 2025 12:08:40 +0200</lastBuildDate>
-    <atom:link href="https://handmadeoasis.com/tag/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Aug 2025 12:20:13 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tag/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Guiding Engineering Philosophy</title>
+      <link>http://localhost:1313/my-guiding-engineering-philosophy/</link>
+      <pubDate>Tue, 26 Aug 2025 12:20:13 +0200</pubDate>
+      <guid>http://localhost:1313/my-guiding-engineering-philosophy/</guid>
+      <description>&lt;p&gt;This is a page about »My Guiding Engineering Philosophy«.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Battery Health Managament Arch</title>
+      <link>http://localhost:1313/battery-health-managament-arch/</link>
+      <pubDate>Tue, 26 Aug 2025 12:17:28 +0200</pubDate>
+      <guid>http://localhost:1313/battery-health-managament-arch/</guid>
+      <description>&lt;p&gt;This is a page about »Battery Health Managament Arch«.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Linux&#39;s Birthday and My Journey With It</title>
-      <link>https://handmadeoasis.com/linux-birthday-and-my-journey-with-it/</link>
+      <link>http://localhost:1313/linux-birthday-and-my-journey-with-it/</link>
       <pubDate>Mon, 25 Aug 2025 12:08:40 +0200</pubDate>
-      <guid>https://handmadeoasis.com/linux-birthday-and-my-journey-with-it/</guid>
+      <guid>http://localhost:1313/linux-birthday-and-my-journey-with-it/</guid>
       <description>&lt;p&gt;Let me preface this post with the fact that&#xA;I was a huge macOS fanboy for a decade or so and only started feeling that the&#xA;OS was getting in my way a couple of years ago.&lt;/p&gt;&#xA;&lt;p&gt;With today being the 34th birthday of Linux it made me reflect a bit on how I&#xA;have used it over the years. I started out using Ubuntu at University 12 years&#xA;ago for some intro labs and for learning how to navigate the filesystem with a&#xA;terminal. That experience was very meh, I thought the OS looked clunky and I was&#xA;not sold on using the terminal over a GUI, especially when compared to the sleek&#xA;and beautiful macOS UI. So this was an opinion that I held on to for a long&#xA;time, of course I was using Linux in the cloud for servers and even just running&#xA;stuff with docker and so on but that was it really.&lt;/p&gt;</description>
     </item>
   </channel>
