@@ -7,14 +7,21 @@
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, Ramtin Javanmardi.</copyright>
-    <lastBuildDate>Sun, 21 Sep 2025 21:05:43 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 21 Oct 2025 00:00:00 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>State of Ai Assisted Workflows October 2025</title>
+      <link>http://localhost:1313/state-of-ai-assisted-workflows-october-2025/</link>
+      <pubDate>Tue, 21 Oct 2025 00:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/state-of-ai-assisted-workflows-october-2025/</guid>
+      <description>&lt;p&gt;This space is moving at a dizzing pace currently and as such there are many new&#xA;&amp;ldquo;frameworks&amp;rdquo;, methods and approaches popping up and promising the world. But&#xA;having spent the past 2 months trying out many of these on non-trivial tasks I&#xA;have managed to nail a workflow which I have pretty good success rate with. This&#xA;post is intended to be like a context compaction of all the things I have&#xA;explored and learned during this time.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>AI and Software Engineering, the Conflict Within</title>
       <link>http://localhost:1313/ai-and-software-engineering-the-conflict-within/</link>
       <pubDate>Sun, 21 Sep 2025 21:05:43 +0200</pubDate>
       <guid>http://localhost:1313/ai-and-software-engineering-the-conflict-within/</guid>
-      <description>&lt;p&gt;I wrote a post a while ago about my current workflow when working with AI, my&#xA;initial skepticism and some brief mentions of the concept of recreational&#xA;programming. This post is going to be a continuation of the train of thought&#xA;presented in that previous post, but it will be a stand alone piece still. In&#xA;other words there is no need to have read the previous one to follow along in&#xA;this post.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I wrote a post a while ago about &lt;a href=&#34;http://localhost:1313/brain-dump-ai-assisted-workflows/&#34;&gt;my current workflow when working with AI&lt;/a&gt;, my&#xA;initial skepticism and some brief mentions of the concept of recreational&#xA;programming. This post is going to be a continuation of the train of thought&#xA;presented in that previous post, but it will be a stand alone piece still. In&#xA;other words there is no need to have read the previous one to follow along in&#xA;this post.&lt;/p&gt;</description>
     </item>
     <item>
       <title>What Is a Data Platform</title>
