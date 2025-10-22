@@ -1,7 +1,7 @@
 +++
 title = 'State of AI Assisted Workflows October 2025'
 date = "2025-10-21T00:00:00+02:00"
-draft = true
+draft = false
 tags = ["generative ai", "ai agents", "software engineering", "stream of consciousness"]
 +++
 
