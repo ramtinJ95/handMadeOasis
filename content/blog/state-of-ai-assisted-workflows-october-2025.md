@@ -2,6 +2,7 @@
 title = 'State of AI Assisted Workflows October 2025'
 date = "2025-10-21T00:00:00+02:00"
 draft = true
+tags = ["generative ai", "ai agents", "software engineering", "stream of consciousness"]
 +++
 
 This space is moving at a dizzying pace currently and as such there are
@@ -18,7 +19,7 @@ levels:
 * Level 1: Using a chat interface provided by one of the big model
   providers
 * Level 2: Using the chat interface next to your code with something like
-  cursor or Github copilot in your editor of choice
+  cursor or GitHub copilot in your editor of choice
 * Level 3: Going full agentic and letting the agent iterate a few steps
   before you as the human in the loop review, course correct and provide
   further prompting
@@ -42,13 +43,13 @@ for repetitive prompts that can be used in different code bases, such as
 /review or /brainstorm etc. Comparing them to the other techniques I will
 mention they are probably the simplest, as they are basically stored
 prompts that can be reused with some modifications. One of them is for
-example that in Opencode a /command can spin up a subagent or a specific
+example that in opencode a /command can spin up a subagent or a specific
 agent with access to specific tools to execute the prompt. But I mostly
 use it as a way to use a carefully crafted prompt in many different
 scenarios, like /review and /brainstorm.
 
 ## SDD (Spec Driven Development)
-This set of methodologies and tools are your Spec-kit, Openspec and BMAD
+This set of methodologies and tools are your spec-kit, openspec and bmad
 type of approaches. The idea here is to use .md files as a way of making
 it very very clear to the LLM what to do, how it should be done and
 breaking everything down to small tasks that are reviewable by a human.
@@ -65,7 +66,7 @@ text that will then be used by an ultimately random text processing engine
 that will use this as input to generate some code or text? It's just way
 faster to just iterate on the code and steer the agents and write the damn
 code myself. If I had such a clear understanding of the problem that I
-could write all these specs, why not sure write the code at that point?
+could write all these specs, why not just write the code at that point?
 
 I don't know maybe it's a personality thing or a workflow thing, but this
 method does not make sense to me at all. To me they sell a false sense of
@@ -120,14 +121,14 @@ a couple of them going then a huge chunk of the available context is
 consumed by a bunch of tokens that potentially has no use for most of the
 session. The second reason is that I think the use case for MCPs are not
 necessarily aligned with how I use LLMs to do development. As I see it the
-biggest advantage of MCP is that they work without needing a full Linux
+biggest advantage of MCP is that they work without needing a full linux
 style sandbox, and they can work with much less capable models. They are
 also useful for exposing a product's APIs in a uniform way so that the LLM 
 can learn about it and then potentially use that to create some small
 tools and stop using that MCP later on to save tokens.
 
 Another approach could be to put the MCP tools list, or just even the
-script to start up the MCP and running it, into a skill that gets loaded
+script to start up MCP and running it, into a skill that gets loaded
 when needed. That would get around the context pollution problem of MCPs,
 if it works. I have not managed to get that work in a useful way yet.
 
@@ -150,7 +151,7 @@ a problem.
 
 ## Current workflow
 So to tie it all together and share how I'm currently working with these
-tools. My current workflow is a Frankenstein of all the aforementioned
+tools. My current workflow is a frankenstein of all the aforementioned
 methodologies bundled together where I have discarded what I don't find
 useful and kept what I have found works for me. Also to further drive home
 the point that what I'm doing and how I'm working with these tools
@@ -201,15 +202,15 @@ understanding how it all worked. Not directly from the deep research
 output but that was enough to show me what I needed to search further for.
 
 ### AI related tools and resources used currently
-* Opencode, CLI tool for using LLMs. Open source Claude code pretty much.
+* opencode, CLI tool for using LLMs. Open source Claude code pretty much.
 * Gemini pro, only using the deep research capability
 * z.ai, a super cheap LLM provider, I use it for access to GLM 4.6.
   Unlimited usage for 45 dollars per quarter. This is my main model
   currently
 * zen.ai a non-profit LLM provider, I use it to try out different models
-  at like 20 dollars a month. Been really liking Kimi K2 from here
+  at like 20 dollars a month. Been really liking kimi-k1.5 from here
   recently.
-* Github copilot subscription, only using Claude 4.5 from here.
+* GitHub copilot subscription, only using Claude 4.5 from here.
 * Different MCPs not that much anymore but still happens.
 * Custom subagents and /commands
 
@@ -224,5 +225,5 @@ The developers who thrive will be those who learn to orchestrate these
 tools effectively while maintaining ownership of their architectural
 decisions and core implementations.
 
-For now, I'm sticking with my Frankenstein workflow. It's messy, it's
+For now, I'm sticking with my frankenstein workflow. It's messy, it's
 personal, and it works for me. That's good enough.
