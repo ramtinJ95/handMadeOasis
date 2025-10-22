@@ -75,7 +75,47 @@ opinion.
 
 ## MCP and SKILL.md
 This section could be an entire post but I will try to keep it as short as
-possible.
+possible. 
+
+The new Skills concept that Anthropic released a week ago is quite simple and
+its something that I was already moving towards because the AGENTS.md files
+where eating too much context already. I had already started using AGENTS.md as
+an index to where to find other markdown files with more detail for the task at
+hand if that is needed. But its great that this is becoming official, because
+that usually means that some tooling around these things will pop-up and thats a
+good thing. Or simply that the models have some apriori system prompt that tells
+them to look for these files and this structure out of the box. 
+
+Lets backup for a moment though, what is a skill and what problem does it aim to
+solve? A Skill is pretty much a folder with context + optional code ready to be
+run. Claude reads a 2-line description. When you need it, Claude loads the full
+thing to get the extra context + get your custom code tools ready. That's it.
+
+The problem this aims to solve in my mind is context pollution. Even though
+context windows are growing and probably will continue to do so, it seems like
+the models ability pay attention to everything in the context decreases the more
+of that window one consumes. You need to consume as little as possible of the
+context window so the tool (agent/llm) can get anything worthwhile done. And
+this is something that MCP's and AGENTS.md files kind of failed at. They consume
+way too much context window.
+
+Which brings me to my current stance and understanding of MCPs.
+I am not that big of a fan of MCPs anymore and I think it boils down to 2
+reasons.
+
+The first one is that they consume so much of the context and if you have a
+couple of them going then a huge chunk of the available context is consumed by a
+bunch of tokens that potentially has no use for most of the session. The second
+reason is that I think the use case for MCPs are not necessarily aligned with
+how I use LLMs to do development. As I see it the biggest advantage of MCP is
+that they work without needing a full linux style sandbox, and they can work
+with much less capable models. They are also useful for exposing a products APIs
+in a uniform way so that the llm can learn about it and then potentially use
+that to create some small tools and stop using that MCP.
+
+
+### Skills and subagents
+
 
 ## Current workflow
 My current workflow is a frankenstein of all the aformentioned methodolgies
@@ -93,6 +133,7 @@ usage for 45 dollars per quarter. This is my main model currently
   20 dollars a month. Been really liking kimi k2 from here recently.
 * Github copilot subscribtion, only using claude 4.5 from here.
 * Different MCPs not that much anymore but still happens.
+* Custom subagents and /commands
 
 ## Conclusion
 Conclude with something about how these tools are useful but for a fairly
