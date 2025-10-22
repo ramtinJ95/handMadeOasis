@@ -56,6 +56,7 @@ breaking everything down to small tasks that are reviewable by a human.
 Usually it also involves many steps of the human actually reviewing text
 in .md files before ever seeing a single line of code.
 
+### Why SDD didn't work for me
 In their current iteration these methods and "frameworks" are completely
 unusable when introducing them into an existing codebase, the amount of
 work it would require is just not worth it at all to get slightly more
@@ -113,6 +114,7 @@ consume as little as possible of the context window so the tool
 MCPs and AGENTS.md files kind of failed at. They consume way too much
 context window.
 
+### Why I'm cooling on MCPs
 Which brings me to my current stance and understanding of MCPs. I am not
 that big of a fan of MCPs anymore and I think it boils down to 2 reasons.
 
@@ -150,8 +152,9 @@ A skill might advise the main agent on how best to use subagents to solve
 a problem.
 
 ## Current workflow
-So to tie it all together and share how I'm currently working with these
-tools. My current workflow is a frankenstein of all the aforementioned
+After all this experimentation, I've settled on what actually works.
+
+My current workflow is a frankenstein of all the aforementioned
 methodologies bundled together where I have discarded what I don't find
 useful and kept what I have found works for me. Also to further drive home
 the point that what I'm doing and how I'm working with these tools
@@ -160,6 +163,7 @@ derive satisfaction when programming, for more detail and a thorough
 explanation see this
 [post](/ai-and-software-engineering-the-conflict-within/).
 
+### My actual daily process
 My main serious workflow is that I create an index.md file that contains
 small two sentence descriptions of files in a folder called agent_docs/
 that contain useful information and small scripts in markdown files that
@@ -201,7 +205,9 @@ out really good and really helped me get the implementation working and
 understanding how it all worked. Not directly from the deep research
 output but that was enough to show me what I needed to search further for.
 
-### AI related tools and resources used currently
+### Tools and resources
+For transparency, here's my current stack:
+
 * opencode, CLI tool for using LLMs. Open source Claude code pretty much.
 * Gemini pro, only using the deep research capability
 * z.ai, a super cheap LLM provider, I use it for access to GLM 4.6.
