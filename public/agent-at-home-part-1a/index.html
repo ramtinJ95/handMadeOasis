@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Agent at Home Part 1a | Handmade Oasis</title>
+<meta name="title" content="Agent at Home Part 1a" />
+<meta name="description" content="Before we get into the coding part of the series I think it would be beneficial
+to give some background to what the ReAct loop is that we are going to make use
+of to build this agent and also describing a bit how the code is going to look
+like. This will not be that long to be fair because the basic loop is fairly
+simple once you grok the ReAct loop." />
+<meta name="keywords" content="ai agents,generative ai,software engineering,developer tooling,agent at home series," />
+
+
+<meta property="og:url" content="http://localhost:1313/agent-at-home-part-1a/">
+  <meta property="og:site_name" content="Handmade Oasis">
+  <meta property="og:title" content="Agent at Home Part 1a">
+  <meta property="og:description" content="Before we get into the coding part of the series I think it would be beneficial to give some background to what the ReAct loop is that we are going to make use of to build this agent and also describing a bit how the code is going to look like. This will not be that long to be fair because the basic loop is fairly simple once you grok the ReAct loop.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-11-30T09:54:01+01:00">
+    <meta property="article:modified_time" content="2025-11-30T09:54:01+01:00">
+    <meta property="article:tag" content="Ai Agents">
+    <meta property="article:tag" content="Generative Ai">
+    <meta property="article:tag" content="Software Engineering">
+    <meta property="article:tag" content="Developer Tooling">
+    <meta property="article:tag" content="Agent at Home Series">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Agent at Home Part 1a">
+  <meta name="twitter:description" content="Before we get into the coding part of the series I think it would be beneficial to give some background to what the ReAct loop is that we are going to make use of to build this agent and also describing a bit how the code is going to look like. This will not be that long to be fair because the basic loop is fairly simple once you grok the ReAct loop.">
+
+
+
+
+  <meta itemprop="name" content="Agent at Home Part 1a">
+  <meta itemprop="description" content="Before we get into the coding part of the series I think it would be beneficial to give some background to what the ReAct loop is that we are going to make use of to build this agent and also describing a bit how the code is going to look like. This will not be that long to be fair because the basic loop is fairly simple once you grok the ReAct loop.">
+  <meta itemprop="datePublished" content="2025-11-30T09:54:01+01:00">
+  <meta itemprop="dateModified" content="2025-11-30T09:54:01+01:00">
+  <meta itemprop="wordCount" content="1040">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Ai Agents,Generative Ai,Software Engineering,Developer Tooling,Agent at Home Series">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+<link rel="stylesheet" href="/css/catppuccin-mocha.css">
+<link rel="canonical" href="http://localhost:1313/agent-at-home-part-1a/" /></head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Handmade Oasis</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/blog/">Blog</a>
+
+<a href="/aboutme/">About Me</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Agent at Home Part 1a</h1>
+<p>
+  <i>
+    <time datetime='2025-11-30'>
+      30 Nov, 2025
+    </time>
+    • 1040 words • 5 min read
+  </i>
+</p>
+
+<content>
+  <p>Before we get into the coding part of the series I think it would be beneficial
+to give some background to what the ReAct loop is that we are going to make use
+of to build this agent and also describing a bit how the code is going to look
+like. This will not be that long to be fair because the basic loop is fairly
+simple once you grok the ReAct loop.</p>
+<p>Note: The goal of this series is not to explain how LLMs work under the hood,
+no deep dives into transformers, attention mechanisms, or training processes.
+While I personally find that stuff fascinating and have spent time learning it,
+this series is about engineering. And here&rsquo;s the thing about engineering: you
+don&rsquo;t need to understand every layer of abstraction below you to build something
+useful on top of it. I don&rsquo;t need to understand semiconductor physics to write
+good software. Similarly, you don&rsquo;t need to understand backpropagation to build
+a capable agent. Scientists discover and seek understanding as the end goal.
+Engineers build, and understanding serves that goal. Both are valuable, they&rsquo;re
+just different. This series is firmly in the engineering camp.</p>
+<h2 id="what-is-an-agent">What is an agent</h2>
+<p>Let&rsquo;s start with me defining what I think an agent is: An agent is essentially a
+while loop that leverages an AI model (i.e Claude, GPT, Gemini etc) to interact
+with and reason about its environment in order to accomplish a user defined goal(the
+user prompt basically), those interactions are mediated through external tools.</p>
+<p>Now it is sometimes useful to categorize agents on a spectrum of different
+agency levels. On such a spectrum this definition of an agent is fairly high up
+on the agency level and would be called something like a multi-step agent.
+Since the output controls the program flow. The goal of this series is to start
+with a multi-step agent and move towards fully multi agent which means an agent
+that can start other agentic workflows.</p>
+<p>I mentioned the spectrum because there are other simpler agents that can also be
+very useful such as a router agent which with its output determines some basic
+control flows, i.e which path code execution should go through based on some
+decision that would be hard to code for in a deterministic way. But that is not
+the focus of this series.</p>
+<h2 id="react-reasoning--acting">ReAct (Reasoning + Acting)</h2>
+<p>The core ReAct loop is actually very simple conceptually. All that is
+happening is: Thought → Action → Observation → (repeat)</p>
+<p>This means that you send some prompt and that prompt includes your system
+prompt, what tools are available and what the objective is. The LLM then reasons
+about the task and then figures out it needs to use one of the tools in the tool
+list you sent in your request. So it sends that back in its response, the agent
+then executes that tool, this is the action step. The output of that action is
+sent back to the LLM with the entire message history (this is the context) and
+the LLM again reasons about the next step. This then repeats until the final
+response from the LLM does not require any more action, which means it either
+has an answer or needs more input from the user. That&rsquo;s all there is to it.
+For more details read the <a href="https://arxiv.org/abs/2210.03629">ReAct Paper</a>.</p>
+<p>I think the reasoning part is worth going into a bit deeper though because there
+is some terminology and methods that interact in that step that I initially
+found a bit confusing.</p>
+<h3 id="chain-of-thoughts-role-in-the-reasoning-step">Chain of thought&rsquo;s role in the reasoning step</h3>
+<p>Chain of thought (CoT) was all the rage like a year ago, maybe less. That is an
+eternity in AI so I think it&rsquo;s worth explaining CoT&rsquo;s role in the ReAct loop.</p>
+<p>Basically CoT is a prompting technique where us as users nudged the models to
+produce intermediate reasoning steps before coming up with the answer, or at
+least show the intermediate steps, and this improved the accuracy on reasoning
+tasks.</p>
+<p>So this means that the ReAct loop is using CoT in its thought/reason step as
+explained earlier above. The confusing part is what is shown to the user and
+what the model is doing implicitly so let&rsquo;s dig a bit deeper still.</p>
+<p>State of the art AI models are, and have been for a while, trained
+(fine-tuned after initial model training to be precise) to generate these
+internal chains of thought by default and then distill them into a final answer.</p>
+<p>The word internal is doing a lot of heavy lifting there. Essentially all the
+&ldquo;thinking&rdquo; AI models are doing internal/hidden CoT steps even if you as a user
+don&rsquo;t ask for it. This hidden reasoning is done with &ldquo;reasoning tokens&rdquo; and uses
+what the model providers call a scratchpad. The external or reasoning steps that
+are shown to us as users and can be returned in a ReAct loop for our agent is a
+cleaned up and summarized version of that internal reasoning. This means that
+the role of CoT has changed from a &ldquo;hack&rdquo; to get better output out of the AI
+models to more of a UX way of getting the reasoning steps in a format that you
+need or require for debugging/understanding why the agent did what it did. What
+this means practically is that when you enable extended thinking etc for these
+models the budget for those reasoning tokens is what you are increasing, it&rsquo;s not
+that you are enabling a new behaviour that they did not have previously.</p>
+<p>Just to be clear though, for weaker models that do not have this internal CoT
+process baked in, CoT as a prompting technique to get more performance out of
+the LLM at the cost of higher context usage could still be viable.</p>
+<h2 id="rounding-off">Rounding off</h2>
+<p>Alright I think that is all the conceptual knowledge that is required to
+understand why the code we are going to write is looking the way it&rsquo;s going to
+look. As you can see the concept is at its core very simple but building it in a
+useful way to extract as much performance as possible out of the AI model is the
+fun engineering challenge we are going to embark on now!</p>
+
+</content>
+<p>
+  
+  <a href="http://localhost:1313/tag/ai-agents/">#Ai Agents</a>
+  
+  <a href="http://localhost:1313/tag/generative-ai/">#Generative Ai</a>
+  
+  <a href="http://localhost:1313/tag/software-engineering/">#Software Engineering</a>
+  
+  <a href="http://localhost:1313/tag/developer-tooling/">#Developer Tooling</a>
+  
+  <a href="http://localhost:1313/tag/agent-at-home-series/">#Agent at Home Series</a>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+  
+</body>
+
+</html>

@@ -2,28 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/agent-at-home-part-1a/</loc>
+    <lastmod>2025-11-30T09:54:01+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/agent-at-home-series/</loc>
+    <lastmod>2025-11-30T09:54:01+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/ai-agents/</loc>
+    <lastmod>2025-11-30T09:54:01+01:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2025-10-21T00:00:00+02:00</lastmod>
+    <lastmod>2025-11-30T09:54:01+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/developer-tooling/</loc>
+    <lastmod>2025-11-30T09:54:01+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/generative-ai/</loc>
+    <lastmod>2025-11-30T09:54:01+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-10-21T00:00:00+02:00</lastmod>
+    <lastmod>2025-11-30T09:54:01+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/software-engineering/</loc>
+    <lastmod>2025-11-30T09:54:01+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-11-30T09:54:01+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/introducing-new-series-we-got-agents-at-home/</loc>
+    <lastmod>2025-11-29T21:50:01+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/llms-are-bottlenecked-by-linear-interfaces/</loc>
+    <lastmod>2025-10-26T09:37:27+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tag/stream-of-consciousness/</loc>
+    <lastmod>2025-10-26T09:37:27+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/state-of-ai-assisted-workflows-october-2025/</loc>
     <lastmod>2025-10-21T00:00:00+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ai-and-software-engineering-the-conflict-within/</loc>
-    <lastmod>2025-09-21T21:05:43+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tag/generative-ai/</loc>
-    <lastmod>2025-09-21T21:05:43+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tag/software-engineering/</loc>
-    <lastmod>2025-09-21T21:05:43+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tag/stream-of-consciousness/</loc>
-    <lastmod>2025-09-21T21:05:43+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-09-21T21:05:43+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tag/data-engineering/</loc>
@@ -40,9 +58,6 @@
   </url><url>
     <loc>http://localhost:1313/what-is-a-data-platform/</loc>
     <lastmod>2025-09-08T12:00:00+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tag/ai-agents/</loc>
-    <lastmod>2025-08-28T23:15:26+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/brain-dump-ai-assisted-workflows/</loc>
     <lastmod>2025-08-28T23:15:26+02:00</lastmod>

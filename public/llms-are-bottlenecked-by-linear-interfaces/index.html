@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>LLMs Are Bottlenecked by Linear Interfaces | Handmade Oasis</title>
+<meta name="title" content="LLMs Are Bottlenecked by Linear Interfaces" />
+<meta name="description" content="Current limitation as I see it
+So I have been experimenting quite a bit with LLMs recently (see my other posts,
+especially /state-of-ai-assisted-workflows-october-2025/) and dedicated some
+serious amount of effort to play around with the tech to both learn more but
+also to build an intuition for what it is and what it can do well etc. This has
+led me to having a realisation or an idea, that I&rsquo;m sure is not unique but I have not seen much
+about it being mentioned yet. The idea is that our current LLMs are being
+bottlenecked, leaving performance on the table, by the interfaces we have when
+using them. Mostly our interactions with these models are through a chat
+interface and that forces linearity which also makes context pollution the huge
+problem it currently is." />
+<meta name="keywords" content="ai agents,generative ai,software engineering,stream of consciousness," />
+
+
+<meta property="og:url" content="http://localhost:1313/llms-are-bottlenecked-by-linear-interfaces/">
+  <meta property="og:site_name" content="Handmade Oasis">
+  <meta property="og:title" content="LLMs Are Bottlenecked by Linear Interfaces">
+  <meta property="og:description" content="Current limitation as I see it So I have been experimenting quite a bit with LLMs recently (see my other posts, especially /state-of-ai-assisted-workflows-october-2025/) and dedicated some serious amount of effort to play around with the tech to both learn more but also to build an intuition for what it is and what it can do well etc. This has led me to having a realisation or an idea, that I’m sure is not unique but I have not seen much about it being mentioned yet. The idea is that our current LLMs are being bottlenecked, leaving performance on the table, by the interfaces we have when using them. Mostly our interactions with these models are through a chat interface and that forces linearity which also makes context pollution the huge problem it currently is.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-10-26T09:37:27+01:00">
+    <meta property="article:modified_time" content="2025-10-26T09:37:27+01:00">
+    <meta property="article:tag" content="Ai Agents">
+    <meta property="article:tag" content="Generative Ai">
+    <meta property="article:tag" content="Software Engineering">
+    <meta property="article:tag" content="Stream of Consciousness">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="LLMs Are Bottlenecked by Linear Interfaces">
+  <meta name="twitter:description" content="Current limitation as I see it So I have been experimenting quite a bit with LLMs recently (see my other posts, especially /state-of-ai-assisted-workflows-october-2025/) and dedicated some serious amount of effort to play around with the tech to both learn more but also to build an intuition for what it is and what it can do well etc. This has led me to having a realisation or an idea, that I’m sure is not unique but I have not seen much about it being mentioned yet. The idea is that our current LLMs are being bottlenecked, leaving performance on the table, by the interfaces we have when using them. Mostly our interactions with these models are through a chat interface and that forces linearity which also makes context pollution the huge problem it currently is.">
+
+
+
+
+  <meta itemprop="name" content="LLMs Are Bottlenecked by Linear Interfaces">
+  <meta itemprop="description" content="Current limitation as I see it So I have been experimenting quite a bit with LLMs recently (see my other posts, especially /state-of-ai-assisted-workflows-october-2025/) and dedicated some serious amount of effort to play around with the tech to both learn more but also to build an intuition for what it is and what it can do well etc. This has led me to having a realisation or an idea, that I’m sure is not unique but I have not seen much about it being mentioned yet. The idea is that our current LLMs are being bottlenecked, leaving performance on the table, by the interfaces we have when using them. Mostly our interactions with these models are through a chat interface and that forces linearity which also makes context pollution the huge problem it currently is.">
+  <meta itemprop="datePublished" content="2025-10-26T09:37:27+01:00">
+  <meta itemprop="dateModified" content="2025-10-26T09:37:27+01:00">
+  <meta itemprop="wordCount" content="723">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Ai Agents,Generative Ai,Software Engineering,Stream of Consciousness">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+<link rel="stylesheet" href="/css/catppuccin-mocha.css">
+<link rel="canonical" href="http://localhost:1313/llms-are-bottlenecked-by-linear-interfaces/" /></head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Handmade Oasis</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/blog/">Blog</a>
+
+<a href="/aboutme/">About Me</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>LLMs Are Bottlenecked by Linear Interfaces</h1>
+<p>
+  <i>
+    <time datetime='2025-10-26'>
+      26 Oct, 2025
+    </time>
+    • 723 words • 4 min read
+  </i>
+</p>
+
+<content>
+  <h2 id="current-limitation-as-i-see-it">Current limitation as I see it</h2>
+<p>So I have been experimenting quite a bit with LLMs recently (see my other posts,
+especially <a href="/state-of-ai-assisted-workflows-october-2025/">/state-of-ai-assisted-workflows-october-2025/</a>) and dedicated some
+serious amount of effort to play around with the tech to both learn more but
+also to build an intuition for what it is and what it can do well etc. This has
+led me to having a realisation or an idea, that I&rsquo;m sure is not unique but I have not seen much
+about it being mentioned yet. The idea is that our current LLMs are being
+bottlenecked, leaving performance on the table, by the interfaces we have when
+using them. Mostly our interactions with these models are through a chat
+interface and that forces linearity which also makes context pollution the huge
+problem it currently is.</p>
+<p>An adjacent contributor to this problem is the fact that the &ldquo;tests&rdquo; or
+benchmarks that are used to evaluate these models reward guessing when not knowing.
+It&rsquo;s like most tests in school, if you are wrong you don&rsquo;t lose points, but if you
+guess and it&rsquo;s the correct answer you get the reward. In such an environment we
+are selecting for models that guess when uncertain. Now if that is good or bad,
+I can see how one can argue for both, but it&rsquo;s important to recognize this I
+think. Because all the current solutions to deal with this problem are in some
+sense also trying to impose guardrails to make a non-deterministic system
+behave deterministically.</p>
+<h2 id="current-problem-with-existing-solutions">Current problem with existing solutions</h2>
+<p>I view most of the current solutions such as swarms of subagents, Spec-kit,
+openspec and other SDD frameworks and .md files such as cursor rules as band-aid
+solutions to the underlying problem.</p>
+<p>These approaches are essentially trying to do context management. Their whole idea
+is to get the LLM to deterministically output something that follows some set of
+rules and preferably those rules should be shareable to replicate the state of
+the model that best aligns with whatever it is that is trying to be achieved.</p>
+<p>But they are not able to fulfill that promise consistently in most cases. I
+think it&rsquo;s because the tools given, i.e. just using text and natural language,
+are not powerful enough.</p>
+<h2 id="the-idea-proposal-for-a-possible-solution">The idea proposal for a possible solution</h2>
+<p>We need to move away from having these linear interfaces where we have prompt -&gt;
+LLM output -&gt; prompt etc, then for a new feature or slightly different topic we
+create a new session starting from scratch and again the linear chain.</p>
+<p>Instead, if we think of each state as a node in a tree structure then we can
+branch off from current state, do some things, evaluate and only bring it back to
+the main branch if deemed useful by a human. This means that we should not think
+in terms of sharing a bunch of text files but rather be able to share the entire
+state.</p>
+<p>Simply put this means that instead of having to trust that the agent does read
+all the .md files and follows all the Skills and loads them into the context
+correctly each new session, I want to be able to share the session / state
+itself.</p>
+<p>This would enable a team to create a number of states for each type of task and
+then run proper evals on top to determine what state is best suited for the type
+of tasks at hand, and if any changes to that state makes it better or worse.</p>
+<h2 id="clarification-of-what-im-after">Clarification of what I&rsquo;m after</h2>
+<p>So what I&rsquo;m proposing is not an agent system prompt or just something that we can
+get by pasting in a context.md file etc. I want to be able to prime the agent
+into those rare moments where the agent feels like it&rsquo;s an extension of you and
+is totally understanding what you are saying without too much prompting, those
+moments that have gotten us all hooked and wanting more, I want to be able to
+save that state and be able to re-use it for other tasks without having to do
+anything other than &ldquo;navigate&rdquo; to that state in the UI and start prompting.</p>
+<p>The one tool that is something close to what I imagine currently would be <a href="https://github.com/steveyegge/beads">beads</a>
+but that is still relying heavily on these txt files, because that&rsquo;s all we got
+currently.</p>
+
+</content>
+<p>
+  
+  <a href="http://localhost:1313/tag/ai-agents/">#Ai Agents</a>
+  
+  <a href="http://localhost:1313/tag/generative-ai/">#Generative Ai</a>
+  
+  <a href="http://localhost:1313/tag/software-engineering/">#Software Engineering</a>
+  
+  <a href="http://localhost:1313/tag/stream-of-consciousness/">#Stream of Consciousness</a>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+  
+</body>
+
+</html>

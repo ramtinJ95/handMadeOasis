@@ -1,7 +1,7 @@
 +++
 title = "Introducing New Series: We Got Agents at Home"
 date = "2025-11-29T21:50:01+01:00"
-draft = true
+draft = false
 
 tags = ["ai agents","generative ai","software engineering", "developer tooling",
 "agent at home series"]
@@ -72,3 +72,5 @@ that helps organize notes and ideas and integrate them with my existing
 personal wiki.
 
 What I cannot create, I do not understand. Time to start creating.
+
+The first post is live: [Agent at Home Part 1a](/agent-at-home-part-1a/) - covering the conceptual foundation before we write any code.

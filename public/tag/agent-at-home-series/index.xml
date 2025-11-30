@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Agent at Home Series on Handmade Oasis</title>
+    <link>http://localhost:1313/tag/agent-at-home-series/</link>
+    <description>Recent content in Agent at Home Series on Handmade Oasis</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2025, Ramtin Javanmardi.</copyright>
+    <lastBuildDate>Sun, 30 Nov 2025 09:54:01 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tag/agent-at-home-series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Agent at Home Part 1a</title>
+      <link>http://localhost:1313/agent-at-home-part-1a/</link>
+      <pubDate>Sun, 30 Nov 2025 09:54:01 +0100</pubDate>
+      <guid>http://localhost:1313/agent-at-home-part-1a/</guid>
+      <description>&lt;p&gt;Before we get into the coding part of the series I think it would be beneficial&#xA;to give some background to what the ReAct loop is that we are going to make use&#xA;of to build this agent and also describing a bit how the code is going to look&#xA;like. This will not be that long to be fair because the basic loop is fairly&#xA;simple once you grok the ReAct loop.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Introducing New Series: We Got Agents at Home</title>
+      <link>http://localhost:1313/introducing-new-series-we-got-agents-at-home/</link>
+      <pubDate>Sat, 29 Nov 2025 21:50:01 +0100</pubDate>
+      <guid>http://localhost:1313/introducing-new-series-we-got-agents-at-home/</guid>
+      <description>&lt;p&gt;Ever since I switched to Linux as my main OS and started building my own&#xA;tools, I&amp;rsquo;ve had this nagging feeling about the coding agents I use daily. I&#xA;understand the principles how LLMs work, how tool calling happens, the&#xA;general architecture. But there&amp;rsquo;s a difference between understanding the&#xA;concepts and truly knowing what&amp;rsquo;s happening in the implementation.&lt;/p&gt;&#xA;&lt;p&gt;A few days ago I saw someone on Hacker News compare building your own coding&#xA;agent to crafting your own lightsaber. That clicked. Just like a Jedi needs&#xA;to understand their weapon intimately, not just conceptually, I want to move&#xA;from theoretical understanding to practical mastery.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

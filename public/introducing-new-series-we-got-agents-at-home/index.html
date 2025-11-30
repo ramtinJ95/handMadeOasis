@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Introducing New Series: We Got Agents at Home | Handmade Oasis</title>
+<meta name="title" content="Introducing New Series: We Got Agents at Home" />
+<meta name="description" content="Ever since I switched to Linux as my main OS and started building my own
+tools, I&rsquo;ve had this nagging feeling about the coding agents I use daily. I
+understand the principles how LLMs work, how tool calling happens, the
+general architecture. But there&rsquo;s a difference between understanding the
+concepts and truly knowing what&rsquo;s happening in the implementation.
+A few days ago I saw someone on Hacker News compare building your own coding
+agent to crafting your own lightsaber. That clicked. Just like a Jedi needs
+to understand their weapon intimately, not just conceptually, I want to move
+from theoretical understanding to practical mastery." />
+<meta name="keywords" content="ai agents,generative ai,software engineering,developer tooling,agent at home series," />
+
+
+<meta property="og:url" content="http://localhost:1313/introducing-new-series-we-got-agents-at-home/">
+  <meta property="og:site_name" content="Handmade Oasis">
+  <meta property="og:title" content="Introducing New Series: We Got Agents at Home">
+  <meta property="og:description" content="Ever since I switched to Linux as my main OS and started building my own tools, I’ve had this nagging feeling about the coding agents I use daily. I understand the principles how LLMs work, how tool calling happens, the general architecture. But there’s a difference between understanding the concepts and truly knowing what’s happening in the implementation.
+A few days ago I saw someone on Hacker News compare building your own coding agent to crafting your own lightsaber. That clicked. Just like a Jedi needs to understand their weapon intimately, not just conceptually, I want to move from theoretical understanding to practical mastery.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-11-29T21:50:01+01:00">
+    <meta property="article:modified_time" content="2025-11-29T21:50:01+01:00">
+    <meta property="article:tag" content="Ai Agents">
+    <meta property="article:tag" content="Generative Ai">
+    <meta property="article:tag" content="Software Engineering">
+    <meta property="article:tag" content="Developer Tooling">
+    <meta property="article:tag" content="Agent at Home Series">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Introducing New Series: We Got Agents at Home">
+  <meta name="twitter:description" content="Ever since I switched to Linux as my main OS and started building my own tools, I’ve had this nagging feeling about the coding agents I use daily. I understand the principles how LLMs work, how tool calling happens, the general architecture. But there’s a difference between understanding the concepts and truly knowing what’s happening in the implementation.
+A few days ago I saw someone on Hacker News compare building your own coding agent to crafting your own lightsaber. That clicked. Just like a Jedi needs to understand their weapon intimately, not just conceptually, I want to move from theoretical understanding to practical mastery.">
+
+
+
+
+  <meta itemprop="name" content="Introducing New Series: We Got Agents at Home">
+  <meta itemprop="description" content="Ever since I switched to Linux as my main OS and started building my own tools, I’ve had this nagging feeling about the coding agents I use daily. I understand the principles how LLMs work, how tool calling happens, the general architecture. But there’s a difference between understanding the concepts and truly knowing what’s happening in the implementation.
+A few days ago I saw someone on Hacker News compare building your own coding agent to crafting your own lightsaber. That clicked. Just like a Jedi needs to understand their weapon intimately, not just conceptually, I want to move from theoretical understanding to practical mastery.">
+  <meta itemprop="datePublished" content="2025-11-29T21:50:01+01:00">
+  <meta itemprop="dateModified" content="2025-11-29T21:50:01+01:00">
+  <meta itemprop="wordCount" content="588">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Ai Agents,Generative Ai,Software Engineering,Developer Tooling,Agent at Home Series">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+<link rel="stylesheet" href="/css/catppuccin-mocha.css">
+<link rel="canonical" href="http://localhost:1313/introducing-new-series-we-got-agents-at-home/" /></head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Handmade Oasis</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/blog/">Blog</a>
+
+<a href="/aboutme/">About Me</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Introducing New Series: We Got Agents at Home</h1>
+<p>
+  <i>
+    <time datetime='2025-11-29'>
+      29 Nov, 2025
+    </time>
+    • 588 words • 3 min read
+  </i>
+</p>
+
+<content>
+  <p>Ever since I switched to Linux as my main OS and started building my own
+tools, I&rsquo;ve had this nagging feeling about the coding agents I use daily. I
+understand the principles how LLMs work, how tool calling happens, the
+general architecture. But there&rsquo;s a difference between understanding the
+concepts and truly knowing what&rsquo;s happening in the implementation.</p>
+<p>A few days ago I saw someone on Hacker News compare building your own coding
+agent to crafting your own lightsaber. That clicked. Just like a Jedi needs
+to understand their weapon intimately, not just conceptually, I want to move
+from theoretical understanding to practical mastery.</p>
+<p>So I&rsquo;m building a coding agent from scratch. This series documents that
+journey no frameworks, every line explained, all the features you&rsquo;d expect
+(tool calling, subagents, MCPs, the works). I&rsquo;m calling it &ldquo;We got agents at
+home&rdquo; because spoiler: there&rsquo;s no magic, just programming we can understand
+deeply by building it ourselves.</p>
+<h2 id="what-to-expect-from-this-series">What to expect from this series</h2>
+<p>I will write a coding agent from scratch using no agent framework because
+I&rsquo;m going to explain every line of code to the best of my ability so we know
+what is going on at each step. At the end of the series I imagine our coding
+agent will have the following features/capabilities:</p>
+<ul>
+<li>Tool calling</li>
+<li>Slash commands</li>
+<li>Running code in a safe way</li>
+<li>Context management/ context pruning</li>
+<li>Exploring caching strategies</li>
+<li>Subagent being used by the primary agent</li>
+<li>Ability to use MCPs</li>
+<li>Possibility to read agent.md files to define different primary and subagents</li>
+<li>Exploring different long term memory solutions</li>
+</ul>
+<p>At some point in this journey, probably pretty early on, we will have to
+create a nice CLI or TUI using some kind of framework. But I&rsquo;m not yet sure
+if that will be integrated into this series or if those parts will be
+optional.</p>
+<p>The cadence of posts will be at least one new entry to the series weekly.</p>
+<h2 id="why-this-matters">Why this matters</h2>
+<p>The build-it-yourself ethos isn&rsquo;t just about control. Mainly, it&rsquo;s about
+understanding. I&rsquo;ve been on this kick of either building my own tooling or
+having a deep understanding of what I use daily. I don&rsquo;t know if it&rsquo;s part of
+the &ldquo;culture&rdquo; of Linux or me maturing as a software engineer, but this has
+become quite important to me.</p>
+<p>To be clear, the idea isn&rsquo;t that we&rsquo;ll create something that can compete
+with Claude Code or OpenCode et al. Rather, the purpose is to demystify and
+bring clarity around what&rsquo;s going on under the hood. That&rsquo;s the reason for
+the name, it comes from the &ldquo;we have x at home&rdquo; meme. My aim is to show that
+there is no magic, it&rsquo;s all good ol&rsquo; programming still.</p>
+<h2 id="beyond-coding-agents-side-quests">Beyond coding agents: side quests</h2>
+<p>I will also explore creating and using agents for tasks that are not related
+to coding. The reason for this is that I actually think that building agents
+is a space that is bottlenecked by creativity, and I find this entire
+problem space very interesting. It reminds me of creating small little games
+when I had just learned the basics of programming and was starting to get
+&ldquo;fluent&rdquo; with communicating with the computer.</p>
+<p>One of the first non-coding agents I will try to build eventually is an agent
+that helps organize notes and ideas and integrate them with my existing
+personal wiki.</p>
+<p>What I cannot create, I do not understand. Time to start creating.</p>
+<p>The first post is live: <a href="/agent-at-home-part-1a/">Agent at Home Part 1a</a> - covering the conceptual foundation before we write any code.</p>
+
+</content>
+<p>
+  
+  <a href="http://localhost:1313/tag/ai-agents/">#Ai Agents</a>
+  
+  <a href="http://localhost:1313/tag/generative-ai/">#Generative Ai</a>
+  
+  <a href="http://localhost:1313/tag/software-engineering/">#Software Engineering</a>
+  
+  <a href="http://localhost:1313/tag/developer-tooling/">#Developer Tooling</a>
+  
+  <a href="http://localhost:1313/tag/agent-at-home-series/">#Agent at Home Series</a>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+  
+</body>
+
+</html>

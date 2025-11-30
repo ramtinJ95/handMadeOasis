@@ -7,14 +7,35 @@
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, Ramtin Javanmardi.</copyright>
-    <lastBuildDate>Tue, 21 Oct 2025 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 30 Nov 2025 09:54:01 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>State of Ai Assisted Workflows October 2025</title>
+      <title>Agent at Home Part 1a</title>
+      <link>http://localhost:1313/agent-at-home-part-1a/</link>
+      <pubDate>Sun, 30 Nov 2025 09:54:01 +0100</pubDate>
+      <guid>http://localhost:1313/agent-at-home-part-1a/</guid>
+      <description>&lt;p&gt;Before we get into the coding part of the series I think it would be beneficial&#xA;to give some background to what the ReAct loop is that we are going to make use&#xA;of to build this agent and also describing a bit how the code is going to look&#xA;like. This will not be that long to be fair because the basic loop is fairly&#xA;simple once you grok the ReAct loop.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Introducing New Series: We Got Agents at Home</title>
+      <link>http://localhost:1313/introducing-new-series-we-got-agents-at-home/</link>
+      <pubDate>Sat, 29 Nov 2025 21:50:01 +0100</pubDate>
+      <guid>http://localhost:1313/introducing-new-series-we-got-agents-at-home/</guid>
+      <description>&lt;p&gt;Ever since I switched to Linux as my main OS and started building my own&#xA;tools, I&amp;rsquo;ve had this nagging feeling about the coding agents I use daily. I&#xA;understand the principles how LLMs work, how tool calling happens, the&#xA;general architecture. But there&amp;rsquo;s a difference between understanding the&#xA;concepts and truly knowing what&amp;rsquo;s happening in the implementation.&lt;/p&gt;&#xA;&lt;p&gt;A few days ago I saw someone on Hacker News compare building your own coding&#xA;agent to crafting your own lightsaber. That clicked. Just like a Jedi needs&#xA;to understand their weapon intimately, not just conceptually, I want to move&#xA;from theoretical understanding to practical mastery.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LLMs Are Bottlenecked by Linear Interfaces</title>
+      <link>http://localhost:1313/llms-are-bottlenecked-by-linear-interfaces/</link>
+      <pubDate>Sun, 26 Oct 2025 09:37:27 +0100</pubDate>
+      <guid>http://localhost:1313/llms-are-bottlenecked-by-linear-interfaces/</guid>
+      <description>&lt;h2 id=&#34;current-limitation-as-i-see-it&#34;&gt;Current limitation as I see it&lt;/h2&gt;&#xA;&lt;p&gt;So I have been experimenting quite a bit with LLMs recently (see my other posts,&#xA;especially &lt;a href=&#34;http://localhost:1313/state-of-ai-assisted-workflows-october-2025/&#34;&gt;/state-of-ai-assisted-workflows-october-2025/&lt;/a&gt;) and dedicated some&#xA;serious amount of effort to play around with the tech to both learn more but&#xA;also to build an intuition for what it is and what it can do well etc. This has&#xA;led me to having a realisation or an idea, that I&amp;rsquo;m sure is not unique but I have not seen much&#xA;about it being mentioned yet. The idea is that our current LLMs are being&#xA;bottlenecked, leaving performance on the table, by the interfaces we have when&#xA;using them. Mostly our interactions with these models are through a chat&#xA;interface and that forces linearity which also makes context pollution the huge&#xA;problem it currently is.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>State of AI Assisted Workflows October 2025</title>
       <link>http://localhost:1313/state-of-ai-assisted-workflows-october-2025/</link>
       <pubDate>Tue, 21 Oct 2025 00:00:00 +0200</pubDate>
       <guid>http://localhost:1313/state-of-ai-assisted-workflows-october-2025/</guid>
-      <description>&lt;p&gt;This space is moving at a dizzing pace currently and as such there are many new&#xA;&amp;ldquo;frameworks&amp;rdquo;, methods and approaches popping up and promising the world. But&#xA;having spent the past 2 months trying out many of these on non-trivial tasks I&#xA;have managed to nail a workflow which I have pretty good success rate with. This&#xA;post is intended to be like a context compaction of all the things I have&#xA;explored and learned during this time.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This space is moving at a dizzying pace currently and as such there are&#xA;many new &amp;ldquo;frameworks&amp;rdquo;, methods and approaches popping up and promising the&#xA;world. But having spent the past 2 months trying out many of these on&#xA;non-trivial tasks I have managed to nail a workflow which I have pretty&#xA;good success rate with. This post is intended to be like a context&#xA;compaction of all the things I have explored and learned during this time.&lt;/p&gt;</description>
     </item>
     <item>
       <title>AI and Software Engineering, the Conflict Within</title>

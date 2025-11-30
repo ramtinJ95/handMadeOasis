@@ -1,7 +1,7 @@
 +++
 title = "Agent at Home Part 1a"
 date = "2025-11-30T09:54:01+01:00"
-draft = true
+draft = false
 #
 # description is optional
 #
