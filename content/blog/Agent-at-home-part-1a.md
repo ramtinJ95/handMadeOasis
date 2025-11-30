@@ -82,6 +82,25 @@ internal chains of thought by default and then distill them into a final answer.
 
 The word internal is doing a lot of heavy lifting there. Essentially all the
 "thinking" AI models are doing internal/hidden CoT steps even if you as a user
-dont ask for it. 
+dont ask for it.This hidden reasoning is done with "reasoning tokens" as use
+what the model providers call a scratchpad. The external or reasoning steps that
+is shown to us as users and can be returned in a ReAct loop for our agent is a
+cleaned up and summarized version of that internal reasoning. This means that
+the role of CoT has changed from a "hack" to get better output out of the AI
+models to more of a UX way of getting the reasoning steps in a format that you
+need or require for debugging/understanding why the agent did what it did. What
+this means practically is that when you enabled extended thinking etc for these
+models the budget for those reasoning tokens is what you are increasing, its not
+that you are enabling a new behaviour that they did not have previously.
 
+Just to be clear though, for weaker models that does not have this internal CoT
+process baked in, CoT as a prompting technique to get more performance out of
+the llm at the cost of higher context usage could still be viable.
+
+## Rounding of
+Alright I think that is all the conceptual knowledge that is required to
+understand why the code we are going to write is looking the way its going to
+look. As you can see the concept is at its core very simple but building it in a
+useful way to extract as much performance as possible out of the AI model is the
+fun engineering challenge we are going to embark on now!
 
