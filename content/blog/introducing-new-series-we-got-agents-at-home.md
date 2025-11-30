@@ -1,9 +1,10 @@
 +++
 title = "Introducing New Series: We Got Agents at Home"
-date = "2025-11-23T21:50:01+01:00"
+date = "2025-11-29T21:50:01+01:00"
 draft = true
 
-tags = ["ai agents","generative ai","software engineering", "developer tooling"]
+tags = ["ai agents","generative ai","software engineering", "developer tooling",
+"agent at home series"]
 +++
 
 Ever since I switched to Linux as my main OS and started building my own
@@ -47,15 +48,15 @@ The cadence of posts will be at least one new entry to the series weekly.
 
 ## Why this matters
 The build-it-yourself ethos isn't just about control. Mainly, it's about
-understanding. Ever since I fully switched to Linux, I've been on this kick
-of either building my own tooling or having a deep understanding of what I
-use daily. I don't know if it's part of the "culture" of Linux or me
-maturing as a software engineer, but this has become quite important to me.
+understanding. I've been on this kick of either building my own tooling or
+having a deep understanding of what I use daily. I don't know if it's part of
+the "culture" of Linux or me maturing as a software engineer, but this has
+become quite important to me.
 
 To be clear, the idea isn't that we'll create something that can compete
 with Claude Code or OpenCode et al. Rather, the purpose is to demystify and
 bring clarity around what's going on under the hood. That's the reason for
-the name it comes from the "we have x at home" meme. My aim is to show that
+the name, it comes from the "we have x at home" meme. My aim is to show that
 there is no magic, it's all good ol' programming still.
 
 ## Beyond coding agents: side quests
