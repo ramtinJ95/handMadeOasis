@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, Ramtin Javanmardi.</copyright>
-    <lastBuildDate>Sun, 30 Nov 2025 09:54:01 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 30 Nov 2025 22:40:01 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/tag/ai-agents/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Agent at Home Part 1b</title>
+      <link>http://localhost:1313/agent-at-home-part-1b/</link>
+      <pubDate>Sun, 30 Nov 2025 22:40:01 +0100</pubDate>
+      <guid>http://localhost:1313/agent-at-home-part-1b/</guid>
+      <description>&lt;h1 id=&#34;agent-at-home-part-1b-the-code-walkthrough&#34;&gt;Agent at Home Part 1b: The Code Walkthrough&lt;/h1&gt;&#xA;&lt;p&gt;&lt;em&gt;XX Dec, 2025 • ~1500 words • 7 min read&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Alright, we covered the conceptual stuff in Part 1a. Now it&amp;rsquo;s time to actually look at code. In this post I&amp;rsquo;m going to walk through the entire &lt;code&gt;agent.py&lt;/code&gt; file line by line. By the end you&amp;rsquo;ll see that there really is no magic here, just a while loop, some API calls, and tool execution. Let&amp;rsquo;s dig in.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Agent at Home Part 1a</title>
       <link>http://localhost:1313/agent-at-home-part-1a/</link>
