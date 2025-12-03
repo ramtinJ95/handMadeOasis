@@ -12,16 +12,16 @@ tags = ["agent at home series","ai agents","developer tooling","generative ai","
 +++
 
 Alright, we covered the conceptual stuff in Part 1a. Now it's time to actually
-look at code. In this post I'm going to walk through the entire `agent.py` file
-line by line. By the end you'll see that there really is no magic here, just a
-while loop, some API calls, and tool execution. Let's dig in.
+look at some code. In this post I'm going to walk through the entire `agent.py`
+file line by line. By the end you'll see that there really is no magic here,
+just a while loop, some API calls, and tool execution. Let's dig in.
 
 ## Getting Started
 
 Before we dive into the code, let's get the environment set up. I'm using
 [uv](https://github.com/astral-sh/uv) for Python project management because
-it's fast and just works. If you don't have it installed, check out their docs.
-It's a single curl command.
+it's fast and just works. If you don't have it installed, check out their docs,
+it's a single curl command.
 
 To set everything up from scratch:
 
@@ -60,7 +60,7 @@ export ANTHROPIC_API_KEY="your-key-here"  # For Claude models
 export OPENAI_API_KEY="your-key-here"     # For GPT models
 export GEMINI_API_KEY="your-key-here"     # For Gemini models
 
-# Run the agent, this is for when we have finished writing the agent.py code
+# Run the agent
 uv run python agent.py
 ```
 
@@ -86,9 +86,17 @@ MODEL_NAME = "anthropic/claude-haiku-4-5-20251001"
 MAX_STEPS = 10
 ```
 
-Nothing fancy here. We're using `asyncio` because LLM API calls can be slow and
-we want to stream responses. `json` for parsing tool arguments. `pathlib`
-because it's just nicer than string manipulation for file paths.
+Nothing fancy here. We're using `asyncio` because we want to stream responses
+from the LLM. Without async, we'd have to wait for the entire response before
+showing anything. With async and streaming, we can print tokens as they arrive,
+giving that nice "typing" effect and making the agent feel more responsive.
+`json` for parsing tool arguments. `pathlib` because it's just nicer than
+string manipulation for file paths.
+
+Quick note on `pathlib` if you haven't used it much: `Path` objects overload
+the `/` operator for path joining. So `self.working_dir / "somefile.txt"` isn't
+division, it's equivalent to `os.path.join(self.working_dir, "somefile.txt")`
+but reads much cleaner. You'll see this pattern throughout the code.
 
 The interesting import is `litellm`. This is the one dependency I'm allowing
 myself because it abstracts away the differences between OpenAI, Anthropic,
@@ -108,14 +116,22 @@ class CodingAgent:
         self.working_dir = Path(working_dir).resolve()
         self.messages = []
         self.running = True
+        self.system_prompt = self._load_system_prompt()
 ```
 
-Three pieces of state. That's it.
+Four pieces of state. That's it. 
 
 - `working_dir`: Where the agent operates. All file paths are relative to this.
 - `messages`: The conversation history. This is the context I mentioned in
   Part 1a.
 - `running`: A flag to keep the main loop going.
+- `system_prompt`: The system prompt, loaded once at initialization to avoid
+  reading from disk on every LLM call.
+
+A note on `messages`: this follows the OpenAI chat format that most LLM APIs
+use. Each message is a dict with a `role` (user, assistant, system, or tool)
+and `content`. The model expects this specific structure, and litellm handles
+translating it for different providers.
 
 ## The Main Loop
 
@@ -189,21 +205,18 @@ expect. We'll add more commands as the series progresses, things like `/undo`,
 ## The System Prompt
 
 ```python
-def get_system_prompt(self):
+def _load_system_prompt(self):
     prompt_path = Path(__file__).parent / "system_prompt.txt"
     return prompt_path.read_text()
 ```
 
-The system prompt lives in a separate file. This is intentional. You'll be
-tweaking this constantly as you figure out what instructions work best. Having
-it in a separate file means you don't have to touch Python code to iterate on
-prompting. The current system prompt is minimal:
-
-Quick note on `pathlib` if you haven't used it much: `Path` objects overload
-the `/` operator for path joining. So `self.working_dir / "somefile.txt"` isn't
-division, it's equivalent to `os.path.join(self.working_dir, "somefile.txt")`
-but reads much cleaner. You'll see this pattern throughout the code.
-
+The system prompt lives in a separate file and is loaded once during
+initialization (note the `_` prefix indicating it's a private method called
+from `__init__`). This is intentional for two reasons: first, you'll be
+tweaking the prompt constantly as you figure out what instructions work best,
+and having it in a separate file means you don't have to touch Python code to
+iterate. Second, caching it avoids re-reading from disk on every LLM call. The
+current system prompt is minimal:
 
 ```
 You are a coding assistant that uses tools to help with file operations.
@@ -222,7 +235,7 @@ Be concise and clear. Ask for clarification when needed.
 ```
 
 We explicitly tell the model to use the ReAct pattern. This is that Chain of
-Thought prompting technique I mentioned in Part 1a. We're asking it to show its
+Thought prompting technique I mentioned in Part 1a, we're asking it to show its
 reasoning steps.
 
 ## Defining Tools
@@ -234,7 +247,7 @@ def get_tools(self):
             "type": "function",
             "function": {
                 "name": "read_tool",
-                "description": "A tool to read files",
+                "description": "Read the contents of a file at the given path",
                 "parameters": {
                     "type": "object",
                     "properties": {"path": {"type": "string"}},
@@ -242,14 +255,40 @@ def get_tools(self):
                 },
             },
         },
-        # ... write_tool and list_files follow the same pattern
+        {
+            "type": "function",
+            "function": {
+                "name": "write_tool",
+                "description": "Write content to a file at the given path",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "path": {"type": "string"},
+                        "content": {"type": "string"},
+                    },
+                    "required": ["path", "content"],
+                },
+            },
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "list_files",
+                "description": "List files and directories at the given path",
+                "parameters": {
+                    "type": "object",
+                    "properties": {"path": {"type": "string"}},
+                    "required": [],
+                },
+            },
+        },
     ]
 ```
 
 This is the OpenAI function calling format (which litellm normalizes across
 providers). Each tool has a name, description, and a JSON Schema for its
-parameters. The description matters a lot because that's what the model uses to
-decide when to call each tool.
+parameters. The description matters a lot since that's what the model uses to
+decide when to call each tool. 
 
 Three tools to start:
 - `read_tool`: Read file contents
@@ -294,10 +333,14 @@ This is where tools actually do things. A few things to note:
    don't want an agent silently overwriting your files. We'll explore more
    sophisticated approaches later (diffs, undo, etc.) but for now a simple y/n
    works.
-3. `list_files` returns structured data, not just strings. This makes it easier
+3. The line `path.parent.mkdir(parents=True, exist_ok=True)` creates any
+   missing parent directories before writing. So if you ask the agent to write
+   `src/utils/helper.py` and `src/utils/` doesn't exist, it creates it
+   automatically.
+4. `list_files` returns structured data, not just strings. This makes it easier
    for the model to reason about the results.
-4. Everything is wrapped in try/except. Tool execution failing shouldn't crash
-   the agent. We just return an error message and let the model figure out what
+5. Everything is wrapped in try/except. Tool execution failing shouldn't crash
+   the agent, we just return an error message and let the model figure out what
    to do.
 
 ## The ReAct Loop (The Heart of It All)
@@ -311,7 +354,7 @@ async def react_loop(self, user_input):
         print("Assistant: ", end="", flush=True)
 
         messages_with_system = [
-            {"role": "system", "content": self.get_system_prompt()}
+            {"role": "system", "content": self.system_prompt}
         ] + self.messages
 
         response = await acompletion(
@@ -324,12 +367,15 @@ async def react_loop(self, user_input):
 ```
 
 Here's where the magic (that isn't magic) happens. Remember from Part 1a:
-Thought -> Action -> Observation -> repeat.
+Thought → Action → Observation → repeat.
 
 1. Add the user message to history
 2. Loop up to `MAX_STEPS` times
 3. Each iteration: send the full conversation (system prompt + message history)
-   to the model with the tool definitions
+   to the model with the tool definitions. Notice we prepend the system prompt
+   fresh each time rather than storing it in `self.messages`. This keeps the
+   system instructions separate from the rolling conversation history, which
+   makes it easier to manage context length later.
 
 The `stream=True` is why we need all that chunk handling code coming next.
 Streaming means we get tokens as they're generated instead of waiting for the
@@ -363,6 +409,16 @@ across multiple chunks, so we need to accumulate them. The `tc.index` tells us
 which tool call this chunk belongs to (models can request multiple tools at
 once). We print content as it streams in for that nice typing effect.
 
+Here's what's happening: when you stream a response, each chunk contains a
+`delta` with partial data. For text content, you might get a few words at a
+time. For tool calls, it's trickier. The first chunk might contain the tool
+name and ID, then subsequent chunks stream in the JSON arguments piece by
+piece. That's why we do `arguments += tc.function.arguments` to accumulate
+them. The `tc.index` exists because models can call multiple tools in parallel,
+so we need to know which tool call each chunk belongs to. We check
+`tc.index >= len(tool_calls)` to detect when a new tool call starts and
+initialize a fresh dict for it.
+
 ```python
         assistant_message = {"role": "assistant", "content": collected_content}
         if tool_calls:
@@ -381,19 +437,23 @@ once). We print content as it streams in for that nice typing effect.
 ```
 
 After collecting the full response, we add it to message history. If there were
-no tool calls, we're done. The model has finished reasoning and given us a
+no tool calls, we're done, the model has finished reasoning and given us a
 final answer. This is the exit condition for our ReAct loop.
 
 ```python
         for tc in tool_calls:
             arguments = json.loads(tc["arguments"]) if tc["arguments"] else {}
             result = await self.execute_tool(tc["name"], arguments)
-            print(f"[Result: {str(result)[:200]}...]")
+            result_str = str(result)
+            display = f"{result_str[:200]}..." if len(result_str) > 200 else result_str
+            print(f"[Result: {display}]")
             self.messages.append({
                 "role": "tool",
                 "tool_call_id": tc["id"],
                 "content": json.dumps(result),
             })
+
+    print(f"\n[Warning: Reached max steps ({MAX_STEPS}) without completion]")
 ```
 
 If there were tool calls, execute them and add the results to message history
@@ -401,8 +461,12 @@ with the special `"role": "tool"` format. The `tool_call_id` links the result
 back to the specific tool call. Then we loop back to the top and let the model
 reason about these new observations.
 
-That's the ReAct loop. Thought (model response) -> Action (tool execution) ->
-Observation (tool result added to context) -> repeat until no more actions
+Note the result display logic: we only show `...` when the result actually
+exceeds 200 characters. And if the loop exhausts `MAX_STEPS` without the model
+finishing naturally, we print a warning so you know something might be off.
+
+That's the ReAct loop. Thought (model response) → Action (tool execution) →
+Observation (tool result added to context) → repeat until no more actions
 needed.
 
 ## Entry Point
@@ -427,7 +491,7 @@ catch is a fallback in case ctrl+c happens before the agent's main loop starts.
 
 ## Wrapping Up
 
-And that's it. Around 220 lines of Python and you have a working coding agent.
+And that's it. Around 250 lines of Python and you have a working coding agent.
 No frameworks, no abstractions you don't understand. Every line is here, every
 decision is visible.
 
@@ -440,7 +504,7 @@ decisions.
 Here's the fun part: you can now use the agent to improve itself. Point it at
 its own codebase and ask it to add a new tool, refactor the streaming logic, or
 improve error handling. It can read `agent.py`, understand what's there, and
-write changes. There's something satisfying about that recursive loop. Using
+write changes. There's something satisfying about that recursive loop, using
 the thing you built to make the thing you built better.
 
 In the next part we'll start adding more sophisticated features. Better tools,
