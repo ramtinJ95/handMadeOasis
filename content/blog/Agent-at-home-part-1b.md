@@ -326,7 +326,7 @@ async def execute_tool(self, name, input_data):
         return {"error": str(e)}
 ```
 
-This is where tools actually do things. A few things to note:
+A few things to note:
 
 1. All paths are joined with `working_dir`. This is a basic sandboxing measure.
 2. `write_tool` asks for confirmation before writing. This is important! You
@@ -491,9 +491,9 @@ catch is a fallback in case ctrl+c happens before the agent's main loop starts.
 
 ## Wrapping Up
 
-And that's it. Around 250 lines of Python and you have a working coding agent.
-No frameworks, no abstractions you don't understand. Every line is here, every
-decision is visible.
+And that's it. Around 250 lines of Python, most of it boilerplate as well, and 
+you have a working coding agent. No frameworks, no abstractions you don't 
+understand. Every line is here, every decision is visible.
 
 Is this production ready? No. Is it competitive with Claude Code or Cursor? Not
 even close. But that was never the point. The point is that you now understand
