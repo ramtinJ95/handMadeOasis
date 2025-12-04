@@ -60,7 +60,7 @@ export ANTHROPIC_API_KEY="your-key-here"  # For Claude models
 export OPENAI_API_KEY="your-key-here"     # For GPT models
 export GEMINI_API_KEY="your-key-here"     # For Gemini models
 
-# Run the agent
+# Run the agent - this command is for the end when agent.py is done
 uv run python agent.py
 ```
 
