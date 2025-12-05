@@ -108,3 +108,6 @@ look. As you can see the concept is at its core very simple but building it in a
 useful way to extract as much performance as possible out of the AI model is the
 fun engineering challenge we are going to embark on now!
 
+---
+
+**Next up:** [Agent at Home Part 1b](/agent-at-home-part-1b/) , where we dive into the actual code and build the agent step by step.
