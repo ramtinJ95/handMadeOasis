@@ -23,6 +23,10 @@ let's get more concrete and into the actual stuff I'm doing
 
 ## What I'm currently doing
 
+Here's the toolkit and approach I've settled on. It's a combination of CLI
+tools, specialized subagents, custom commands, and a looping script that ties
+it all together. Each piece serves a specific purpose.
+
 ### CLI Tools of Choice
 Day to day I use only CLI tools when it comes to agentic coding. The CLI tools I
 use daily are currently Opencode and Claude Code. There is really not much
@@ -70,6 +74,11 @@ Now how do all of these subsystems combine into something that works well? Let's
 dive into that! 
 
 ## What's working really well
+
+These are the patterns and mental models that have proven most valuable. Some
+are conceptual frameworks for thinking about context and agents, others are
+concrete practices I use daily. All of them have emerged from trial and error
+over months of heavy use.
 
 ### Context as Memory Mental Model
 Thinking about subagents as libraries and commands as functions and context as
