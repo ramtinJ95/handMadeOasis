@@ -1,7 +1,7 @@
 +++
 title = "State of AI Assisted Workflows January 2026"
 date = "2026-01-25T21:41:48+01:00"
-draft = true
+draft = false
 #
 # description is optional
 #
@@ -11,8 +11,10 @@ tags = ["ai agents","developer tooling","generative ai","software engineering",]
 +++
 
 Last time I wrote about my AI assisted workflows was 3 months ago. Paradoxically,
-everything has changed while nothing feels different. Many of the techniques and methods I was using 3 months ago were
-new to me. As I described in that post, it felt like a Frankenstein type of
+everything has changed while nothing feels different. Many of the techniques and
+methods I was using 3 months ago were new to me. As I described in
+[that post](/blog/state-of-ai-assisted-workflows-october-2025/), it felt like a
+Frankenstein type of
 workflow—many different systems duct taped together into something. That
 something I, in hindsight, think of as the prototype. Now what I have is much
 more refined and streamlined, and I think that is the reason for why it feels
@@ -22,13 +24,13 @@ let's get more concrete and into the actual stuff I'm doing
 ## What I'm currently doing
 
 ### CLI Tools of Choice
-Day to day I use only CLI tools when it come to agentic coding. The CLI tools I
+Day to day I use only CLI tools when it comes to agentic coding. The CLI tools I
 use daily are currently Opencode and Claude Code. There is really not much
 difference between my workflows for these 2 tools currently, I have managed to
 replicate the "infrastructure" I like in both. The only reason I have started to
 use Claude Code is because they did not like that people were using their
 Claude Max subscriptions with Opencode and started messing with requests from
-other harnesses. So when I use opus 4.5 I use Claude code, it's as simple of a
+other harnesses. So when I use opus 4.5 I use Claude Code, it's as simple of a
 reason as that really. I still much prefer Opencode though.
 
 ### Subagent Infrastructure
@@ -37,8 +39,8 @@ subagents that I call upon, often directly, depending on the situation. The most
 used ones are a research agent, review agent, test agent, ui test agent,
 documentation agent and explore agent. These agents are then enriched with
 different tools and permissions suitable for their focus. For example the
-research agent is the only one with access to context7 and gh-grep mcp's, the
-others do not get their context's polluted with the tool descriptions from those
+research agent is the only one with access to context7 and gh-grep MCPs, the
+others do not get their contexts polluted with the tool descriptions from those
 mcps. In the same way I actually limit the available tools also to further limit
 context pollution. Because you don't want to give the LLM too many options either
 because that will just make it more likely that it uses something wrong and so
@@ -62,7 +64,7 @@ one maybe max 50 lines.
 ### The Ralph Loop
 The most recent addition to this "infrastructure" that I have made is what is
 now known as the "ralph loop". This piece is essentially a script that uses
-Claude code or Opencode as unix cli tools and runs them in a loop.
+Claude Code or Opencode as unix cli tools and runs them in a loop.
 
 Now how do all of these subsystems combine into something that works well? Let's
 dive into that! 
@@ -76,7 +78,7 @@ of memory that has to be viewed as a precious resource. AGENTS.md should be thou
 as a cache layer. If you see tool call failures, repeated build errors, or the
 agent calling regex patterns to find files, those are cache misses. But even more expensive in a
 sense because they pollute the current context for the task at hand with a bunch
-of tool calls and output's that is not relevant at all for the task at hand.
+of tool calls and outputs that is not relevant at all for the task at hand.
 Building on this analogy, I think each task should be viewed as its own program
 even. This means that as soon as the task at hand is changing you should start a
 new session and reset the context. I have found that this keeps the agent
@@ -133,7 +135,7 @@ domain or techniques used in that library. Then I ask it to create the
 curriculum that will guide me from nothing to having a replica of that system
 but I will myself have to implement all the actual code and what not. With the
 sources it finds for source material and learning. It's actually a total shift
-for me, its like on demand tutorials on any topic customized for whatever I want
+for me, it's like on demand tutorials on any topic customized for whatever I want
 to get out of it.
 
 ### The Ralph Loop Approach
@@ -170,7 +172,7 @@ involved, then after that do I have any success with automation.
 Opencode running playwright mcp. For some reason when I run the playwright mcp
 using my subagent in Opencode it always times out or does not really manage to
 test the ui features properly. The same subagent instructions and everything
-works way better in Claude code for some reason, not sure yet why this is.
+works way better in Claude Code for some reason, not sure yet why this is.
 
 Skills. Honestly I almost never see skills load dynamically as advised. I don't
 know if it's because the LLM's are not trained to use them as they are with tools
@@ -188,7 +190,7 @@ avoid it like the plague if you are using the current generation of models from
 Anthropic.
 
 ## What I want to explore more
-Local LLMs for task. I want to try them out and see what the current generation
+Local LLMs for tasks. I want to try them out and see what the current generation
 of local llms can do, I have not kept up with this side of things recently.
 
 Voice inputs. I have started to see some reports of this being way faster and
