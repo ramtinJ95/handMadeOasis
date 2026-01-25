@@ -86,9 +86,20 @@ current part of my mental model when working with agentic coding systems at
 least and I think it has served me well thus far.
 
 Working from a concept of setting the stage for the agent. This is the second
-part of my mental model for working with agentic coding. 
+part of my mental model for working with agentic coding. This idea is what
+guided me to be so cautious about what I include in the context. Basically the
+idea is that we set the environment for the agent with a goal. By being very
+deliberate and conscious about the environment which we put the agent in we can
+limit the degrees of freedom it has but at the same time make use of the fact
+that these are dynamic agents that can actually do useful things without us
+having to give detailed instructions of each step.
 
-Using subagents.
+Use subagents. If you are not already doing it yourself, I'm pretty sure most
+harnesses actaully have started to do this out of the box already. Get
+comfortable with them and start using them extensively is my recommendation. The
+value unlock of proper use of subagents is just phenomanal. If there is one
+thing you really really should do out of all the things I have presented its
+this.
 
 Using tests to check my understanding and confirming whats actually been done.
 This is about probing the system and making sure that whatever has been produced
@@ -109,10 +120,29 @@ speeding up learning so much. Although having said this, I also make it question
 me and grade my answers and so on to actually make sure I'm always understanding
 whats going on and that I dont have only surface level learning. It's not
 perfect yet but its way better than just accepting whatever the agent generates,
-and way more fun for me. 
+and way more fun for me.
 
 Using guiding document + different phases of implementation together with ralph
-loop for super quick prototyping of full products.
+loop for super quick prototyping of full products. This build on the back and
+forth with the agent concept. I have found it quite fun and useful to first
+create a big architecture document around what is going to be built. Through use
+of research agents to guide my own assumptions and understanding. This is the
+bulk of the work. This is the actual engineering that I do, what used to be the
+code is now this pretty much. I actually can spend hours going back and forth
+here, this is the exploration of the problem space part but also the
+architecturing of the system. Then from this I split it into smaller phases,
+then i split the phases into individual tasks. Then I ask the agent to generate
+a summary of the architecture document and call it the guiding document. This is
+essentially the stage that I was talking about earlier. Each phase is its own
+document containing tasks just to be clear. Once all this upfront work is done,
+much of the writing of these documents is actually done by the agent itself once
+I have taken all the descions and been interviewed, challenged and thought
+through the architecture. At this point I just run the ralph loop script that I
+have created. What it does is include the guiding document + the phase document.
+Then for each iteration of the loop its only allowed to do one task. The tasks
+are ordered in such a way that they are chronological for what needs to be built
+according to my understanding. I just let it rip at this point and just watch in
+amazement as what I had in my mind just hours earlier is being built. 
 
 ## Whats not working well 
 ralph pluging in claude code.
