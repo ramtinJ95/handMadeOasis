@@ -1,6 +1,6 @@
 +++
 title = "State of AI Assisted Workflows January 2026"
-date = "2026-01-01T25:41:48+01:00"
+date = "2026-01-25T21:41:48+01:00"
 draft = true
 #
 # description is optional
@@ -10,9 +10,10 @@ draft = true
 tags = ["ai agents","developer tooling","generative ai","software engineering",]
 +++
 
-Last time I wrote about my AI assisted workflows was 3 months ago. Paradoxically, everything has changed while nothing feels different. Many of the techniques and methods I was using 3 months ago were
-new to me and as I described in that post it felt like a Frankenstein type of
-workflow with many different systems silver taped together into something. That
+Last time I wrote about my AI assisted workflows was 3 months ago. Paradoxically,
+everything has changed while nothing feels different. Many of the techniques and methods I was using 3 months ago were
+new to me. As I described in that post, it felt like a Frankenstein type of
+workflow—many different systems duct taped together into something. That
 something I, in hindsight, think of as the prototype. Now what I have is much
 more refined and streamlined, and I think that is the reason for why it feels
 like nothing has changed but at the same time everything has changed. Alright
@@ -53,9 +54,10 @@ in the global AGENTS.md file or in a project specific AGENTS.md file. I firmly
 believe that those types of files that are always included in the context
 regardless of which subagent is spun up or what the task at hand is, should be
 kept extremely light and barebones otherwise they hurt way more than they help.
-In practice, these files shouldn't be used as long-term memory. Instead just include build commands and things like general
-file structure of the project. Max 100-150 lines in the project specific
-AGENTS.md I think and for the global one maybe max 50 lines. 
+In practice, these files shouldn't be used as long-term memory. Instead just
+include build commands and things like general file structure of the project.
+Max 100-150 lines in the project specific AGENTS.md I think and for the global
+one maybe max 50 lines.
 
 ### The Ralph Loop
 The most recent addition to this "infrastructure" that I have made is what is
@@ -71,17 +73,16 @@ dive into that!
 Thinking about subagents as libraries and commands as functions and context as
 the memory in the "classical" sense of computers, i.e I view context as an array
 of memory that has to be viewed as a precious resource. AGENTS.md should be thought of
-as a cache layer. If you see tool call failures, or the same patterns of failing
-to build the project or that it has to start calling regex patterns to find
-files etc, those are cache misses essentially. But even more expensive in a
+as a cache layer. If you see tool call failures, repeated build errors, or the
+agent calling regex patterns to find files, those are cache misses. But even more expensive in a
 sense because they pollute the current context for the task at hand with a bunch
 of tool calls and output's that is not relevant at all for the task at hand.
 Building on this analogy, I think each task should be viewed as its own program
 even. This means that as soon as the task at hand is changing you should start a
 new session and reset the context. I have found that this keeps the agent
 focused and reduces hallucinations and stops the agent from going "dumb". This
-is the same thing as avoiding what is now called as the "dumb zone". This is my
-current part of my mental model when working with agentic coding systems at
+is the same thing as avoiding what is now called as the "dumb zone". This is
+part of my current mental model when working with agentic coding systems at
 least and I think it has served me well thus far.
 
 ### Setting the Stage
@@ -184,7 +185,7 @@ ago but since that thus far has meant total collapse of performance I never hit
 it anymore. I have seen though that codex seems to be really good at compacting
 but the Anthropic models are just fully lobotomized if you hit compaction so
 avoid it like the plague if you are using the current generation of models from
-Anthropic. 
+Anthropic.
 
 ## What I want to explore more
 Local LLMs for task. I want to try them out and see what the current generation
@@ -209,5 +210,5 @@ This system has grown with me over almost 5 months of heavy use.
 It's not something to replicate wholesale. Your own "infrastructure" should
 evolve organically based on what works for you.
 
-Find your own balance. Build your own tools. Have fun exploring this new age of
-computing!
+Find your own balance. Build your own tools. What I cannot create, I do not
+understand. What I create too fast, I also do not understand.
