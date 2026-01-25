@@ -144,16 +144,58 @@ are ordered in such a way that they are chronological for what needs to be built
 according to my understanding. I just let it rip at this point and just watch in
 amazement as what I had in my mind just hours earlier is being built. 
 
-## Whats not working well 
-ralph pluging in claude code.
-opencode running playwright mcp.
-Skills.
-Compaction in opus 4.5
+## What did not work well that I have stopped doing
+Ralph plugin in claude code. This plugin is just not it. It does not match at
+all what the ralph loop is about and furthermore it does not even work really. I
+would suggest you avoid it and first run the loop iterations by hand. In general
+I have found that using "off the shelf" solutions and systems does not work at
+all for me. I have to first run the things manually to understand the steps
+involved then after that do I have any success with automation.
+
+Opencode running playwright mcp. For some reason when I run the playwright mcp
+using my subagent in Opencode it always times out or does not really manage to
+test the ui features properly. The same subagent instructions and everything
+works way better in Claude code for some reason, not sure yet why this is.
+
+Skills. Honestly I almost never see skills load dynamically as advised, I dont
+know if its because the LLM's are not trained to use them as they are with tools
+or what if the descriptions of the skills is where I mess up but for me skills
+does not work as advertised. However when combined with /commands they are
+great. Although to be honest I dont really know at that point why I should not
+use /commands to replace the whole thing, they are the same thing really. But Im
+willing to consceed that this could be a skill issue (pun intended).
+
+Compaction in opus 4.5 or in general. I used to hit compaction a bit 3 months
+ago but since that thus far has meant total collapse of performance I never hit
+it anymore. I have seen though that codex seems to be really good at compacting
+but the Anthropic models are just fully lobotomized if you hit compaction so
+avoid it like the plauge if you are using the current generation of models from
+Anthropic. 
 
 ## What I want to explore more
-Local LLMs for task
-Voice inputs
+Local LLMs for task. I want to try them out and see what the current generation
+of local llms can do, I have not kept up with this side of things recently.
+
+Voice inputs. I have started to see some reports of this being way faster and
+more reliable recently and I'm very curious to try it out. Although I do think
+that some friction between thought and instruction to a LLM is a feature and
+not a bug but that is a discussion for another time.
+
 Building an agent harness for different use cases. Meaning moving beyond
 subagents into even more specific and narrow harnesses for task at hand.
 Start using more of the small fast models and not use SOTA models for
 everything.
+
+## Rounding off
+This post got way more detailed and long than I had in mind when I started
+writing. Quite a few of these details and steps have been ingrained in me now
+that I dont really consider them as separate steps but when trying to explain
+them its quite clear that I do some of the on autopilot. That insight in itself
+was valuable for me honestly, because reflecting over what one is doing and why
+is so important. Not only for building workflows but also so that improvement
+and tweaks can continue to be made. I truly hope that this is not too
+overwhelming of a post. But if you do think this is too much and/or
+overwhelming, try to remember that this is a system that has grown with me now
+for almost 5 months. Furthermore these are things that I find useful or that has
+worked for me. That context is very important. So use it as inpiration if
+anything and have fun exploring this new marveouls time in computing!
