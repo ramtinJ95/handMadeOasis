@@ -37,7 +37,10 @@ documentation agent and explore agent. These agents are then enriched with
 different tools and permissions suitable for their focus. For example the
 research agent is the only one with access to context7 and gh-grep mcp's, the
 others do not get their context's polluted with the tool descriptions from those
-mcps. 
+mcps. In the same way I actually limit the available tools also to further limit
+context pollution. Because you dont want to give the LLM too many options either
+because that will just make it more likely that it uses something wrong and so
+on.
 
 Then I have quite a few custom /commands that i make use of to either prime the
 context of an agent or give a specific set of instructions that I have found
@@ -47,21 +50,80 @@ done. I have found this approach works way better than having these instructions
 in the global AGENTS.md file or in a project specific AGENTS.md file. I firmly
 belive that those types of files that are always included in the context
 regardless of which subagent is spun up or what the task at hand is, should be
-kept extremly light and barebones otherwise they hurt way more than they help. 
+kept extremly light and barebones otherwise they hurt way more than they help.
+What this means in practice is that I dont think these files should be used as
+long term memory. Instead just include build commands and things like general
+file structure of the project. Max 100-150 lines in the project specific
+AGENTS.md I think and for the global one maybe max 50 lines. 
 
+The most recent addition to this "infrastructure" that I have made is what is
+now known as the "ralph loop". This piece is essentially a script that uses
+Claude code or Opencode as unix cli tools and runs them in a loop.
 
+Now how does all of these subsystems combine into something that works well you
+may ask. Let's dive into that! Before that though, if you are new to agentic
+workflows this can all seem overwhelming. I just want to remind you that this is
+something that has evoled over a months and heavy use, this is in no way
+something that one should try to replicate. It's good inspiration, hopefully at
+least, but you should allow for your own "infrastructure" to grow organically
+for the best results I think. 
 
-### Whats working really well
+## Whats working really well
+Thinking about subagents as libraries and commands as functions and context as
+the memory in the "classical" sense of computers, i.e I view context as an array
+of memory that has to be viewed as a precious resource. AGENTS.md should be thought of
+as a cache layer. If you see tool call failures, or the same patterns of failing
+to build the project or that it has to start calling regex patterns to find
+files etc, those are cache misses essentially. But even more expensive in a
+sense because they pollute the current context for the task at hand with a bunch
+of tool calls and output's that is not relevant at all for the task at hand.
+Building on this analogy, I think each task should be viewed as its own program
+even. This means that as soon as the task at hand is changing you should start a
+new session and reset the context. I have found that this keeps the agent
+focused and reduces hallucinations and stops the agent from going "dumb". This
+is the same thing as avoiding what is now called as the "dumb zone". This is my
+current part of my mental model when working with agentic coding systems at
+least and I think it has served me well thus far.
 
-### What did not work well
+Working from a concept of setting the stage for the agent. This is the second
+part of my mental model for working with agentic coding. 
+
+Using subagents.
+
+Using tests to check my understanding and confirming whats actually been done.
+This is about probing the system and making sure that whatever has been produced
+matches your mental model of it. Reason for this way of working for me is
+because the amount and speed of code generation is so high now that reviewing it
+the old way is just not possible for larger features. We also dont want to lose
+the connection to the way the system works and the interfaces between different
+parts of the code, because the intent and architecture parts are still not
+within the realm of what these systems can deal with. I also dont feel comfortable,
+at least for actual production code, with trusting fully what the AI generates.
+
+Going back and forth with the LLM's through these CLI/TUI tools to learn, plan
+and research is actually both fun and very fruitful. Asking it to monitor a pod
+thats running in a kubernetes cluster and present its findings so the requests
+for the pod can be set in a good way. Or using that report to research further
+what the actual documentation recommends against what Im doing, its just
+speeding up learning so much. Although having said this, I also make it question
+me and grade my answers and so on to actually make sure I'm always understanding
+whats going on and that I dont have only surface level learning. It's not
+perfect yet but its way better than just accepting whatever the agent generates,
+and way more fun for me. 
+
+Using guiding document + different phases of implementation together with ralph
+loop for super quick prototyping of full products.
+
+## Whats not working well 
 ralph pluging in claude code.
 opencode running playwright mcp.
 Skills.
 Compaction in opus 4.5
+
 ## What I want to explore more
 Local LLMs for task
 Voice inputs
 Building an agent harness for different use cases. Meaning moving beyond
 subagents into even more specific and narrow harnesses for task at hand.
-
-## Suggested guidelines compressing all my learnings
+Start using more of the small fast models and not use SOTA models for
+everything.
