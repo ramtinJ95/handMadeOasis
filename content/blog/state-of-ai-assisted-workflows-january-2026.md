@@ -15,7 +15,7 @@ everything has changed while nothing feels different. Many of the techniques and
 methods I was using 3 months ago were new to me. As I described in
 [that post](/blog/state-of-ai-assisted-workflows-october-2025/), it felt like a
 Frankenstein type of
-workflow—many different systems duct taped together into something. That
+workflow. Many different systems duct taped together into something. That
 something I, in hindsight, think of as the prototype. Now what I have is much
 more refined and streamlined, and I think that is the reason for why it feels
 like nothing has changed but at the same time everything has changed. Alright
