@@ -1,6 +1,6 @@
 +++
 title = "State of AI Assisted Workflows January 2026"
-date = "2026-01-25T21:41:48+01:00"
+date = "2026-01-24T21:41:48+01:00"
 draft = false
 #
 # description is optional
