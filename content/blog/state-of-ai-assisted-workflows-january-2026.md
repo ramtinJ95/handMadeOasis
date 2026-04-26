@@ -13,7 +13,7 @@ tags = ["ai agents","developer tooling","generative ai","software engineering",]
 Last time I wrote about my AI assisted workflows was 3 months ago. Paradoxically,
 everything has changed while nothing feels different. Many of the techniques and
 methods I was using 3 months ago were new to me. As I described in
-[that post](/blog/state-of-ai-assisted-workflows-october-2025/), it felt like a
+[that post](/state-of-ai-assisted-workflows-october-2025/), it felt like a
 Frankenstein type of
 workflow. Many different systems duct taped together into something. That
 something I, in hindsight, think of as the prototype. Now what I have is much

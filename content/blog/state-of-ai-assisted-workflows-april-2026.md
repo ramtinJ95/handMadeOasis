@@ -12,11 +12,18 @@ draft = true
 tags = ["ai agents","developer tooling","generative ai","software engineering",]
 +++
 
-It's been three months almost exactly since I last documented my workflows and
-setup. Although it does not feel like it for me, reading back what I wrote in
-the last update there are quite a few differences. The system I have going now
-really does feel like an exoskeleton, to quote a recent interview with DHH where
-he described it like having 12 arms and a totally different kind of flow.
+It's been three months almost exactly since I
+[last documented](/state-of-ai-assisted-workflows-january-2026/) my workflows
+and setup. Although it does not feel like it for me, reading back what I wrote
+in the last update there are quite a few differences.
+
+The system I have going now really does feel like an exoskeleton, to quote a
+recent interview with DHH where he described it like having 12 arms and a
+totally different kind of flow. Not necessarily because the tools themselves are
+magical, but because the layer around them has become much more important to me.
+The harness, the context, the workflow, the small scripts, the review loops and
+all the other boring pieces around the model are increasingly where the leverage
+seems to be.
 
 ## What I'm currently doing
 Let's start with going through which tools I'm using currently and my general
@@ -92,9 +99,8 @@ some understanding of the context in which the PR was created and not just the
 code itself or even worse that it tries to assume some intent or end goal by
 itself. I have not quite got this to where I want yet but it's a clear
 improvement over my previous more naive approach so that's always something.
-Essentially it's a
-continuation of the idea of setting the stage in which the agent is spawned in,
-which I wrote about in the previous update post.
+Essentially it's a continuation of the idea of setting the stage in which the
+agent is spawned in, which I wrote about in the previous update post.
 
 ### OpenClaw and Mac mini
 I gave in to my FOMO like 6 weeks ago, very late by AI standards, and bought a
@@ -129,9 +135,18 @@ structured as a tree.
 This harness is just above anything else right now. The ergonomics of how to use
 it and customize it, the no fluff defaults and the fact that it does not keep
 changing under you all the time makes it a super reliable tool that does not
-break all the damn. Other harnesses might have some fancier tools etc but all of
-that can be replicated so easily and just by looking at the extensions for Pi
-it's easy to see that, that benefit is not just theoretical.
+break all the damn time. Other harnesses might have some fancier tools etc but
+all of that can be replicated so easily and just by looking at the extensions
+for Pi it's easy to see that, that benefit is not just theoretical. I mean my
+system prompt when using Pi is like 2K tokens, Claude code improved for a while
+but now its like back at above 20K same for Codex. And nobody seems to be
+talking about this, I dont quite get it. There is nothing more important to get
+what you want out of these models then keeping context as small and clean as
+possible its all to increase the probability that the tokens generated is in
+line with what you actually want. 
+
+This is the thing I keep coming back to now: the model matters, but the shape
+of the workflow around the model matters more than I used to think.
 
 ### Own tooling
 I have been using and building my own tooling for my own needs to an extent I
@@ -150,7 +165,7 @@ I built my own agent orchestrator so that I can send a bunch of prompts to
 different agents and then in one TUI view I can see what they are all doing and
 if they are waiting for input. This one is useful for sending the same prompt
 also to many agents and see what they come up with and cross compare, there are
-some funky things that this orchestrator makes really easy so its been a blast
+some funky things that this orchestrator makes really easy so it's been a blast
 playing around with it.
 
 I built a news aggregator for my dad which sends him an email based on what he
@@ -164,6 +179,26 @@ close to at all. Literally any aspect of Pi can be modified through the
 extensions, it's unbelievable.
 
 ### Experimentation and simulation
+This one is the newest addition to my toolbox. I find that it is so useful to
+have the agent just spin up different simulations, stress test the code and
+write reports, or run through a matrix of possible permutations for different
+parameters for hours in the background while I'm doing other work.
+
+To be a bit more concrete, I had to write a pipeline that will be moving almost
+400GB of data every night. This is just one of many pipelines and it will run on
+a shared node pool on our Kubernetes cluster which was not sized for these types
+of workloads and so on. Long story short the performance matters here. So what
+I did to get this really fast and resource efficient was that I downloaded a
+representative sample of the data around 10-12GB and then ran different
+configurations of the pipeline on that data fully end to end as it would in
+production. This allowed me to find the best throughput while staying within the
+pod resource limit.
+
+Since then, I keep this kind of thing running in the background. Simulations and
+experiments for different things to see if I have missed something or can
+improve something. So far, every time some optimization is found I learn a ton
+also about the underlying frameworks and tools used. It has been a really
+enjoyable way of using AI at work.
 
 ## What I have stopped doing
 
@@ -189,3 +224,16 @@ prompt level rules already for it to actually pay attention to anything most of
 the time but that's a whole other discussion.
 
 ## Rounding off
+The main shift since the last update is not that the workflow is suddenly clean
+or finished. It is more that I have stopped expecting the default shape of these
+tools to be the right shape for me.
+
+The models are good enough now that the bottleneck is often everything around
+them. The harness, the context, the review flow, the way tools are exposed, the
+way sessions branch, the way intent is carried from one step to another. That
+whole layer matters way more than I think I understood three months ago.
+
+So the direction for me is pretty clear. No more waiting for someone else to
+build the perfect AI workflow, more small sharp tools that fit how I actually
+think and work. More building the system myself, because as usual, what I
+cannot create I do not understand.
