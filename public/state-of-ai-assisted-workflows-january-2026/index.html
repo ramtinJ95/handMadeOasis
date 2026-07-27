@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://handmadeoasis.com/images/favicon.png" />
+<title>State of AI Assisted Workflows January 2026 | Handmade Oasis</title>
+<meta name="title" content="State of AI Assisted Workflows January 2026" />
+<meta name="description" content="Last time I wrote about my AI assisted workflows was 3 months ago. Paradoxically,
+everything has changed while nothing feels different. Many of the techniques and
+methods I was using 3 months ago were new to me. As I described in
+that post, it felt like a
+Frankenstein type of
+workflow. Many different systems duct taped together into something. That
+something I, in hindsight, think of as the prototype. Now what I have is much
+more refined and streamlined, and I think that is the reason for why it feels
+like nothing has changed but at the same time everything has changed. Alright
+let&rsquo;s get more concrete and into the actual stuff I&rsquo;m doing" />
+<meta name="keywords" content="ai agents,developer tooling,generative ai,software engineering," />
+
+
+<meta property="og:url" content="https://handmadeoasis.com/state-of-ai-assisted-workflows-january-2026/">
+  <meta property="og:site_name" content="Handmade Oasis">
+  <meta property="og:title" content="State of AI Assisted Workflows January 2026">
+  <meta property="og:description" content="Last time I wrote about my AI assisted workflows was 3 months ago. Paradoxically, everything has changed while nothing feels different. Many of the techniques and methods I was using 3 months ago were new to me. As I described in that post, it felt like a Frankenstein type of workflow. Many different systems duct taped together into something. That something I, in hindsight, think of as the prototype. Now what I have is much more refined and streamlined, and I think that is the reason for why it feels like nothing has changed but at the same time everything has changed. Alright let’s get more concrete and into the actual stuff I’m doing">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2026-01-24T21:41:48+01:00">
+    <meta property="article:modified_time" content="2026-01-24T21:41:48+01:00">
+    <meta property="article:tag" content="Ai Agents">
+    <meta property="article:tag" content="Developer Tooling">
+    <meta property="article:tag" content="Generative AI">
+    <meta property="article:tag" content="Software Engineering">
+    <meta property="og:image" content="https://handmadeoasis.com/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://handmadeoasis.com/images/share.png">
+  <meta name="twitter:title" content="State of AI Assisted Workflows January 2026">
+  <meta name="twitter:description" content="Last time I wrote about my AI assisted workflows was 3 months ago. Paradoxically, everything has changed while nothing feels different. Many of the techniques and methods I was using 3 months ago were new to me. As I described in that post, it felt like a Frankenstein type of workflow. Many different systems duct taped together into something. That something I, in hindsight, think of as the prototype. Now what I have is much more refined and streamlined, and I think that is the reason for why it feels like nothing has changed but at the same time everything has changed. Alright let’s get more concrete and into the actual stuff I’m doing">
+
+
+
+
+  <meta itemprop="name" content="State of AI Assisted Workflows January 2026">
+  <meta itemprop="description" content="Last time I wrote about my AI assisted workflows was 3 months ago. Paradoxically, everything has changed while nothing feels different. Many of the techniques and methods I was using 3 months ago were new to me. As I described in that post, it felt like a Frankenstein type of workflow. Many different systems duct taped together into something. That something I, in hindsight, think of as the prototype. Now what I have is much more refined and streamlined, and I think that is the reason for why it feels like nothing has changed but at the same time everything has changed. Alright let’s get more concrete and into the actual stuff I’m doing">
+  <meta itemprop="datePublished" content="2026-01-24T21:41:48+01:00">
+  <meta itemprop="dateModified" content="2026-01-24T21:41:48+01:00">
+  <meta itemprop="wordCount" content="2314">
+  <meta itemprop="image" content="https://handmadeoasis.com/images/share.png">
+  <meta itemprop="keywords" content="Ai Agents,Developer Tooling,Generative AI,Software Engineering">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+<link rel="stylesheet" href="/css/catppuccin-mocha.css">
+<link rel="canonical" href="https://handmadeoasis.com/state-of-ai-assisted-workflows-january-2026/" /></head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Handmade Oasis</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/blog/">Blog</a>
+
+<a href="/aboutme/">About Me</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>State of AI Assisted Workflows January 2026</h1>
+<p>
+  <i>
+    <time datetime='2026-01-24'>
+      24 Jan, 2026
+    </time>
+    • 2314 words • 11 min read
+  </i>
+</p>
+
+<content>
+  <p>Last time I wrote about my AI assisted workflows was 3 months ago. Paradoxically,
+everything has changed while nothing feels different. Many of the techniques and
+methods I was using 3 months ago were new to me. As I described in
+<a href="/state-of-ai-assisted-workflows-october-2025/">that post</a>, it felt like a
+Frankenstein type of
+workflow. Many different systems duct taped together into something. That
+something I, in hindsight, think of as the prototype. Now what I have is much
+more refined and streamlined, and I think that is the reason for why it feels
+like nothing has changed but at the same time everything has changed. Alright
+let&rsquo;s get more concrete and into the actual stuff I&rsquo;m doing</p>
+<h2 id="what-im-currently-doing">What I&rsquo;m currently doing</h2>
+<p>Here&rsquo;s the toolkit and approach I&rsquo;ve settled on. It&rsquo;s a combination of CLI
+tools, specialized subagents, custom commands, and a looping script that ties
+it all together. Each piece serves a specific purpose.</p>
+<h3 id="cli-tools-of-choice">CLI Tools of Choice</h3>
+<p>Day to day I use only CLI tools when it comes to agentic coding. The CLI tools I
+use daily are currently Opencode and Claude Code. There is really not much
+difference between my workflows for these 2 tools currently, I have managed to
+replicate the &ldquo;infrastructure&rdquo; I like in both. The only reason I have started to
+use Claude Code is because they did not like that people were using their
+Claude Max subscriptions with Opencode and started messing with requests from
+other harnesses. So when I use opus 4.5 I use Claude Code, it&rsquo;s as simple of a
+reason as that really. I still much prefer Opencode though.</p>
+<h3 id="subagent-infrastructure">Subagent Infrastructure</h3>
+<p>The &ldquo;infrastructure&rdquo; mentioned above consists of the following. I have a set of
+subagents that I call upon, often directly, depending on the situation. The most
+used ones are a research agent, review agent, test agent, ui test agent,
+documentation agent and explore agent. These agents are then enriched with
+different tools and permissions suitable for their focus. For example the
+research agent is the only one with access to context7 and gh-grep MCPs, the
+others do not get their contexts polluted with the tool descriptions from those
+mcps. In the same way I actually limit the available tools also to further limit
+context pollution. Because you don&rsquo;t want to give the LLM too many options either
+because that will just make it more likely that it uses something wrong and so
+on.</p>
+<h3 id="custom-commands-and-agentsmd-philosophy">Custom Commands and AGENTS.md Philosophy</h3>
+<p>Then I have quite a few custom /commands that I make use of to either prime the
+context of an agent or give a specific set of instructions that I have found
+myself repeating often. In these commands I often tell it to use specific skills
+or subagents, and also have extra instructions around how I want certain things
+done. I have found this approach works way better than having these instructions
+in the global AGENTS.md file or in a project specific AGENTS.md file. I firmly
+believe that those types of files that are always included in the context
+regardless of which subagent is spun up or what the task at hand is, should be
+kept extremely light and barebones otherwise they hurt way more than they help.
+In practice, these files shouldn&rsquo;t be used as long-term memory. Instead just
+include build commands and things like general file structure of the project.
+Max 100-150 lines in the project specific AGENTS.md I think and for the global
+one maybe max 50 lines.</p>
+<h3 id="the-ralph-loop">The Ralph Loop</h3>
+<p>The most recent addition to this &ldquo;infrastructure&rdquo; that I have made is what is
+now known as the &ldquo;ralph loop&rdquo;. This piece is essentially a script that uses
+Claude Code or Opencode as unix cli tools and runs them in a loop.</p>
+<p>Now how do all of these subsystems combine into something that works well? Let&rsquo;s
+dive into that!</p>
+<h2 id="whats-working-really-well">What&rsquo;s working really well</h2>
+<p>These are the patterns and mental models that have proven most valuable. Some
+are conceptual frameworks for thinking about context and agents, others are
+concrete practices I use daily. All of them have emerged from trial and error
+over months of heavy use.</p>
+<h3 id="context-as-memory-mental-model">Context as Memory Mental Model</h3>
+<p>Thinking about subagents as libraries and commands as functions and context as
+the memory in the &ldquo;classical&rdquo; sense of computers, i.e I view context as an array
+of memory that has to be viewed as a precious resource. AGENTS.md should be thought of
+as a cache layer. If you see tool call failures, repeated build errors, or the
+agent calling regex patterns to find files, those are cache misses. But even more expensive in a
+sense because they pollute the current context for the task at hand with a bunch
+of tool calls and outputs that is not relevant at all for the task at hand.
+Building on this analogy, I think each task should be viewed as its own program
+even. This means that as soon as the task at hand is changing you should start a
+new session and reset the context. I have found that this keeps the agent
+focused and reduces hallucinations and stops the agent from going &ldquo;dumb&rdquo;. This
+is the same thing as avoiding what is now called as the &ldquo;dumb zone&rdquo;. This is
+part of my current mental model when working with agentic coding systems at
+least and I think it has served me well thus far.</p>
+<h3 id="setting-the-stage">Setting the Stage</h3>
+<p>Working from a concept of setting the stage for the agent. This is the second
+part of my mental model for working with agentic coding. This idea is what
+guided me to be so cautious about what I include in the context. Basically the
+idea is that we set the environment for the agent with a goal. By being very
+deliberate and conscious about the environment which we put the agent in we can
+limit the degrees of freedom it has but at the same time make use of the fact
+that these are dynamic agents that can actually do useful things without us
+having to give detailed instructions of each step.</p>
+<h3 id="subagent-utilization">Subagent Utilization</h3>
+<p>Use subagents. If you are not already doing it yourself, I&rsquo;m pretty sure most
+harnesses actually have started to do this out of the box already. Get
+comfortable with them and start using them extensively is my recommendation. The
+value unlock of proper use of subagents is just phenomenal. If there is one
+thing you really really should do out of all the things I have presented it&rsquo;s
+this.</p>
+<h3 id="test-driven-verification">Test-Driven Verification</h3>
+<p>Using tests to check my understanding and confirming what&rsquo;s actually been done.
+This is about probing the system and making sure that whatever has been produced
+matches your mental model of it. Reason for this way of working for me is
+because the amount and speed of code generation is so high now that reviewing it
+the old way is just not possible for larger features. We also don&rsquo;t want to lose
+the connection to the way the system works and the interfaces between different
+parts of the code, because the intent and architecture parts are still not
+within the realm of what these systems can deal with. For production code, I
+still don&rsquo;t fully trust what the AI generates.</p>
+<h3 id="interactive-learning">Interactive Learning</h3>
+<p>Going back and forth with the LLM&rsquo;s through these CLI/TUI tools to learn, plan
+and research is actually both fun and very fruitful. Asking it to monitor a pod
+that&rsquo;s running in a kubernetes cluster and present its findings so the requests
+for the pod can be set in a good way. Or using that report to research further
+what the actual documentation recommends against what I&rsquo;m doing, it&rsquo;s just
+speeding up learning so much. Although having said this, I also make it question
+me and grade my answers and so on to actually make sure I&rsquo;m always understanding
+what&rsquo;s going on and that I don&rsquo;t have only surface level learning. It&rsquo;s not
+perfect yet but it&rsquo;s way better than just accepting whatever the agent generates,
+and way more fun for me.</p>
+<p>One other workflow that I recently have started doing is creating curriculums
+for learning based on open source libraries. I ask the agent to research and
+understand the codebase then try to find papers and sources related to the
+domain or techniques used in that library. Then I ask it to create the
+curriculum that will guide me from nothing to having a replica of that system
+but I will myself have to implement all the actual code and what not. With the
+sources it finds for source material and learning. It&rsquo;s actually a total shift
+for me, it&rsquo;s like on demand tutorials on any topic customized for whatever I want
+to get out of it.</p>
+<h3 id="the-ralph-loop-approach">The Ralph Loop Approach</h3>
+<p>Using guiding document + different phases of implementation together with ralph
+loop for super quick prototyping of full products. This build on the back and
+forth with the agent concept. I have found it quite fun and useful to first
+create a big architecture document around what is going to be built. Through use
+of research agents to guide my own assumptions and understanding. This is the
+bulk of the work. This is the actual engineering that I do, what used to be the
+code is now this pretty much. I actually can spend hours going back and forth
+here, this is the exploration of the problem space part but also the
+architecturing of the system. Then from this I split it into smaller phases,
+then I split the phases into individual tasks. Then I ask the agent to generate
+a summary of the architecture document and call it the guiding document. This is
+essentially the stage that I was talking about earlier. Each phase is its own
+document containing tasks just to be clear. Once all this upfront work is done,
+much of the writing of these documents is actually done by the agent itself once
+I have taken all the decisions and been interviewed, challenged, and thought
+through the architecture. At this point I just run the ralph loop script that I
+have created. What it does is include the guiding document + the phase document.
+Then for each iteration of the loop it&rsquo;s only allowed to do one task. The tasks
+are ordered in such a way that they are chronological for what needs to be built
+according to my understanding. I just let it rip at this point and just watch in
+amazement as what I had in my mind just hours earlier is being built.</p>
+<h2 id="what-did-not-work-well-that-i-have-stopped-doing">What did not work well that I have stopped doing</h2>
+<p>Ralph plugin in claude code. This plugin is just not it. It does not match at
+all what the ralph loop is about and furthermore it does not even work really. I
+would suggest you avoid it and first run the loop iterations by hand. In general
+I have found that using &ldquo;off the shelf&rdquo; solutions and systems does not work at
+all for me. I have to first run the things manually to understand the steps
+involved, then after that do I have any success with automation.</p>
+<p>Opencode running playwright mcp. For some reason when I run the playwright mcp
+using my subagent in Opencode it always times out or does not really manage to
+test the ui features properly. The same subagent instructions and everything
+works way better in Claude Code for some reason, not sure yet why this is.</p>
+<p>Skills. Honestly I almost never see skills load dynamically as advised. I don&rsquo;t
+know if it&rsquo;s because the LLM&rsquo;s are not trained to use them as they are with tools
+or what if the descriptions of the skills is where I mess up but for me skills
+don&rsquo;t work as advertised. However when combined with /commands they are
+great. Although to be honest I don&rsquo;t really know at that point why I should not
+use /commands to replace the whole thing, they are the same thing really. But I&rsquo;m
+willing to concede that this could be a skill issue (pun intended).</p>
+<p>Compaction in opus 4.5 or in general. I used to hit compaction a bit 3 months
+ago but since that thus far has meant total collapse of performance I never hit
+it anymore. I have seen though that codex seems to be really good at compacting
+but the Anthropic models are just fully lobotomized if you hit compaction so
+avoid it like the plague if you are using the current generation of models from
+Anthropic.</p>
+<h2 id="what-i-want-to-explore-more">What I want to explore more</h2>
+<p>Local LLMs for tasks. I want to try them out and see what the current generation
+of local llms can do, I have not kept up with this side of things recently.</p>
+<p>Voice inputs. I have started to see some reports of this being way faster and
+more reliable recently and I&rsquo;m very curious to try it out. Although I do think
+that some friction between thought and instruction to a LLM is a feature and
+not a bug but that is a discussion for another time.</p>
+<p>Building an agent harness for different use cases. Meaning moving beyond
+subagents into even more specific and narrow harnesses for task at hand.
+Start using more of the small fast models and not use SOTA models for
+everything.</p>
+<h2 id="rounding-off">Rounding off</h2>
+<p>The irony isn&rsquo;t lost on me: I use AI to build faster, then turn it off to learn
+slower. Both matter. Speed without understanding is just disaster waiting to happen.
+Understanding without speed is a luxury we no longer have.</p>
+<p>This system has grown with me over almost 5 months of heavy use.
+It&rsquo;s not something to replicate wholesale. Your own &ldquo;infrastructure&rdquo; should
+evolve organically based on what works for you.</p>
+<p>Find your own balance. Build your own tools. What I cannot create, I do not
+understand. What I create too fast, I also do not understand.</p>
+
+</content>
+<p>
+  
+  <a href="https://handmadeoasis.com/tag/ai-agents/">#Ai Agents</a>
+  
+  <a href="https://handmadeoasis.com/tag/developer-tooling/">#Developer Tooling</a>
+  
+  <a href="https://handmadeoasis.com/tag/generative-ai/">#Generative AI</a>
+  
+  <a href="https://handmadeoasis.com/tag/software-engineering/">#Software Engineering</a>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+  
+</body>
+
+</html>

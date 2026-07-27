@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<link rel="shortcut icon" href="https://handmadeoasis.com/images/favicon.png" />
 <title>Agent at Home Part 1b | Handmade Oasis</title>
 <meta name="title" content="Agent at Home Part 1b" />
 <meta name="description" content="Alright, we covered the conceptual stuff in Part 1a. Now it&rsquo;s time to actually
@@ -20,7 +20,7 @@ it&rsquo;s a single curl command." />
 <meta name="keywords" content="agent at home series,ai agents,developer tooling,generative ai,software engineering," />
 
 
-<meta property="og:url" content="http://localhost:1313/agent-at-home-part-1b/">
+<meta property="og:url" content="https://handmadeoasis.com/agent-at-home-part-1b/">
   <meta property="og:site_name" content="Handmade Oasis">
   <meta property="og:title" content="Agent at Home Part 1b">
   <meta property="og:description" content="Alright, we covered the conceptual stuff in Part 1a. Now it’s time to actually look at some code. In this post I’m going to walk through the entire agent.py file line by line. By the end you’ll see that there really is no magic here, just a while loop, some API calls, and tool execution. Let’s dig in.
@@ -33,15 +33,15 @@ Getting Started Before we dive into the code, let’s get the environment set up
     <meta property="article:tag" content="Agent at Home Series">
     <meta property="article:tag" content="Ai Agents">
     <meta property="article:tag" content="Developer Tooling">
-    <meta property="article:tag" content="Generative Ai">
+    <meta property="article:tag" content="Generative AI">
     <meta property="article:tag" content="Software Engineering">
-    <meta property="og:image" content="http://localhost:1313/images/share.png">
+    <meta property="og:image" content="https://handmadeoasis.com/images/share.png">
 
 
 
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:image" content="https://handmadeoasis.com/images/share.png">
   <meta name="twitter:title" content="Agent at Home Part 1b">
   <meta name="twitter:description" content="Alright, we covered the conceptual stuff in Part 1a. Now it’s time to actually look at some code. In this post I’m going to walk through the entire agent.py file line by line. By the end you’ll see that there really is no magic here, just a while loop, some API calls, and tool execution. Let’s dig in.
 Getting Started Before we dive into the code, let’s get the environment set up. I’m using uv for Python project management because it’s fast and just works. If you don’t have it installed, check out their docs, it’s a single curl command.">
@@ -54,9 +54,9 @@ Getting Started Before we dive into the code, let’s get the environment set up
 Getting Started Before we dive into the code, let’s get the environment set up. I’m using uv for Python project management because it’s fast and just works. If you don’t have it installed, check out their docs, it’s a single curl command.">
   <meta itemprop="datePublished" content="2025-11-30T22:40:01+01:00">
   <meta itemprop="dateModified" content="2025-11-30T22:40:01+01:00">
-  <meta itemprop="wordCount" content="2527">
-  <meta itemprop="image" content="http://localhost:1313/images/share.png">
-  <meta itemprop="keywords" content="Agent at Home Series,Ai Agents,Developer Tooling,Generative Ai,Software Engineering">
+  <meta itemprop="wordCount" content="2538">
+  <meta itemprop="image" content="https://handmadeoasis.com/images/share.png">
+  <meta itemprop="keywords" content="Agent at Home Series,Ai Agents,Developer Tooling,Generative AI,Software Engineering">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -222,7 +222,7 @@ Getting Started Before we dive into the code, let’s get the environment set up
 
 </style>
 <link rel="stylesheet" href="/css/catppuccin-mocha.css">
-<link rel="canonical" href="http://localhost:1313/agent-at-home-part-1b/" /></head>
+<link rel="canonical" href="https://handmadeoasis.com/agent-at-home-part-1b/" /></head>
 
 <body>
   <header><a href="/" class="title">
@@ -245,7 +245,7 @@ Getting Started Before we dive into the code, let’s get the environment set up
     <time datetime='2025-11-30'>
       30 Nov, 2025
     </time>
-    • 2527 words • 12 min read
+    • 2538 words • 12 min read
   </i>
 </p>
 
@@ -260,14 +260,14 @@ just a while loop, some API calls, and tool execution. Let&rsquo;s dig in.</p>
 it&rsquo;s fast and just works. If you don&rsquo;t have it installed, check out their docs,
 it&rsquo;s a single curl command.</p>
 <p>To set everything up from scratch:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#60a0b0;font-style:italic"># Create a new project folder</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#60a0b0;font-style:italic"># Create a new project folder</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>mkdir agent-at-home
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#007020">cd</span> agent-at-home
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#60a0b0;font-style:italic"># Initialize a new uv project</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>uv init
 </span></span></code></pre></div><p>Now replace the contents of the generated <code>pyproject.toml</code> with:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>[project]
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>[project]
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>name = <span style="color:#4070a0">&#34;agent-at-home&#34;</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>version = <span style="color:#4070a0">&#34;0.1.0&#34;</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>description = <span style="color:#4070a0">&#34;Add your description here&#34;</span>
@@ -278,7 +278,7 @@ it&rsquo;s a single curl command.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    <span style="color:#4070a0">&#34;python-dotenv&gt;=1.2.1&#34;</span>,
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>]
 </span></span></code></pre></div><p>Then install dependencies and set up your API key:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#60a0b0;font-style:italic"># Install dependencies</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#60a0b0;font-style:italic"># Install dependencies</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>uv sync
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#60a0b0;font-style:italic"># Set up your API key based on which provider you want to use</span>
@@ -286,7 +286,7 @@ it&rsquo;s a single curl command.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#007020">export</span> <span style="color:#bb60d5">OPENAI_API_KEY</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;your-key-here&#34;</span>     <span style="color:#60a0b0;font-style:italic"># For GPT models</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#007020">export</span> <span style="color:#bb60d5">GEMINI_API_KEY</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;your-key-here&#34;</span>     <span style="color:#60a0b0;font-style:italic"># For Gemini models</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#60a0b0;font-style:italic"># Run the agent</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#60a0b0;font-style:italic"># Run the agent - this command is for the end when agent.py is done</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>uv run python agent.py
 </span></span></code></pre></div><p>You only need to export the key for the provider you&rsquo;re actually using. If you
 set <code>MODEL_NAME = &quot;anthropic/claude-haiku-4-5-20251001&quot;</code> in the code, you need
@@ -296,7 +296,7 @@ set <code>MODEL_NAME = &quot;anthropic/claude-haiku-4-5-20251001&quot;</code> in
 providers, and <code>python-dotenv</code> if you prefer keeping your API key in a <code>.env</code>
 file instead of exporting it. Nothing else needed.</p>
 <h2 id="the-imports">The Imports</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">asyncio</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">asyncio</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">json</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pathlib</span> <span style="color:#007020;font-weight:bold">import</span> Path
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
@@ -323,7 +323,7 @@ just works. No framework magic, just a thin wrapper over HTTP calls.</p>
 <p><code>MAX_STEPS</code> is our safety valve. We don&rsquo;t want the agent running forever if it
 gets stuck in some weird loop. Ten iterations is plenty for most tasks.</p>
 <h2 id="the-agent-class">The Agent Class</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">CodingAgent</span>:
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">CodingAgent</span>:
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">__init__</span>(<span style="color:#007020">self</span>, working_dir<span style="color:#666">=</span><span style="color:#4070a0">&#34;.&#34;</span>):
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>        <span style="color:#007020">self</span><span style="color:#666">.</span>working_dir <span style="color:#666">=</span> Path(working_dir)<span style="color:#666">.</span>resolve()
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>        <span style="color:#007020">self</span><span style="color:#666">.</span>messages <span style="color:#666">=</span> []
@@ -343,7 +343,7 @@ use. Each message is a dict with a <code>role</code> (user, assistant, system, o
 and <code>content</code>. The model expects this specific structure, and litellm handles
 translating it for different providers.</p>
 <h2 id="the-main-loop">The Main Loop</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#007020;font-weight:bold">async</span> <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">run</span>(<span style="color:#007020">self</span>):
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#007020;font-weight:bold">async</span> <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">run</span>(<span style="color:#007020">self</span>):
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">Coding Agent Started&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Commands: /clear /exit&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Tip: Press enter twice to submit</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)
@@ -367,7 +367,7 @@ input, check if it&rsquo;s a command (like <code>/clear</code> or <code>/exit</c
 off to the ReAct loop. The <code>KeyboardInterrupt</code> catch is so you can ctrl+c out
 gracefully.</p>
 <h2 id="getting-user-input">Getting User Input</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">get_input</span>(<span style="color:#007020">self</span>):
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">get_input</span>(<span style="color:#007020">self</span>):
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">You:&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    lines <span style="color:#666">=</span> []
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020;font-weight:bold">True</span>:
@@ -383,7 +383,7 @@ changes from <code>&gt;</code> to <code>  </code> (indented) after the first lin
 multi-line mode. Nothing revolutionary but makes it nicer to paste in code
 blocks or longer prompts.</p>
 <h2 id="commands">Commands</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">handle_command</span>(<span style="color:#007020">self</span>, command):
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">handle_command</span>(<span style="color:#007020">self</span>, command):
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    <span style="color:#007020;font-weight:bold">if</span> command <span style="color:#666">==</span> <span style="color:#4070a0">&#34;/clear&#34;</span>:
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>        <span style="color:#007020">self</span><span style="color:#666">.</span>messages <span style="color:#666">=</span> []
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>        <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Context cleared.&#34;</span>)
@@ -397,7 +397,7 @@ when context gets too long or you want to start fresh. <code>/exit</code> does w
 expect. We&rsquo;ll add more commands as the series progresses, things like <code>/undo</code>,
 <code>/save</code>, etc.</p>
 <h2 id="the-system-prompt">The System Prompt</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">_load_system_prompt</span>(<span style="color:#007020">self</span>):
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">_load_system_prompt</span>(<span style="color:#007020">self</span>):
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    prompt_path <span style="color:#666">=</span> Path(<span style="color:#bb60d5">__file__</span>)<span style="color:#666">.</span>parent <span style="color:#666">/</span> <span style="color:#4070a0">&#34;system_prompt.txt&#34;</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#007020;font-weight:bold">return</span> prompt_path<span style="color:#666">.</span>read_text()
 </span></span></code></pre></div><p>The system prompt lives in a separate file and is loaded once during
@@ -424,7 +424,7 @@ Be concise and clear. Ask for clarification when needed.
 Thought prompting technique I mentioned in Part 1a, we&rsquo;re asking it to show its
 reasoning steps.</p>
 <h2 id="defining-tools">Defining Tools</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">get_tools</span>(<span style="color:#007020">self</span>):
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">get_tools</span>(<span style="color:#007020">self</span>):
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    <span style="color:#007020;font-weight:bold">return</span> [
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>        {
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>            <span style="color:#4070a0">&#34;type&#34;</span>: <span style="color:#4070a0">&#34;function&#34;</span>,
@@ -479,7 +479,7 @@ decide when to call each tool.</p>
 <p>These are the basics you need for a coding agent. We&rsquo;ll add more sophisticated
 tools later (grep, glob, bash execution, etc.) but this is enough to be useful.</p>
 <h2 id="executing-tools">Executing Tools</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#007020;font-weight:bold">async</span> <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">execute_tool</span>(<span style="color:#007020">self</span>, name, input_data):
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#007020;font-weight:bold">async</span> <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">execute_tool</span>(<span style="color:#007020">self</span>, name, input_data):
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    <span style="color:#007020;font-weight:bold">try</span>:
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>        <span style="color:#007020;font-weight:bold">if</span> name <span style="color:#666">==</span> <span style="color:#4070a0">&#34;read_tool&#34;</span>:
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>            path <span style="color:#666">=</span> <span style="color:#007020">self</span><span style="color:#666">.</span>working_dir <span style="color:#666">/</span> input_data[<span style="color:#4070a0">&#34;path&#34;</span>]
@@ -520,7 +520,7 @@ the agent, we just return an error message and let the model figure out what
 to do.</li>
 </ol>
 <h2 id="the-react-loop-the-heart-of-it-all">The ReAct Loop (The Heart of It All)</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#007020;font-weight:bold">async</span> <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">react_loop</span>(<span style="color:#007020">self</span>, user_input):
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#007020;font-weight:bold">async</span> <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">react_loop</span>(<span style="color:#007020">self</span>, user_input):
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    <span style="color:#007020">self</span><span style="color:#666">.</span>messages<span style="color:#666">.</span>append({<span style="color:#4070a0">&#34;role&#34;</span>: <span style="color:#4070a0">&#34;user&#34;</span>, <span style="color:#4070a0">&#34;content&#34;</span>: user_input})
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#007020;font-weight:bold">for</span> step <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">1</span>, MAX_STEPS <span style="color:#666">+</span> <span style="color:#40a070">1</span>):
@@ -552,7 +552,7 @@ makes it easier to manage context length later.</li>
 <p>The <code>stream=True</code> is why we need all that chunk handling code coming next.
 Streaming means we get tokens as they&rsquo;re generated instead of waiting for the
 full response.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>        collected_content <span style="color:#666">=</span> <span style="color:#4070a0">&#34;&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>        collected_content <span style="color:#666">=</span> <span style="color:#4070a0">&#34;&#34;</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>        tool_calls <span style="color:#666">=</span> []
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>        <span style="color:#007020;font-weight:bold">async</span> <span style="color:#007020;font-weight:bold">for</span> chunk <span style="color:#007020;font-weight:bold">in</span> response:
@@ -585,7 +585,7 @@ them. The <code>tc.index</code> exists because models can call multiple tools in
 so we need to know which tool call each chunk belongs to. We check
 <code>tc.index &gt;= len(tool_calls)</code> to detect when a new tool call starts and
 initialize a fresh dict for it.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>        assistant_message <span style="color:#666">=</span> {<span style="color:#4070a0">&#34;role&#34;</span>: <span style="color:#4070a0">&#34;assistant&#34;</span>, <span style="color:#4070a0">&#34;content&#34;</span>: collected_content}
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>        assistant_message <span style="color:#666">=</span> {<span style="color:#4070a0">&#34;role&#34;</span>: <span style="color:#4070a0">&#34;assistant&#34;</span>, <span style="color:#4070a0">&#34;content&#34;</span>: collected_content}
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>        <span style="color:#007020;font-weight:bold">if</span> tool_calls:
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>            assistant_message[<span style="color:#4070a0">&#34;tool_calls&#34;</span>] <span style="color:#666">=</span> [
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>                {
@@ -602,7 +602,7 @@ initialize a fresh dict for it.</p>
 </span></span></code></pre></div><p>After collecting the full response, we add it to message history. If there were
 no tool calls, we&rsquo;re done, the model has finished reasoning and given us a
 final answer. This is the exit condition for our ReAct loop.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>        <span style="color:#007020;font-weight:bold">for</span> tc <span style="color:#007020;font-weight:bold">in</span> tool_calls:
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>        <span style="color:#007020;font-weight:bold">for</span> tc <span style="color:#007020;font-weight:bold">in</span> tool_calls:
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>            arguments <span style="color:#666">=</span> json<span style="color:#666">.</span>loads(tc[<span style="color:#4070a0">&#34;arguments&#34;</span>]) <span style="color:#007020;font-weight:bold">if</span> tc[<span style="color:#4070a0">&#34;arguments&#34;</span>] <span style="color:#007020;font-weight:bold">else</span> {}
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>            result <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">await</span> <span style="color:#007020">self</span><span style="color:#666">.</span>execute_tool(tc[<span style="color:#4070a0">&#34;name&#34;</span>], arguments)
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>            result_str <span style="color:#666">=</span> <span style="color:#007020">str</span>(result)
@@ -626,7 +626,7 @@ finishing naturally, we print a warning so you know something might be off.</p>
 Observation (tool result added to context) → repeat until no more actions
 needed.</p>
 <h2 id="entry-point">Entry Point</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#007020;font-weight:bold">async</span> <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">main</span>():
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#007020;font-weight:bold">async</span> <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">main</span>():
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;=&#34;</span> <span style="color:#666">*</span> <span style="color:#40a070">50</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">f</span><span style="color:#4070a0">&#34;Coding Agent (</span><span style="color:#70a0d0">{</span>MODEL_NAME<span style="color:#70a0d0">}</span><span style="color:#4070a0">)&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;=&#34;</span> <span style="color:#666">*</span> <span style="color:#40a070">50</span>)
@@ -665,15 +665,15 @@ here? That stays the same.</p>
 </content>
 <p>
   
-  <a href="http://localhost:1313/tag/agent-at-home-series/">#Agent at Home Series</a>
+  <a href="https://handmadeoasis.com/tag/agent-at-home-series/">#Agent at Home Series</a>
   
-  <a href="http://localhost:1313/tag/ai-agents/">#Ai Agents</a>
+  <a href="https://handmadeoasis.com/tag/ai-agents/">#Ai Agents</a>
   
-  <a href="http://localhost:1313/tag/developer-tooling/">#Developer Tooling</a>
+  <a href="https://handmadeoasis.com/tag/developer-tooling/">#Developer Tooling</a>
   
-  <a href="http://localhost:1313/tag/generative-ai/">#Generative Ai</a>
+  <a href="https://handmadeoasis.com/tag/generative-ai/">#Generative AI</a>
   
-  <a href="http://localhost:1313/tag/software-engineering/">#Software Engineering</a>
+  <a href="https://handmadeoasis.com/tag/software-engineering/">#Software Engineering</a>
   
 </p>
 
