@@ -1,61 +1,89 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Generative Ai on Handmade Oasis</title>
-    <link>http://localhost:1313/tag/generative-ai/</link>
-    <description>Recent content in Generative Ai on Handmade Oasis</description>
+    <title>Generative AI on Handmade Oasis</title>
+    <link>https://handmadeoasis.com/tag/generative-ai/</link>
+    <description>Recent content in Generative AI on Handmade Oasis</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, Ramtin Javanmardi.</copyright>
-    <lastBuildDate>Sun, 30 Nov 2025 22:40:01 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tag/generative-ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Jul 2026 22:28:03 +0200</lastBuildDate>
+    <atom:link href="https://handmadeoasis.com/tag/generative-ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>State of AI Assisted Workflows July 2026</title>
+      <link>https://handmadeoasis.com/state-of-ai-assisted-workflows-july-2026/</link>
+      <pubDate>Sun, 26 Jul 2026 22:28:03 +0200</pubDate>
+      <guid>https://handmadeoasis.com/state-of-ai-assisted-workflows-july-2026/</guid>
+      <description>&lt;p&gt;Three months since the&#xA;&lt;a href=&#34;https://handmadeoasis.com/state-of-ai-assisted-workflows-april-2026/&#34;&gt;last update&lt;/a&gt;, give or take a day.&#xA;In that post I landed on the idea that the layer around the model is where the&#xA;leverage is, the harness, the context, the review loops, all the boring pieces.&#xA;I still think that&amp;rsquo;s true. What changed this quarter is which problem I point&#xA;all of that at.&lt;/p&gt;&#xA;&lt;p&gt;Because what I have actually been optimizing for is not speed of generation&#xA;anymore, it&amp;rsquo;s keeping my mental model current at a rate of change that used to&#xA;be impossible. That&amp;rsquo;s the whole post really. Everything below is either&#xA;something that helps with that, or something I stopped doing because it quietly&#xA;worked against it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LLMs as a Different Kind of Intelligence</title>
+      <link>https://handmadeoasis.com/llms-as-a-different-kind-of-intelligence/</link>
+      <pubDate>Sun, 14 Jun 2026 11:01:18 +0200</pubDate>
+      <guid>https://handmadeoasis.com/llms-as-a-different-kind-of-intelligence/</guid>
+      <description>&lt;p&gt;As I was writing this post I could not crystallize who the target audience for&#xA;it is, other than for myself to put into writing how I view and think about&#xA;LLMs. I have spent enough time with these systems by now that I have stopped&#xA;trying to map them onto things I already understand, because every analogy I&#xA;reach for ends up breaking somewhere. The most honest thing I can say after all&#xA;this time is that what we are dealing with is a different kind of intelligence,&#xA;strictly different from our own, and I think most of the confusion around these&#xA;tools comes from us pretending otherwise.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>State of AI Assisted Workflows April 2026</title>
+      <link>https://handmadeoasis.com/state-of-ai-assisted-workflows-april-2026/</link>
+      <pubDate>Sun, 26 Apr 2026 11:04:08 +0200</pubDate>
+      <guid>https://handmadeoasis.com/state-of-ai-assisted-workflows-april-2026/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s been three months almost exactly since I&#xA;&lt;a href=&#34;https://handmadeoasis.com/state-of-ai-assisted-workflows-january-2026/&#34;&gt;last documented&lt;/a&gt; my workflows&#xA;and setup. Although it does not feel like it for me, reading back what I wrote&#xA;in the last update there are quite a few differences.&lt;/p&gt;&#xA;&lt;p&gt;The system I have going now really does feel like an exoskeleton, to quote a&#xA;recent interview with DHH where he described it like having 12 arms and a&#xA;totally different kind of flow. Not necessarily because the tools themselves are&#xA;magical, but because the layer around them has become much more important to me.&#xA;The harness, the context, the workflow, the small scripts, the review loops and&#xA;all the other boring pieces around the model are increasingly where the leverage&#xA;seems to be.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>State of AI Assisted Workflows January 2026</title>
+      <link>https://handmadeoasis.com/state-of-ai-assisted-workflows-january-2026/</link>
+      <pubDate>Sat, 24 Jan 2026 21:41:48 +0100</pubDate>
+      <guid>https://handmadeoasis.com/state-of-ai-assisted-workflows-january-2026/</guid>
+      <description>&lt;p&gt;Last time I wrote about my AI assisted workflows was 3 months ago. Paradoxically,&#xA;everything has changed while nothing feels different. Many of the techniques and&#xA;methods I was using 3 months ago were new to me. As I described in&#xA;&lt;a href=&#34;https://handmadeoasis.com/state-of-ai-assisted-workflows-october-2025/&#34;&gt;that post&lt;/a&gt;, it felt like a&#xA;Frankenstein type of&#xA;workflow. Many different systems duct taped together into something. That&#xA;something I, in hindsight, think of as the prototype. Now what I have is much&#xA;more refined and streamlined, and I think that is the reason for why it feels&#xA;like nothing has changed but at the same time everything has changed. Alright&#xA;let&amp;rsquo;s get more concrete and into the actual stuff I&amp;rsquo;m doing&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Agent at Home Part 1b</title>
-      <link>http://localhost:1313/agent-at-home-part-1b/</link>
+      <link>https://handmadeoasis.com/agent-at-home-part-1b/</link>
       <pubDate>Sun, 30 Nov 2025 22:40:01 +0100</pubDate>
-      <guid>http://localhost:1313/agent-at-home-part-1b/</guid>
+      <guid>https://handmadeoasis.com/agent-at-home-part-1b/</guid>
       <description>&lt;p&gt;Alright, we covered the conceptual stuff in Part 1a. Now it&amp;rsquo;s time to actually&#xA;look at some code. In this post I&amp;rsquo;m going to walk through the entire &lt;code&gt;agent.py&lt;/code&gt;&#xA;file line by line. By the end you&amp;rsquo;ll see that there really is no magic here,&#xA;just a while loop, some API calls, and tool execution. Let&amp;rsquo;s dig in.&lt;/p&gt;&#xA;&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;&#xA;&lt;p&gt;Before we dive into the code, let&amp;rsquo;s get the environment set up. I&amp;rsquo;m using&#xA;&lt;a href=&#34;https://github.com/astral-sh/uv&#34;&gt;uv&lt;/a&gt; for Python project management because&#xA;it&amp;rsquo;s fast and just works. If you don&amp;rsquo;t have it installed, check out their docs,&#xA;it&amp;rsquo;s a single curl command.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Agent at Home Part 1a</title>
-      <link>http://localhost:1313/agent-at-home-part-1a/</link>
+      <link>https://handmadeoasis.com/agent-at-home-part-1a/</link>
       <pubDate>Sun, 30 Nov 2025 09:54:01 +0100</pubDate>
-      <guid>http://localhost:1313/agent-at-home-part-1a/</guid>
+      <guid>https://handmadeoasis.com/agent-at-home-part-1a/</guid>
       <description>&lt;p&gt;Before we get into the coding part of the series I think it would be beneficial&#xA;to give some background to what the ReAct loop is that we are going to make use&#xA;of to build this agent and also describing a bit how the code is going to look&#xA;like. This will not be that long to be fair because the basic loop is fairly&#xA;simple once you grok the ReAct loop.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Introducing New Series: We Got Agents at Home</title>
-      <link>http://localhost:1313/introducing-new-series-we-got-agents-at-home/</link>
+      <link>https://handmadeoasis.com/introducing-new-series-we-got-agents-at-home/</link>
       <pubDate>Sat, 29 Nov 2025 21:50:01 +0100</pubDate>
-      <guid>http://localhost:1313/introducing-new-series-we-got-agents-at-home/</guid>
+      <guid>https://handmadeoasis.com/introducing-new-series-we-got-agents-at-home/</guid>
       <description>&lt;p&gt;Ever since I switched to Linux as my main OS and started building my own&#xA;tools, I&amp;rsquo;ve had this nagging feeling about the coding agents I use daily. I&#xA;understand the principles how LLMs work, how tool calling happens, the&#xA;general architecture. But there&amp;rsquo;s a difference between understanding the&#xA;concepts and truly knowing what&amp;rsquo;s happening in the implementation.&lt;/p&gt;&#xA;&lt;p&gt;A few days ago I saw someone on Hacker News compare building your own coding&#xA;agent to crafting your own lightsaber. That clicked. Just like a Jedi needs&#xA;to understand their weapon intimately, not just conceptually, I want to move&#xA;from theoretical understanding to practical mastery.&lt;/p&gt;</description>
     </item>
     <item>
       <title>LLMs Are Bottlenecked by Linear Interfaces</title>
-      <link>http://localhost:1313/llms-are-bottlenecked-by-linear-interfaces/</link>
+      <link>https://handmadeoasis.com/llms-are-bottlenecked-by-linear-interfaces/</link>
       <pubDate>Sun, 26 Oct 2025 09:37:27 +0100</pubDate>
-      <guid>http://localhost:1313/llms-are-bottlenecked-by-linear-interfaces/</guid>
-      <description>&lt;h2 id=&#34;current-limitation-as-i-see-it&#34;&gt;Current limitation as I see it&lt;/h2&gt;&#xA;&lt;p&gt;So I have been experimenting quite a bit with LLMs recently (see my other posts,&#xA;especially &lt;a href=&#34;http://localhost:1313/state-of-ai-assisted-workflows-october-2025/&#34;&gt;/state-of-ai-assisted-workflows-october-2025/&lt;/a&gt;) and dedicated some&#xA;serious amount of effort to play around with the tech to both learn more but&#xA;also to build an intuition for what it is and what it can do well etc. This has&#xA;led me to having a realisation or an idea, that I&amp;rsquo;m sure is not unique but I have not seen much&#xA;about it being mentioned yet. The idea is that our current LLMs are being&#xA;bottlenecked, leaving performance on the table, by the interfaces we have when&#xA;using them. Mostly our interactions with these models are through a chat&#xA;interface and that forces linearity which also makes context pollution the huge&#xA;problem it currently is.&lt;/p&gt;</description>
+      <guid>https://handmadeoasis.com/llms-are-bottlenecked-by-linear-interfaces/</guid>
+      <description>&lt;h2 id=&#34;current-limitation-as-i-see-it&#34;&gt;Current limitation as I see it&lt;/h2&gt;&#xA;&lt;p&gt;So I have been experimenting quite a bit with LLMs recently (see my other posts,&#xA;especially &lt;a href=&#34;https://handmadeoasis.com/state-of-ai-assisted-workflows-october-2025/&#34;&gt;/state-of-ai-assisted-workflows-october-2025/&lt;/a&gt;) and dedicated some&#xA;serious amount of effort to play around with the tech to both learn more but&#xA;also to build an intuition for what it is and what it can do well etc. This has&#xA;led me to having a realisation or an idea, that I&amp;rsquo;m sure is not unique but I have not seen much&#xA;about it being mentioned yet. The idea is that our current LLMs are being&#xA;bottlenecked, leaving performance on the table, by the interfaces we have when&#xA;using them. Mostly our interactions with these models are through a chat&#xA;interface and that forces linearity which also makes context pollution the huge&#xA;problem it currently is.&lt;/p&gt;</description>
     </item>
     <item>
       <title>State of AI Assisted Workflows October 2025</title>
-      <link>http://localhost:1313/state-of-ai-assisted-workflows-october-2025/</link>
+      <link>https://handmadeoasis.com/state-of-ai-assisted-workflows-october-2025/</link>
       <pubDate>Tue, 21 Oct 2025 00:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/state-of-ai-assisted-workflows-october-2025/</guid>
+      <guid>https://handmadeoasis.com/state-of-ai-assisted-workflows-october-2025/</guid>
       <description>&lt;p&gt;This space is moving at a dizzying pace currently and as such there are&#xA;many new &amp;ldquo;frameworks&amp;rdquo;, methods and approaches popping up and promising the&#xA;world. But having spent the past 2 months trying out many of these on&#xA;non-trivial tasks I have managed to nail a workflow which I have pretty&#xA;good success rate with. This post is intended to be like a context&#xA;compaction of all the things I have explored and learned during this time.&lt;/p&gt;</description>
     </item>
     <item>
       <title>AI and Software Engineering, the Conflict Within</title>
-      <link>http://localhost:1313/ai-and-software-engineering-the-conflict-within/</link>
+      <link>https://handmadeoasis.com/ai-and-software-engineering-the-conflict-within/</link>
       <pubDate>Sun, 21 Sep 2025 21:05:43 +0200</pubDate>
-      <guid>http://localhost:1313/ai-and-software-engineering-the-conflict-within/</guid>
-      <description>&lt;p&gt;I wrote a post a while ago about &lt;a href=&#34;http://localhost:1313/brain-dump-ai-assisted-workflows/&#34;&gt;my current workflow when working with AI&lt;/a&gt;, my&#xA;initial skepticism and some brief mentions of the concept of recreational&#xA;programming. This post is going to be a continuation of the train of thought&#xA;presented in that previous post, but it will be a stand alone piece still. In&#xA;other words there is no need to have read the previous one to follow along in&#xA;this post.&lt;/p&gt;</description>
+      <guid>https://handmadeoasis.com/ai-and-software-engineering-the-conflict-within/</guid>
+      <description>&lt;p&gt;I wrote a post a while ago about &lt;a href=&#34;https://handmadeoasis.com/brain-dump-ai-assisted-workflows/&#34;&gt;my current workflow when working with AI&lt;/a&gt;, my&#xA;initial skepticism and some brief mentions of the concept of recreational&#xA;programming. This post is going to be a continuation of the train of thought&#xA;presented in that previous post, but it will be a stand alone piece still. In&#xA;other words there is no need to have read the previous one to follow along in&#xA;this post.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Brain Dump: AI Assisted Workflows</title>
-      <link>http://localhost:1313/brain-dump-ai-assisted-workflows/</link>
+      <link>https://handmadeoasis.com/brain-dump-ai-assisted-workflows/</link>
       <pubDate>Thu, 28 Aug 2025 23:15:26 +0200</pubDate>
-      <guid>http://localhost:1313/brain-dump-ai-assisted-workflows/</guid>
+      <guid>https://handmadeoasis.com/brain-dump-ai-assisted-workflows/</guid>
       <description>&lt;p&gt;This is just like a note or dump of everything I research on AI agents, MCP, and&#xA;other generative AI stuff. I think the correct phrase for it is a stream of&#xA;consciousness dump&lt;/p&gt;&#xA;&lt;p&gt;There seems to be a kind of tier or ladder of sophistication that is slowly&#xA;getting shaped when it comes to AI assisted workflows, especially in relation to&#xA;software engineering. As I see it currently we have the use of online chat&#xA;interfaces, this is where you have chatGPT, Claude and company. At this point 3 years in,&#xA;this I think we have to admit has become table stakes pretty much. The next&#xA;level up is having an agent side by side your daily work. Here you have direct&#xA;access to the LLM and if you use a vscode fork like Cursor or any of their&#xA;competitors its usually just another pane on the right side of your code. This&#xA;is pretty nice, especially when you start to use it. It just feels so nice to&#xA;not have to leave your editor (personally i hated having to use these vs code&#xA;forks, and so glad the next level now exists), and just have the LLM have some&#xA;context around your code and so on.&lt;/p&gt;</description>
     </item>
   </channel>

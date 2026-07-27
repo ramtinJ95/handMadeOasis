@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://handmadeoasis.com/images/favicon.png" />
+<title>LLMs as a Different Kind of Intelligence | Handmade Oasis</title>
+<meta name="title" content="LLMs as a Different Kind of Intelligence" />
+<meta name="description" content="As I was writing this post I could not crystallize who the target audience for
+it is, other than for myself to put into writing how I view and think about
+LLMs. I have spent enough time with these systems by now that I have stopped
+trying to map them onto things I already understand, because every analogy I
+reach for ends up breaking somewhere. The most honest thing I can say after all
+this time is that what we are dealing with is a different kind of intelligence,
+strictly different from our own, and I think most of the confusion around these
+tools comes from us pretending otherwise." />
+<meta name="keywords" content="ai agents,generative ai,software engineering,stream of consciousness," />
+
+
+<meta property="og:url" content="https://handmadeoasis.com/llms-as-a-different-kind-of-intelligence/">
+  <meta property="og:site_name" content="Handmade Oasis">
+  <meta property="og:title" content="LLMs as a Different Kind of Intelligence">
+  <meta property="og:description" content="As I was writing this post I could not crystallize who the target audience for it is, other than for myself to put into writing how I view and think about LLMs. I have spent enough time with these systems by now that I have stopped trying to map them onto things I already understand, because every analogy I reach for ends up breaking somewhere. The most honest thing I can say after all this time is that what we are dealing with is a different kind of intelligence, strictly different from our own, and I think most of the confusion around these tools comes from us pretending otherwise.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2026-06-14T11:01:18+02:00">
+    <meta property="article:modified_time" content="2026-06-14T11:01:18+02:00">
+    <meta property="article:tag" content="Ai Agents">
+    <meta property="article:tag" content="Generative AI">
+    <meta property="article:tag" content="Software Engineering">
+    <meta property="article:tag" content="Stream of Consciousness">
+    <meta property="og:image" content="https://handmadeoasis.com/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://handmadeoasis.com/images/share.png">
+  <meta name="twitter:title" content="LLMs as a Different Kind of Intelligence">
+  <meta name="twitter:description" content="As I was writing this post I could not crystallize who the target audience for it is, other than for myself to put into writing how I view and think about LLMs. I have spent enough time with these systems by now that I have stopped trying to map them onto things I already understand, because every analogy I reach for ends up breaking somewhere. The most honest thing I can say after all this time is that what we are dealing with is a different kind of intelligence, strictly different from our own, and I think most of the confusion around these tools comes from us pretending otherwise.">
+
+
+
+
+  <meta itemprop="name" content="LLMs as a Different Kind of Intelligence">
+  <meta itemprop="description" content="As I was writing this post I could not crystallize who the target audience for it is, other than for myself to put into writing how I view and think about LLMs. I have spent enough time with these systems by now that I have stopped trying to map them onto things I already understand, because every analogy I reach for ends up breaking somewhere. The most honest thing I can say after all this time is that what we are dealing with is a different kind of intelligence, strictly different from our own, and I think most of the confusion around these tools comes from us pretending otherwise.">
+  <meta itemprop="datePublished" content="2026-06-14T11:01:18+02:00">
+  <meta itemprop="dateModified" content="2026-06-14T11:01:18+02:00">
+  <meta itemprop="wordCount" content="1290">
+  <meta itemprop="image" content="https://handmadeoasis.com/images/share.png">
+  <meta itemprop="keywords" content="Ai Agents,Generative AI,Software Engineering,Stream of Consciousness">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+<link rel="stylesheet" href="/css/catppuccin-mocha.css">
+<link rel="canonical" href="https://handmadeoasis.com/llms-as-a-different-kind-of-intelligence/" /></head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Handmade Oasis</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/blog/">Blog</a>
+
+<a href="/aboutme/">About Me</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>LLMs as a Different Kind of Intelligence</h1>
+<p>
+  <i>
+    <time datetime='2026-06-14'>
+      14 Jun, 2026
+    </time>
+    • 1290 words • 7 min read
+  </i>
+</p>
+
+<content>
+  <p>As I was writing this post I could not crystallize who the target audience for
+it is, other than for myself to put into writing how I view and think about
+LLMs. I have spent enough time with these systems by now that I have stopped
+trying to map them onto things I already understand, because every analogy I
+reach for ends up breaking somewhere. The most honest thing I can say after all
+this time is that what we are dealing with is a different kind of intelligence,
+strictly different from our own, and I think most of the confusion around these
+tools comes from us pretending otherwise.</p>
+<p>Even the words we use give the game away. The term agent is overloaded for sure.
+An agent is something that works by itself based on some type of direction. Yes
+this exists today, but most of the existing workflows are also more like
+scheduled jobs that run with some kind of dynamic properties that was not
+possible before. It is the same with words like cognition and thinking. Using
+those words when talking about genai feels inaccurate to me, but I will go with
+them for the sake of argument because we do not really have better words yet.
+That is kind of the whole problem, we keep borrowing human vocabulary for
+something that is not human. Models as they are today do not think as we think,
+and using those words leads to expectations and assumptions that are simply not
+true.</p>
+<p>This is why I think the comparison that is often made, where LLMs are compared
+to junior engineers, is flawed, simplistic and a false narrative designed to
+sell. The reason is that I do not subscribe to the idea that we can compare
+human and LLM cognition at all. They are not a worse version of us that will
+eventually grow into a better one. They are something else.</p>
+<p>Yes, in the beginning a junior engineer might not produce solutions as fast, or
+even as well, as an LLM does today, but a junior can connect dots and understand
+the intent behind the proposed fix or why the problem was encountered to begin
+with. A junior engineer can also use their own unique ideas and even fully
+ignore the assumptions and premise of a task because they realize what the user
+wants or how the problem even comes about, which is that intent understanding
+that an LLM simply does not have today.</p>
+<p>The other analogy I was fully onboard with until a while ago is the idea of
+LLMs being a new abstraction layer. I think that idea is directionally correct
+but not fully. Usually the comparison is that we have gone from writing machine
+code, to compilers, to higher level languages, and now we are at the next step
+which is LLMs writing the code. However I do not really think this is accurate
+anymore, because each of the previous abstraction layers can be peeled back if
+needed, and even more importantly each step through those layers that the
+machine takes for us is deterministic and can be replicated and fully
+understood. How the LLM comes to its conclusions, how it decides on some
+implementation, how that is affected by each word in the input, and then on top
+of all that a certain level of randomness, none of it fits the pattern of the
+previous generations of abstractions it gets compared to.</p>
+<p>If you zoom out a bit there is actually an interesting shift hiding in here. For
+most of computing history the layers underneath us were deterministic, and the
+probabilistic stuff lived off to the side in data science and machine learning.
+With agents that probabilistic behavior has come all the way up to the surface
+and is now the thing we work with directly. So the deterministic mental model I
+have always used for programming and the probabilistic mental model I used for
+data work are slowly converging into one, and honestly that is a bit
+uncomfortable, because the whole discipline of software engineering was built on
+top of determinism.</p>
+<p>So if it is not a junior engineer, and it is not just the next abstraction
+layer, what is it? Honestly the most accurate description I have landed on is
+almost a contradiction. It is a system that knows everything and understands
+nothing.</p>
+<p>It has read more than any human ever will, and yet it cannot connect the dots on
+its own, not even at the level of a child. A child at least asks why. The model
+just does. I notice this constantly. I can ask it to write a pipeline and it
+will produce something that runs, uses the right libraries, even handles edge
+cases I did not mention. But the moment the actual goal shifts slightly from the
+words I used, it keeps optimizing for what I said instead of what I wanted,
+because it never had a model of why I wanted it. It knows the syntax, the
+algorithms, the data structures, all of it. What it does not have is intent.
+That combination does not exist anywhere in human experience, which is exactly
+why our analogies keep failing.</p>
+<p>You could argue that with enough context the model would not make that mistake,
+and for a single well bounded task you might be right. But intent is not the
+same thing as context. Context is the information you can put in front of it,
+the files, the ticket, the constraints. Intent is the why underneath all of
+that, the thing a person keeps measuring every small decision against without
+even thinking about it. The real tell shows up over time, not in any single
+task. The model does not fail loudly, it drifts. Every individual decision looks
+reasonable on its own, and yet they slowly accumulate into something that has
+quietly wandered away from what you actually wanted. Leaving them alone to work
+on something for too long always leads to a loss of alignment with the vision
+and intent of the user or engineer, in a way that a human who knows everything,
+or is smart enough and experienced enough to be as technically capable as LLMs
+are at engineering, would never. We do not have a reference point for an
+intelligence like this.</p>
+<p>And I think that missing reference point is where most of the problems and the
+wildly differing opinions come from. It is what leads to the discussion of how
+some people are not even opening their IDEs anymore, while others cannot get
+models to do anything useful for them. Think about what you are implying when
+you treat them as just some advanced autocomplete that has to be told what to do
+step by step. You are saying that on a mechanical level the system already knows
+everything it needs. It just cannot capture intent, so it needs you to spell
+everything out.</p>
+<p>None of this is to say analogies are useless. The mistake is forgetting that
+they are analogies. The junior engineer framing and the abstraction layer
+framing are both reaching for something true, they just stop short and then get
+sold as the whole picture. I think we would all get more out of these tools if
+we stopped trying to force them into shapes we already understand, and instead
+treated this as its own kind of intelligence with its own failure modes, and
+then went and learned those failure modes directly. It is not a smarter version
+of us, and it is not the next compiler. It is something genuinely new, and the
+sooner I stopped pretending I already had a box to put it in, the more useful it
+actually became.</p>
+
+</content>
+<p>
+  
+  <a href="https://handmadeoasis.com/tag/ai-agents/">#Ai Agents</a>
+  
+  <a href="https://handmadeoasis.com/tag/generative-ai/">#Generative AI</a>
+  
+  <a href="https://handmadeoasis.com/tag/software-engineering/">#Software Engineering</a>
+  
+  <a href="https://handmadeoasis.com/tag/stream-of-consciousness/">#Stream of Consciousness</a>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+  
+</body>
+
+</html>

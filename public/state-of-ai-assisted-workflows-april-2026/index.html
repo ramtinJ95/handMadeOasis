@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://handmadeoasis.com/images/favicon.png" />
+<title>State of AI Assisted Workflows April 2026 | Handmade Oasis</title>
+<meta name="title" content="State of AI Assisted Workflows April 2026" />
+<meta name="description" content="It&rsquo;s been three months almost exactly since I
+last documented my workflows
+and setup. Although it does not feel like it for me, reading back what I wrote
+in the last update there are quite a few differences.
+The system I have going now really does feel like an exoskeleton, to quote a
+recent interview with DHH where he described it like having 12 arms and a
+totally different kind of flow. Not necessarily because the tools themselves are
+magical, but because the layer around them has become much more important to me.
+The harness, the context, the workflow, the small scripts, the review loops and
+all the other boring pieces around the model are increasingly where the leverage
+seems to be." />
+<meta name="keywords" content="ai agents,developer tooling,generative ai,software engineering," />
+
+
+<meta property="og:url" content="https://handmadeoasis.com/state-of-ai-assisted-workflows-april-2026/">
+  <meta property="og:site_name" content="Handmade Oasis">
+  <meta property="og:title" content="State of AI Assisted Workflows April 2026">
+  <meta property="og:description" content="It’s been three months almost exactly since I last documented my workflows and setup. Although it does not feel like it for me, reading back what I wrote in the last update there are quite a few differences.
+The system I have going now really does feel like an exoskeleton, to quote a recent interview with DHH where he described it like having 12 arms and a totally different kind of flow. Not necessarily because the tools themselves are magical, but because the layer around them has become much more important to me. The harness, the context, the workflow, the small scripts, the review loops and all the other boring pieces around the model are increasingly where the leverage seems to be.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2026-04-26T11:04:08+02:00">
+    <meta property="article:modified_time" content="2026-04-26T11:04:08+02:00">
+    <meta property="article:tag" content="Ai Agents">
+    <meta property="article:tag" content="Developer Tooling">
+    <meta property="article:tag" content="Generative AI">
+    <meta property="article:tag" content="Software Engineering">
+    <meta property="og:image" content="https://handmadeoasis.com/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://handmadeoasis.com/images/share.png">
+  <meta name="twitter:title" content="State of AI Assisted Workflows April 2026">
+  <meta name="twitter:description" content="It’s been three months almost exactly since I last documented my workflows and setup. Although it does not feel like it for me, reading back what I wrote in the last update there are quite a few differences.
+The system I have going now really does feel like an exoskeleton, to quote a recent interview with DHH where he described it like having 12 arms and a totally different kind of flow. Not necessarily because the tools themselves are magical, but because the layer around them has become much more important to me. The harness, the context, the workflow, the small scripts, the review loops and all the other boring pieces around the model are increasingly where the leverage seems to be.">
+
+
+
+
+  <meta itemprop="name" content="State of AI Assisted Workflows April 2026">
+  <meta itemprop="description" content="It’s been three months almost exactly since I last documented my workflows and setup. Although it does not feel like it for me, reading back what I wrote in the last update there are quite a few differences.
+The system I have going now really does feel like an exoskeleton, to quote a recent interview with DHH where he described it like having 12 arms and a totally different kind of flow. Not necessarily because the tools themselves are magical, but because the layer around them has become much more important to me. The harness, the context, the workflow, the small scripts, the review loops and all the other boring pieces around the model are increasingly where the leverage seems to be.">
+  <meta itemprop="datePublished" content="2026-04-26T11:04:08+02:00">
+  <meta itemprop="dateModified" content="2026-04-26T11:04:08+02:00">
+  <meta itemprop="wordCount" content="2498">
+  <meta itemprop="image" content="https://handmadeoasis.com/images/share.png">
+  <meta itemprop="keywords" content="Ai Agents,Developer Tooling,Generative AI,Software Engineering">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+<link rel="stylesheet" href="/css/catppuccin-mocha.css">
+<link rel="canonical" href="https://handmadeoasis.com/state-of-ai-assisted-workflows-april-2026/" /></head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Handmade Oasis</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/blog/">Blog</a>
+
+<a href="/aboutme/">About Me</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>State of AI Assisted Workflows April 2026</h1>
+<p>
+  <i>
+    <time datetime='2026-04-26'>
+      26 Apr, 2026
+    </time>
+    • 2498 words • 12 min read
+  </i>
+</p>
+
+<content>
+  <p>It&rsquo;s been three months almost exactly since I
+<a href="/state-of-ai-assisted-workflows-january-2026/">last documented</a> my workflows
+and setup. Although it does not feel like it for me, reading back what I wrote
+in the last update there are quite a few differences.</p>
+<p>The system I have going now really does feel like an exoskeleton, to quote a
+recent interview with DHH where he described it like having 12 arms and a
+totally different kind of flow. Not necessarily because the tools themselves are
+magical, but because the layer around them has become much more important to me.
+The harness, the context, the workflow, the small scripts, the review loops and
+all the other boring pieces around the model are increasingly where the leverage
+seems to be.</p>
+<h2 id="what-im-currently-doing">What I&rsquo;m currently doing</h2>
+<p>Let&rsquo;s start with going through which tools I&rsquo;m using currently and my general
+approach.</p>
+<h3 id="cli-agents-of-choice-and-model-choice">CLI agents of choice and model choice</h3>
+<p>Compared to 3 months ago this is probably one of the largest changes I have made
+in my stack. I have completely stopped using Opencode and use three different
+agents now to varying extents. My primary agent is Pi now because it is so
+barebones and allows for true adaptation to me as the user and the way it&rsquo;s
+built is just so damn nice that nothing comes close to it in terms of developer
+ergonomics. My secondary agent is Codex just to see how OpenAI adapts their
+harness to their models since I&rsquo;m sure they RL the actual models to use their
+own harness so I want to see what it does better than my Pi setup so I can
+replicate the feature/capabilities should I want to. Last but not least I do
+use Claude Code for two reasons. The first one is just to see what Anthropic
+does and comes up with when it comes to harness engineering and the second
+reason is to continuously use their model also so my biases and opinions are my
+own always and based on actual experience instead of some proxy opinion based on
+blog posts etc.</p>
+<p>For models I use mostly 5.5 now that it&rsquo;s released and before that 5.4 on xhigh
+when doing serious work. Although for 5.5 I keep it at high since there is no
+difference between xhigh and high for the work I do except higher compute usage
+so it makes no sense. I also use opus 4.6 and 4.7 quite a bit for frontend
+specific things I think that model family is still the best for that even though
+the gap is shrinking with each release.</p>
+<h3 id="mcp-exodus">MCP exodus</h3>
+<p>From the beginning I have argued that MCPs are not the answer to most
+situations as was their initial promise. So I have zero MCPs being used in my
+current setup and have replaced context7 with ctx7, their own CLI, and the same
+for Playwright. I must say, however, that I have come around a bit to MCPs and
+think that they can be useful for situations where you don&rsquo;t want everyone to
+have a CLI installed for some company-related internal tooling. But again that
+MCP should be enabled only for specific subagents etc., not always on and
+polluting the context of each session.</p>
+<h3 id="skills">Skills</h3>
+<p>I have seen a huge improvement in harnesses&rsquo; and models&rsquo; ability to actually
+make use of skills which is really cool. Because of this I have been making more
+and more skills and seen quite an improvement in robustness when it comes to my
+day to day usage of AI.</p>
+<p>I have a few skills at user level like conventional-commits that format commits
+and the git workflow as I like to do it, a meta skill creator skill, and a few
+related to how to do research and search depending on the harness being used.
+Again even with skills it&rsquo;s important to keep the main context clean and slim so
+that everything in the current session is relevant for the task at hand.</p>
+<p>Then for each repo I have relevant skills. I also have entire workflows as
+skills, like investigate this pipeline deployment run and tell me what&rsquo;s wrong;
+these skills are not callable by the model itself they can only be called by me.
+The way I build these skills is I do the troubleshooting or whatever workflow
+with the agent by hand-holding it through the process the first time and then
+ironing out the rough edges. Then I tell the agent to use the meta skill to
+create a skill that allows it to replicate that whole workflow for the future,
+this works so surprisingly well and is a huge productivity boost. Like anything
+I do more than a handful of times now, I &ldquo;automate&rdquo; as a skill so that the AI
+can do it by itself in the future and save me a bunch of time.</p>
+<p>The benefit of converting these things to skills is that they can be shared in
+the repo itself for other team members, which is quite nice.</p>
+<h3 id="review">Review</h3>
+<p>Reviewing with agents is improving quite rapidly also and I have been trying
+a new pattern which I have had some success with. Once something is ready to be
+reviewed, in the session that was used to do the implementation I ask the model
+to give me a summary of what it has done and interview me for the intent of
+the change. That document then gets fed into the context of a new session which
+is then used to review the changes. This makes it so that the review session has
+some understanding of the context in which the PR was created and not just the
+code itself or even worse that it tries to assume some intent or end goal by
+itself. I have not quite got this to where I want yet but it&rsquo;s a clear
+improvement over my previous more naive approach so that&rsquo;s always something.
+Essentially it&rsquo;s a continuation of the idea of setting the stage in which the
+agent is spawned in, which I wrote about in the previous update post.</p>
+<h3 id="openclaw-and-mac-mini">OpenClaw and Mac mini</h3>
+<p>I gave in to my FOMO like 6 weeks ago, very late by AI standards, and bought a
+Mac mini and ran OpenClaw on it. Honestly I was not blown away with OpenClaw,
+most of the things I was already doing and the new things with the heartbeat and
+personality and stuff it just is not for me. Like I have no desire to bond or
+treat AI as my friend, it&rsquo;s just a tool to me. Having said that however it&rsquo;s
+been great to expose proper AI to my family through Tailscale and OpenClaw with
+some tweaks. I got them interacting with actual SOTA models and not just the
+free chat interfaces and they are really enjoying it and understanding why I&rsquo;m
+so into it so that&rsquo;s been great.</p>
+<p>I&rsquo;m finding though that the Mac mini is quite useful as a machine to SSH into
+and run some workflows which I will get into later.</p>
+<h3 id="spec-documents-and-prds">Spec documents and PRDs</h3>
+<p>This way of working I flip flop on quite a bit. Sometimes I really like it but
+most of the time it just feels like &ldquo;waterfally&rdquo; instead of being like
+iterative. I like going back and forth with these models, poking and prodding
+their answers seeing what they can come up with. Giving them a full spec works
+sometimes when I know kind of what has to be done and have done that thing
+before though so in those cases it&rsquo;s quite useful, but most of the time I like
+the back and forth approach way more. Also spinning up and doing the actual
+thing in worktrees or going down a path then summarize and go back to an earlier
+point in the conversation with the learnings then branch off in a different
+direction. This is possible and easy with Pi because the conversation is
+structured as a tree.</p>
+<h2 id="whats-working-well">What&rsquo;s working well</h2>
+<h3 id="pi">Pi</h3>
+<p>This harness is just above anything else right now. The ergonomics of how to use
+it and customize it, the no fluff defaults and the fact that it does not keep
+changing under you all the time makes it a super reliable tool that does not
+break all the damn time. Other harnesses might have some fancier tools etc but
+all of that can be replicated so easily and just by looking at the extensions
+for Pi it&rsquo;s easy to see that, that benefit is not just theoretical. I mean my
+system prompt when using Pi is like 2K tokens, Claude code improved for a while
+but now its like back at above 20K same for Codex. And nobody seems to be
+talking about this, I dont quite get it. There is nothing more important to get
+what you want out of these models then keeping context as small and clean as
+possible its all to increase the probability that the tokens generated is in
+line with what you actually want.</p>
+<p>This is the thing I keep coming back to now: the model matters, but the shape
+of the workflow around the model matters more than I used to think.</p>
+<h3 id="own-tooling">Own tooling</h3>
+<p>I have been using and building my own tooling for my own needs to an extent I
+simply did not have the time to do before which has been really fun and actually
+made me more in tune with the machine so to speak.</p>
+<p>I built one tool running on my Mac mini which takes a YouTube link and
+transcribes and summarizes the whole video, this has been really useful to
+combine with some workflows where I have an agent look at blogs and Hacker News
+every 6 hours to find me content relevant to me based on some filters and send
+them to me on Slack. This runs totally on my Mac mini, the only API calls are
+for the summaries of the transcribed texts because I want high quality ones so
+I send it to a SOTA model but other than that it&rsquo;s all local on that machine.</p>
+<p>I built my own agent orchestrator so that I can send a bunch of prompts to
+different agents and then in one TUI view I can see what they are all doing and
+if they are waiting for input. This one is useful for sending the same prompt
+also to many agents and see what they come up with and cross compare, there are
+some funky things that this orchestrator makes really easy so it&rsquo;s been a blast
+playing around with it.</p>
+<p>I built a news aggregator for my dad which sends him an email based on what he
+is interested in knowing from the news; this also runs on a schedule on my Mac
+mini.</p>
+<p>I have a bunch of agent tools specific for Pi that I have been building with Pi,
+that&rsquo;s been really fun and super useful because they are totally fitted to my
+workflow and way of working. This is something the other harnesses does not come
+close to at all. Literally any aspect of Pi can be modified through the
+extensions, it&rsquo;s unbelievable.</p>
+<h3 id="experimentation-and-simulation">Experimentation and simulation</h3>
+<p>This one is the newest addition to my toolbox. I find that it is so useful to
+have the agent just spin up different simulations, stress test the code and
+write reports, or run through a matrix of possible permutations for different
+parameters for hours in the background while I&rsquo;m doing other work.</p>
+<p>To be a bit more concrete, I had to write a pipeline that will be moving almost
+400GB of data every night. This is just one of many pipelines and it will run on
+a shared node pool on our Kubernetes cluster which was not sized for these types
+of workloads and so on. Long story short the performance matters here. So what
+I did to get this really fast and resource efficient was that I downloaded a
+representative sample of the data around 10-12GB and then ran different
+configurations of the pipeline on that data fully end to end as it would in
+production. This allowed me to find the best throughput while staying within the
+pod resource limit.</p>
+<p>Since then, I keep this kind of thing running in the background. Simulations and
+experiments for different things to see if I have missed something or can
+improve something. So far, every time some optimization is found I learn a ton
+also about the underlying frameworks and tools used. It has been a really
+enjoyable way of using AI at work.</p>
+<h2 id="what-i-have-stopped-doing">What I have stopped doing</h2>
+<h3 id="overuse-of-subagents">Overuse of subagents</h3>
+<p>Not a skill issue I think, at almost 10B total tokens burned by now I have a
+hunch about how things go. I think having too many subagents doing different
+parts of the work, unless that work is very narrow and really well explained
+leads to intent guessing which rapidly decays into slop generation. It is much
+better to treat subagents as strictly context preservation. Meaning send them to
+do some research and come back then summarize the session yourself with the
+agent and bring that back to the main context for example. This way there is no
+intent guessing from the subagent, and you only bring what you needed back to
+the main context with no context pollution with subagent calls etc.</p>
+<p>I frequently jump into subagent sessions now and steer them, if the harness
+makes this easy which Pi does. This is not something I used to do, before I was
+much more prone to tell the main &ldquo;use a subagent to look x up and research it&rdquo;.
+Now I do that still but the way I have it setup is that I can jump into that
+session and guide the subagent. I also have added so that the main agent always
+asks me about my intent, this is an agents.md rule at the user level and mostly
+only works for Pi, the other two, i.e. Codex and Claude, have too many system
+prompt level rules already for it to actually pay attention to anything most of
+the time but that&rsquo;s a whole other discussion.</p>
+<h2 id="rounding-off">Rounding off</h2>
+<p>The main shift since the last update is not that the workflow is suddenly clean
+or finished. It is more that I have stopped expecting the default shape of these
+tools to be the right shape for me.</p>
+<p>The models are good enough now that the bottleneck is often everything around
+them. The harness, the context, the review flow, the way tools are exposed, the
+way sessions branch, the way intent is carried from one step to another. That
+whole layer matters way more than I think I understood three months ago.</p>
+<p>So the direction for me is pretty clear. No more waiting for someone else to
+build the perfect AI workflow, more small sharp tools that fit how I actually
+think and work. More building the system myself, because as usual, what I
+cannot create I do not understand.</p>
+
+</content>
+<p>
+  
+  <a href="https://handmadeoasis.com/tag/ai-agents/">#Ai Agents</a>
+  
+  <a href="https://handmadeoasis.com/tag/developer-tooling/">#Developer Tooling</a>
+  
+  <a href="https://handmadeoasis.com/tag/generative-ai/">#Generative AI</a>
+  
+  <a href="https://handmadeoasis.com/tag/software-engineering/">#Software Engineering</a>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+  
+</body>
+
+</html>
