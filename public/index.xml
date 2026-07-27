@@ -7,12 +7,12 @@
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, Ramtin Javanmardi.</copyright>
-    <lastBuildDate>Sun, 26 Jul 2026 22:28:03 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 20:28:03 +0200</lastBuildDate>
     <atom:link href="https://handmadeoasis.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>State of AI Assisted Workflows July 2026</title>
       <link>https://handmadeoasis.com/state-of-ai-assisted-workflows-july-2026/</link>
-      <pubDate>Sun, 26 Jul 2026 22:28:03 +0200</pubDate>
+      <pubDate>Mon, 27 Jul 2026 20:28:03 +0200</pubDate>
       <guid>https://handmadeoasis.com/state-of-ai-assisted-workflows-july-2026/</guid>
       <description>&lt;p&gt;Three months since the&#xA;&lt;a href=&#34;https://handmadeoasis.com/state-of-ai-assisted-workflows-april-2026/&#34;&gt;last update&lt;/a&gt;, give or take a day.&#xA;In that post I landed on the idea that the layer around the model is where the&#xA;leverage is, the harness, the context, the review loops, all the boring pieces.&#xA;I still think that&amp;rsquo;s true. What changed this quarter is which problem I point&#xA;all of that at.&lt;/p&gt;&#xA;&lt;p&gt;Because what I have actually been optimizing for is not speed of generation&#xA;anymore, it&amp;rsquo;s keeping my mental model current at a rate of change that used to&#xA;be impossible. That&amp;rsquo;s the whole post really. Everything below is either&#xA;something that helps with that, or something I stopped doing because it quietly&#xA;worked against it.&lt;/p&gt;</description>
     </item>
